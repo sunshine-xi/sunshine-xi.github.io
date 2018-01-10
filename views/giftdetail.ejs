@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>企业专区商品详情页面</title>
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you views the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/giftdetail.css"/>
+</head>
+<body>
+<%-include("nav.ejs")%>
+<div class="jiange"></div>
+<!--banner 图-->
+<section class="container-fluid banner">
+    <div class="row">
+        <div class="bir-banner">
+            <!--<div class="goods-detail">-->
+            <img src="<%=backImg%>" class="goods-detail"  alt=""/>
+            <!--</div>-->
+        </div>
+    </div>
+</section>
+<!--产品详情内容-->
+<%for(var i=0;i<mydata.length;i++){%>
+<section class="container">
+    <div class="row">
+        <h2 class="col-lg-12"><%=mydata[i].pro_name%></h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 descript">
+            <p>/<%=mydata[i].pro_descript%>/</p>
+            <!--<p>/夹心中增加可咀嚼的玫瑰蜜饯，丰富口感/</p>-->
+            <!--<p>当季水果夹心：芒果</p>-->
+        </div>
+        <div class="col-lg-6">
+            <span class="tittle-price">￥<%=mydata[i].pro_price%>/<%=mydata[i].pro_norm%>磅</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="clean"></div>
+            <ul class="product-detail">
+                <li>
+                    <img src="images/icon1.png" class="product-detail-img2" alt=""/>
+                    <span>配送时间：</span>
+                    <span>现在订购最早 <span class="now-time"></span>  14:30 配送。每日最晚配送时间21:30</span>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-6 right-line">
+            <div class="row">
+                <div class="col-lg-12 product-detail-right">
+                    <ul class="row">
+                        <li>
+                            <img src="images/icon4.png" alt=""/>
+                            <span>35x35cm</span>
+                        </li>
+                        <li>
+                            <img src="images/icon5.png" alt=""/>
+                            <span>适合30-40人享用</span>
+                        </li>
+                        <li>
+                            <img src="images/icon6.png" alt=""/>
+                            <span>含40套餐具</span>
+                        </li>
+                        <li>
+                            <img src="images/icon_15.png" alt=""/>
+                            <span>需提前168小时预订</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 product-detail-right-price">
+                    <ul class="right-size">
+                        <li>商品规格</li>
+                        <li>
+                            <input type="radio" name="w-name" value="1500.00" class="yin-chang"/>
+                            <a href="#" class="size-toggle active"><span class="value">10.0磅</span></a>
+                        </li>
+                        <li>
+                            <input type="radio" name="w-name" value="3000.00" class="yin-chang"/>
+                            <a href="#" class="size-toggle"><span class="value">20.0磅</span></a>
+                        </li>
+                        <li>
+                            <input type="radio" name="w-name" value="4500.00" class="yin-chang"/>
+                            <a href="#" class="size-toggle"><span class="value">30.0磅</span></a>
+                        </li>
+                        <li>
+                            <input type="radio" name="w-name" value="0" class="yin-chang"/>
+                            <a href="#" class="size-toggle"><span class="value">更多磅数</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row kongge"></div>
+            <div class="row ">
+                <div class="col-lg-5">
+                    <div class="gouwu">
+                        <button class="btn-give-up" onclick="shop(this)">立即购买</button>
+                    </div>
+
+                </div>
+                <div class="col-lg-5 col-lg-offset-1">
+                    <div class="shoppingDo">
+                        <p>成功加入购物车</p>
+                        <a href="/gouwuche.do">
+                            <div class="chakan">查看购物车</div>
+                        </a>
+                    </div>
+
+                    <button class="btn-que-ren" onclick="cakeShop(this)">加入购物车</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<%}%>
+
+<section class="container">
+    <div class="row">
+        <div class="col-lg-6 bottom-line"></div>
+        <div class="col-lg-6 bottom-line"></div>
+    </div>
+</section>
+<!--分割线-->
+<!--<section class="container">-->
+<!--<div class="row bottom-line"></div>-->
+<!--</section>-->
+<!--图片展示-->
+<section class="container">
+    <%for(var j=0;j<mydata.length;j++){%>
+    <div class="row">
+        <div class="picture-view">
+            <img src="<%=mydata[j].pro_descript_img_one%>" class="img-responsive" alt=""/>
+        </div>
+    </div>
+    <!--<div class="row">-->
+    <!--<div class="picture-views">-->
+    <!--<img src="images/giftdetail2.jpg" class="img-responsive" alt=""/>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+    <!--<div class="picture-views">-->
+    <!--<img src="images/giftdetail3.jpg" class="img-responsive" alt=""/>-->
+    <!--</div>-->
+    <!--</div>-->
+    <%}%>
+</section>
+
+
+<!--推荐-->
+<section class="container">
+    <div class="row">
+        <div class="col-lg-12 googs-tuijian">
+            <h4>商品推荐</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="goods-view">
+                <li>
+                    <a href="tjgoods.do?name1=images/birthday23.jpg"><img src="<%=tuijoods1%>" alt=""/></a>
+                </li>
+                <li>
+                    <a href="tjgoods.do?name1=images/birthday24.jpg"><img src="<%=tuijoods2%>" alt=""/></a>
+                </li>
+                <li>
+                    <a href="tjgoods.do?name1=images/birthday25.jpg"><img src="<%=tuijoods3%>" alt=""/></a>
+                </li>
+                <li>
+                    <a href="tjgoods.do?name1=images/brthday26.jpg"><img src="<%=tuijoods4%>" alt=""/></a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+<%-include("footer.ejs")%>
+<!--登陆提示模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" id="prompt_modal"aria-hidden="true" data-backdrop="static" data-show="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                请登陆!
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="prompt_sure_btn" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="js/giftdetail.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

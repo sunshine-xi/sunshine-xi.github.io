@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    font-size: 14px;
+}
+/*banner图*/
+section #header{
+    background-image:url("../images/zhoubian-banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    background-size: 100%;
+}
+/*周边页面导航分类*/
+section #fenlei{
+    height: 100px;
+    color: #684029;
+    background-color: #f7f7f7;
+}
+section #fenlei>div>p{
+    line-height: 100px;
+}
+section #fenlei>div>p:hover{
+    color: #BB9772;
+    cursor: pointer;
+}
+/*分类移入边框变色*/
+section .waikuang:hover{
+    /*border: 1px solid #BB9772;*/
+    box-shadow: 1px 1px 5px;
+    cursor: pointer;
+}
+/*标题字体样式*/
+section .biaoti{
+    font-size: 24px;
+    font-weight: 700;
+    color: #684029;
+    display: block;
+    /*text-align: center;*/
+    margin-top: 20px;
+    padding: 0;
+}
+section .wz>p,span{
+    line-height: 40px;
+    color:#684029;
+}
+section #xianhua{
+    margin-top: 10px;
+}
+section .sb>p{
+    color:#684029;
+    font-weight: 800;
+    margin-top: 120px;
+    margin-left: 80px;
+    font-size: 24px;
+}
+section #lipin{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+/*加入购物车样式*/
+section .pro-list-linkOne img{
+    width: 20px;
+    height: 20px;
+}
+section .pro-list-linkOne{
+    color: #765751;
+}
+section #a:link{
+    display: block;
+    margin: 25px 0;
+    color: #765751;
+    text-decoration: none;
+}
+section #a:visited{
+    text-decoration: none;
+    color: #765751;
+}
+section #a:hover{
+    color: #BB9AA6;
+    cursor: pointer;
+}
+section #a:active{
+    text-decoration: none;
+    color: #765751;
+}
+section #a:first-child:hover h3{
+    color: #BB9AA6;
+}
+section .fa-cart-plus{
+    margin-top: 20px;
+}
+/*<!--提示模态框-->*/
+#prompt_modal>div{
+    margin-top:15%;
+    width: 30%;
+    border: none;
+    background: none;
+}
+#prompt_modal .modal-content{
+    border: 1px solid rgba(73, 43, 26, 0.64);
+    border-radius: 1px;
+    background-color:rgba(73, 43, 26, 0.64);
+    /*box-shadow: none;*/
+    padding: 4% 2%;
+}
+/*#prompt_modal*/
+#prompt_modal .modal-header{
+    font-size: 14px;
+    color: #e4e4e4;
+    border-bottom: none;
+    line-height:28px;
+}
+#prompt_modal .modal-footer{
+    border-top: none;
+}
+#prompt_modal .modal-footer button{
+    height:40px;
+    width:32%;
+    border:1px solid rgba(73, 43, 26, 0.6);
+    box-shadow: none;
+    outline: none;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    background-color:rgba(73, 43, 26, 0.9);
+    color: #e4e4e4;
+}
+#prompt_modal .modal-footer button:hover{
+    background-color: rgb(56, 33, 19);
+}
+.pro-list-linkOne{
+    cursor: pointer;
+}
+.pro-list-linkOne:hover{
+    color: #BB9AA6;
+}

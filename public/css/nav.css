@@ -1,0 +1,141 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    list-style: none;
+    text-decoration: none;
+}
+header{
+    margin-bottom: 80px;
+}
+/*头部*/
+.header{
+    height: 80px;
+    box-shadow: 1px 1px 5px 0 grey;
+    color: #684029;
+    background-color: #FFFFFF;
+}
+/*导航*/
+.nav{
+    padding-left: 20px;
+}
+/*左边导航*/
+.nav_left{
+    background-color: #FFFFFF;
+    height: 78px;
+    margin-top: 0;
+}
+.nav_left>li{
+    float: left;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    width: 60px;
+}
+.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>li>ul>li>a{
+    display: inline-block;
+    color: #684029;
+    padding: 0;
+}
+.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>ul>li>a:hover{
+    color: #BB9772;
+    text-decoration: none;
+}
+
+/*logo图片*/
+.logoImg{
+    height:80px;
+    margin-left: 2%;
+}
+/*专区*/
+.zone{
+    position:relative;
+}
+/*专区的子菜单*/
+.zoneInfo{
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    z-index: 999;
+    width: 100px;
+    border: 1px solid #EDEDED;
+    background-color: #FFFFFF;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s linear;
+}
+.zoneInfo>li{
+    height: 40px;
+    line-height: 40px;
+}
+.zone:hover .zoneInfo{
+    visibility: visible;
+    opacity: 1;
+}
+.zoneInfo>li:hover{
+    color: #684029;
+}
+/*右边导航*/
+.navbar-right>li:not(:nth-child(3)){
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    width: 80px;
+}
+.nav_left>li:hover,.navbar-right>li:not(:nth-child(3)):hover{
+    color: #BB9772;
+    cursor: pointer;
+}
+.navbar-right>li:nth-child(3)>span>a{
+    color: #684029;
+}
+.navbar-right>li:nth-child(3)>span>a:hover{
+    color: #BB9772;
+    text-decoration: none;
+}
+.navbar-right>li:nth-child(3)>span:hover{
+    color: #BB9772;
+    cursor: pointer;
+}
+/*地址下拉列表*/
+.navbar-right #address{
+    border: none;
+    background-color: rgba(0,0,0,0);
+}
+/*窗口缩小时的菜单栏*/
+.navbar-toggle{
+    margin-top: 20px;
+}
+/*app下载*/
+.app{
+    position: relative;
+}
+/*二维码*/
+.Qrcode{
+    position: absolute;
+    margin-left: -50px;
+    left: 50%;
+    margin-top: -10px;
+    z-index: 999;
+}
+.Qrcode>li>img{
+    width: 100px;
+    display: none;
+}
+.app:hover .Qrcode>li>img{
+    display: block;
+}
+.navbar-collapse.in{
+    height: 200px;
+}
+.shoppingCart{
+    font-size: 18px;
+    margin-left: -10px;
+}
+.navLogin{
+    padding: 0 10px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}

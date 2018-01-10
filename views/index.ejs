@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/mplayer.min.css">
+</head>
+<body class="home page-template-default page page-id-6">
+<div class="indexBg">
+    <div></div>
+</div><!--固定背景-->
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top header">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!--缩小时的菜单栏-->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse row" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav nav_left">
+                    <li>
+                        <a href="/index.do">
+                            首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/recommend.do">
+                            推荐
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/cake.do">
+                            蛋糕
+                        </a>
+                    </li>
+                    <li class="zone">
+                        <a href="/zone.do">
+                            专区
+                        </a>
+                        <ul class="zoneInfo">
+                            <li>
+                                <a href="/birthday.do">
+                                    生日专区
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company.do">
+                                    企业专区
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/teacherdesgin.do">
+                                    礼品专区
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/Creamtea.do">
+                            下午茶
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/customized.do">
+                            定制
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/baking.do">
+                            体验
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/periphery.do">
+                            周边
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/brandstory.do">
+                            品牌故事
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right hidden-sm hidden-md hidden-xs">
+                    <li class="app">APP下载
+                        <ul class="Qrcode">
+                            <li><img src="images/Qrcode.png" alt=""></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <select name="" id="address">
+                            <option value="成都">成都</option>
+                            <option value="北京">北京</option>
+                            <option value="上海">上海</option>
+                            <option value="天津">天津</option>
+                            <option value="杭州">杭州</option>
+                            <option value="苏州">苏州</option>
+                        </select>
+                    </li>
+                    <li class="navLogin">
+                        <%if(nickname==null){%>
+                            <span>
+                               <a href="login.html">登录</a>
+                            </span> /
+                            <span>
+                               <a href="registered.html">注册</a>
+                            </span>
+                        <%}else{%>
+                            <span>
+                               <a href="/userCenter.do"><%=nickname%></a>
+                            </span> /
+                            <span class="sign-out">
+                               <a href="/deleteUser.do" target="_parent">
+                                   退出
+                               </a>
+                            </span>
+                        <%}%>
+                    </li>
+                    <li>
+                        <a href="/gouwuche.do">
+                            <i class="fa fa-cart-plus shoppingCart" aria-hidden="true"></i>
+                             <span class="num" style="position: absolute;top:-10px;background-color:#BA9978;color: white;display: inline-block;font-size:12px;padding: 0 5px;max-height: 20px;line-height: 20px">
+                                 <%if(num==null||num==""){%>
+                                 <%}else{%>
+                                    <%=num%>
+                                 <%}%>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div id="container">
+    <div id="content-wrapper" class="wrap">
+        <!--欢迎页面-->
+        <section id="welcome" class="scroll-section clearfix">
+            <img class="welcome-logo img-circle" src="images/logo.png">
+            <p>
+                <span>Welcome</span>
+            </p>
+            <h4>
+                <span>幸福是每天可以看到各种人为他的谁谁买蛋糕 听到许许多多美丽的故事 </span>
+            </h4>
+            <span class="dash-bottom"></span>
+        </section>
+        <span class="pin-trigger"></span>
+        <!--第二版 品牌介绍-->
+        <div class="scrollmagic-pin-spacer" >
+            <!--第二版第一块-->
+            <div id="pin-outer" class="clearfix">
+                <div id="pin-inner" class="clearfix">
+                    <section id="maintenance-contracts" class="scroll-section clearfix">
+                        <p><span>特色推荐</span></p>
+                        <div class="content-box clearfix">
+                            <ul>
+                                <li>
+                                    <a href="brhgoods.do?name=images/birthday3.jpg">
+                                        <img src="images/birthday3.jpg" alt="">
+                                    </a>
+                                    <p>
+                                        <a href="brhgoods.do?name=images/birthday3.jpg">
+                                            深爱百利甜情人蛋糕
+                                        </a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <a href="/message.do?name=images/3002.jpg">
+                                        <img src="images/3002.jpg" alt="">
+                                    </a>
+                                    <p>
+                                        <a href="/message.do?name=images/3002.jpg">
+                                            黑森林
+                                        </a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <a href="brhgoodss.do?name=images/cake02.jpg">
+                                        <img src="images/cake02.jpg" alt="">
+                                    </a>
+                                    <p>
+                                        <a href="brhgoodss.do?name=images/cake02.jpg">
+                                            Mango Jerry 芒果慕斯
+                                        </a>
+                                    </p>
+                                </li>
+                                <!--<li>-->
+                                    <!--<a href="/Creamtea.do">-->
+                                        <!--<img src="images/iceCream.jpg" alt="">-->
+                                    <!--</a>-->
+                                    <!--<p>-->
+                                        <!--<a href="/Creamtea.do">-->
+                                            <!--拿铁冰淇淋-->
+                                        <!--</a>-->
+                                    <!--</p>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="/Creamtea.do">-->
+                                        <!--<img src="images/iceCreamTwo.jpg" alt="">-->
+                                    <!--</a>-->
+                                    <!--<p>-->
+                                        <!--<a href="/Creamtea.do">-->
+                                            <!--荔枝冰淇淋-->
+                                        <!--</a>-->
+                                    <!--</p>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="/Creamtea.do">-->
+                                        <!--<img src="images/icecream2.jpg" alt="">-->
+                                    <!--</a>-->
+                                    <!--<p>-->
+                                        <!--<a href="/Creamtea.do">-->
+                                            <!--原味牛乳冰淇淋-->
+                                        <!--</a>-->
+                                    <!--</p>-->
+                                <!--</li>-->
+                            </ul>
+                        </div>
+                        <span class="dash-bottom"></span>
+                        <span class="dash-right"></span>
+
+                    </section>
+
+
+                    <section id="types-of-repair" class="scroll-section clearfix">
+                        <div class="product-wrap-outer">
+                            <div class="product-wrap clearfix">
+                                <div class="product-box">
+                                    <h3>
+                                        <span>提拉米苏</span>
+                                    </h3>
+                                    <p>
+                                    <span class="text-left">
+                                        含义：“带我走”。入口时，芝士的香滑、咖啡的苦涩、朗姆酒的辛烈，
+                                        交织成意大利馥郁难忘的专属味道，让人不由得想起那个亘古流传的誓言：带我走！
+                                        在意大利文里提拉米苏(Tiramisu)的意思是"带我走，拉我起来"意指吃了此等美味，
+                                        就会幸福得飘飘然、宛如登上仙境。
+                                    </span>
+                                    </p>
+                                    <img src="images/3012.jpg" class="attachment-product-image size-product-image wp-post-image" alt="Washing Machine Repair">
+                                </div>
+
+                                <div class="product-box">
+                                    <h3><span>黑森林蛋糕</span></h3>
+                                    <p>
+                                        <span class="text-left">
+                                        含义：“爱情的味道”。融合了樱桃的酸、奶油的甜、巧克力的苦、樱桃酒的醇香，正是爱情的味道。
+                                            完美的黑森林蛋糕经得起各种口味的挑剔。黑森林蛋糕被称作黑森林的特产之一。
+                                            正宗的黑森林蛋糕，巧克力相对比较少，更为突出的是樱桃酒和奶油的味道。
+                                        </span>
+                                    </p>
+                                    <img src="images/3002.jpg" class="attachment-product-image size-product-image wp-post-image">
+                                </div>
+
+                                <div class="product-box">
+                                    <h3><span>卡布奇诺</span></h3>
+                                    <p>
+                                        <span class="text-left">
+                                            含义：“等待”。味道甜中带苦，却又始终如一的味道。预示着，等待就是甜中带苦，怀着忠实的真心，不会变心的等待。
+                                            甜蜜快乐，它独特的奶香可以把苦涩的咖啡变得香醇、浓厚，即使是不会品尝咖啡的人也会为它而着迷。
+                                            感悟人生，香甜而又苦涩，可以让人领略人生的滋味。
+                                        </span>
+                                    </p>
+                                    <img src="images/3016.jpg" class="attachment-product-image size-product-image wp-post-image" >
+                                </div>
+
+                                <div class="product-box">
+                                    <h3><span>芝士蛋糕</span></h3>
+                                    <p>
+                                        <span class="text-left">
+                                           含义：“甜蜜的爱情”。当奶油恋上芝士，香浓的爱意沉浸在芝士的丝滑里，却因同根生而被命运阻隔，
+                                            于是这份爱恋少了些许甜腻，多了一丝酸楚。幸好，有相思豆的铺撒，让原本凄凉的爱情多了无限温暖。
+                                            香浓细滑的巧克力和奶油，再加上酥脆的姜饼干，口感丰富层次鲜明。
+                                        </span>
+                                    </p>
+                                    <img src="images/3011.jpg" class="attachment-product-image size-product-image wp-post-image" >
+                                </div>
+
+                                <div class="product-box">
+                                    <h3><span>布朗尼</span></h3>
+                                    <p>
+                                        <span class="text-left">
+                                        含义：“可爱的错误”。据说有个胖胖的黑人嬷嬷系着围裙，在厨房烘培着松软可口的巧克力蛋糕，
+                                            结果居然忘了将奶油先打发，而意外做出的失败作品，这块原本要丢掉的蛋糕，老妈妈一尝，居然十分美味，
+                                            布朗尼蛋糕这个“可爱的错误”就这么成为美国家庭中最代表性的蛋糕了。
+                                        </span>
+                                    </p>
+                                    <img src="images/3026.jpg" class="attachment-product-image size-product-image wp-post-image" >
+                                </div>
+                                <span class="swipe-icon"></span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="appliance-rework" class="scroll-section clearfix">
+                        <p><span>生日蛋糕</span></p>
+                        <div class="content-box clearfix text-left">
+                            <p>
+                                <a href="/message.do?name=images/3003.jpg"><img src="images/3003.jpg" alt=""></a>
+                            </p>
+                            <div class="fact fact-left text_letter">
+                                <div>中古时期的欧洲人相信 ，生日是灵魂最容</div>
+                                <div>易被恶魔入侵的日子 ，所以在生日当天 ，</div>
+                                <div>亲人朋友都会齐聚身边给予祝福 ，并且送</div>
+                                <div>蛋糕以带来好运驱逐恶魔 。</div>
+                            </div>
+                        </div>
+                        <span class="dash-left"></span>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--满月蛋糕-->
+		<span class="pin-trigger2">
+			<span class="dash-vert"></span>
+		</span>
+        <div id="scrollmagic-pin-spacer">
+            <div id="pin-outer2" class="clearfix">
+                <div id="pin-inner2" class="clearfix">
+                    <section id="product-evaluation" class="scroll-section clearfix">
+                        <p><span>满月蛋糕</span></p>
+                        <div class="content-box clearfix">
+                            <p>
+                                <a href="/message.do?name=images/3012.jpg"><img src="images/3012.jpg" alt=""></a>
+                            </p>
+                            <div class="fact fact-left text_letter">
+                                <div>满月蛋糕宝宝满月 ，免不了求神祭祖 ，然</div>
+                                <div>后剃胎发 ，大人总希望小宝宝快快长大 。</div>
+                                <div>在满月当天 ，外公外婆要送小宝宝许多满</div>
+                                <div>月蛋糕，希望外孙(女)能中状元 ，终生圆圆满满 。</div>
+                            </div>
+                        </div>
+                        <!--<span class="dash-bottom"></span>-->
+                        <span class="dash-right"></span>
+                    </section>
+
+                    <section id="appliance-suppliers" class="scroll-section clearfix">
+                        <div class="suppliers-wrap-outer">
+                            <p><span>婚礼蛋糕</span></p>
+                            <div class="content-box clearfix">
+                                <p>
+                                    <a href="/message.do?name=images/wedding_cake_one.jpg"><img src="images/wedding_cake_one.jpg" alt=""></a>
+                                </p>
+                                <div class="fact fact-left  text_letter">
+                                    <div>婚礼蛋糕 ，据传最早出现在古</div>
+                                    <div>罗马时代 。 蛋糕一词则出自英</div>
+                                    <div>语 ，其原意是扁圆的面包 。同</div>
+                                    <div>时也意味着“ 快乐幸福 ” 之意 。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="about" class="scroll-section clearfix col-xs-12">
+                        <h1>
+                            <span>Brand history</span>
+                        </h1>
+                        <div class="content-box clearfix">
+                            <p>
+                                很多人还不知道samll lucky，
+                                它的味道，故事和名字，只在朋友中间口碑相传。
+                                同所有纯正的蛋糕一样，samll lucky使用真正的乳脂奶油，杜绝任何色素、香精和防腐剂。
+                                一次次的旅行，一次次的寻找，一次次的尝试，挑剔近50种国外的地道原料，
+                                samll lucky，
+                                甜蜜的味道
+                                samll lucky，不止是一块蛋糕。
+                                <!--想念和你们坐在一起谈天说地的日子 有甜甜的蛋糕 也有苦中带酸的咖啡就好像我们的故事 填满了那些一去不复返的青葱岁月！ ​​​​-->
+                            </p>
+                            <div class="fact fact-left">
+                                <span style="letter-spacing: 1px">用心烘焙愛的味道</span>
+                            </div>
+                        </div>
+                        <span class="dash-bottom"></span>
+                        <span class="dash-left"></span>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--联系我们-->
+        <section id="contact" class="scroll-section clearfix">
+            <span class="dash-top"></span>
+            <div class="contact-inner clearfix">
+                <p>
+                    <span>联系我们</span>
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="name" placeholder="姓名">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" id="tel" placeholder="联系电话">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="邮箱">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="留言" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default ">提交</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+
+<div class="mp">
+    <div class="mp-box">
+        <img src="img/mplayer_error.png" alt="music cover" class="mp-cover">
+        <div class="mp-info">
+            <p class="mp-name">小幸运</p>
+            <p class="mp-singer">许嵩</p>
+            <p><span class="mp-time-current">00:00</span>/<span class="mp-time-all">00:00</span></p>
+        </div>
+        <div class="mp-btn">
+            <button class="mp-prev" title="上一首"></button>
+            <button class="mp-pause" title="播放"></button>
+            <button class="mp-next" title="下一首"></button>
+            <button class="mp-mode" title="播放模式"></button>
+            <div class="mp-vol">
+                <button class="mp-vol-img" title="静音"></button>
+                <div class="mp-vol-range" data-range_min="0" data-range_max="100" data-cur_min="80">
+                    <div class="mp-vol-current"></div>
+                    <div class="mp-vol-circle"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mp-pro">
+            <div class="mp-pro-current"></div>
+        </div>
+        <div class="mp-menu">
+            <button class="mp-list-toggle"></button>
+            <button class="mp-lrc-toggle"></button>
+        </div>
+    </div>
+    <button class="mp-toggle">
+        <span class="mp-toggle-img"></span>
+    </button>
+    <div class="mp-lrc-box">
+        <ul class="mp-lrc"></ul>
+    </div>
+    <button class="mp-lrc-close"></button>
+    <div class="mp-list-box">
+        <ul class="mp-list-title"></ul>
+        <table class="mp-list-table">
+            <thead>
+            <tr>
+                <th>歌名</th>
+                <th>歌手</th>
+                <th>时长</th>
+            </tr>
+            </thead>
+            <tbody class="mp-list"></tbody>
+        </table>
+    </div>
+</div>
+<%-include('footer.ejs')%>
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="configuration/js/fa053.js"></script>
+<script type="text/javascript" src="configuration/js/onu2fuu.js"></script>
+<script src="configuration/js/ec71f.js"></script>
+<script src="configuration/js/TweenMax.min.js"></script>
+<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+<script src="js/mplayer.js"></script>
+<script src="js/mplayer-list.js"></script>
+<script src="js/mplayer-functions.js"></script>
+<script src="http://cdn.bootcss.com/jquery-nstslider/1.0.13/jquery.nstSlider.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top header">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!--缩小时的菜单栏-->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--logo图-->
+                <img src="images/logo.png" alt="" class="logoImg">
+            </div>
+            <div class="collapse navbar-collapse row" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav nav_left">
+                    <li>
+                        <a href="/index.do">
+                            首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/recommend.do">
+                            推荐
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/cake.do">
+                            蛋糕
+                        </a>
+                    </li>
+                    <li class="zone">
+                        <a href="/zone.do">
+                            专区
+                        </a>
+                        <ul class="zoneInfo">
+                            <li>
+                                <a href="/birthday.do">
+                                    生日专区
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company.do">
+                                    企业专区
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/teacherdesgin.do">
+                                    礼品专区
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/Creamtea.do">
+                            下午茶
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/customized.do">
+                            定制
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/baking.do">
+                            体验
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/periphery.do">
+                            周边
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/brandstory.do">
+                            品牌故事
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right hidden-sm hidden-md hidden-xs">
+                    <li class="app">APP下载
+                        <ul class="Qrcode">
+                            <li><img src="images/Qrcode.png" alt=""></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <select name="" id="address">
+                            <option value="成都">成都</option>
+                            <option value="北京">北京</option>
+                            <option value="上海">上海</option>
+                            <option value="天津">天津</option>
+                            <option value="杭州">杭州</option>
+                            <option value="苏州">苏州</option>
+                        </select>
+                    </li>
+                    <li class="navLogin">
+                        <%if(nickname==null||nickname==""){%>
+                            <span>
+                                <a href="login.html">登录</a>
+                            </span> /
+                            <span>
+                                <a href="registered.html">注册</a>
+                            </span>
+                        <%}else{%>
+                            <span>
+                               <a href="/userCenter.do"><%=nickname%></a>
+                            </span> /
+                            <span class="sign-out">
+                                  <a href="/deleteUser.do" target="_parent">
+                                     退出
+                                  </a>
+                            </span>
+                        <%}%>
+                    </li>
+                    <li>
+                        <a href="/gouwuche.do" style="position: relative">
+                            <i class="fa fa-cart-plus shoppingCart" aria-hidden="true"></i>
+                            <span style="position: absolute;top:-10px;background-color:#BA9978;color: white;display: inline-block;font-size:12px;padding: 0 5px;max-height: 20px;line-height: 20px">
+                                <%if(num==null||num==""){%>
+                                <%}else{%>
+                                    <%=num%>
+                                <%}%>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

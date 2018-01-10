@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户中心</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/userCenter.css">
+</head>
+<body>
+<%-include('nav.ejs')%>
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-xs-4 userInf">
+            <form  class="headPortrait col-xs-4" id="imgForm" enctype="multipart/form-data">
+                <img src="<%=titleImg%>" alt="" class="headImg">
+                <input type="file" name="myImg" id="headImg"/>
+                <div class="masking">更换头像</div>
+                <button type="button" id="uploadImg">上传头像</button>
+            </form>
+            <div class="col-xs-4 userManger">
+                <p><%=nickname%></p>
+                <p style="width: 200px"><%=mydata[0].username%><span><a href="/changePassword.do">修改密码</a></span></p>
+                <p><a href="/personalInformation.do">编辑个人信息</a></p>
+                <p><a href="/address.do">地址管理</a></p>
+                <p><a href="/details.do">订单管理</a></p>
+            </div>
+        </div>
+        <div class="col-xs-6 userInf">
+            <div class="col-xs-offset-1 col-xs-4 text-center">
+                <i class="fa fa-cny cny"></i>
+                <p>果实币余额：
+                    <%if(mydata[0].integral==null){%>
+                        0
+                    <%}else{%>
+                         <%=mydata[0].integral%>
+                    <%}%>
+                </p>
+                <p>
+                    <span>卡券充值</span>
+                    <span><a href="/convert.do">积分兑换</a></span>
+                </p>
+            </div>
+            <div class="col-xs-3 text-center arch">
+                <a href="/coupons.do">
+                    <img src="images/arch.png" alt="">
+                </a>
+                <p>
+                    优惠券：
+                    <%if(mydata[0].vouNum==null){%>
+                    0
+                    <%}else{%>
+                    <%=mydata[0].vouNum%>
+                    <%}%>
+                    张可用
+                </p>
+            </div>
+            <div class="col-xs-3 text-center vouchers">
+                <a href="/giftcard.do">
+                    <i class="fa fa-credit-card-alt fa-2x"></i>
+                </a>
+                <p>
+                    代金券：
+                    <%if(mydata[0].giftNum==null){%>
+                    0
+                    <%}else{%>
+                        <%=mydata[0].giftNum%>
+                    <%}%>
+                    张可用
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-10 userInf">
+            <div class="row">
+                <div class="col-xs-12 text-center memberCenter">
+                    会员中心
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    您当前身份为：初阶会员
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1"></div>
+                <!--初阶会员-->
+                <div class="col-xs-2 firstStage">
+                    <div class="text-center">
+                        <img src="images/firstStage.png" alt="">
+                        <p>初阶会员（0-500）</p>
+                    </div>
+                    <p>可以积分</p>
+                    <p>免费配送券1张</p>
+                    <p>8.5折扣券1张</p>
+                </div>
+                <!--中阶会员-->
+                <div class="col-xs-2 intermediate">
+                    <div class="text-center">
+                        <img src="images/intermediate.png" alt="">
+                        <p>中阶会员（501-1500）</p>
+                    </div>
+                    <p>可以积分</p>
+                    <p>享受9折优惠</p>
+                    <p>新品体验券1张</p>
+                </div>
+                <!--高阶会员-->
+                <div class="col-xs-2 senior">
+                    <div class="text-center">
+                        <img src="images/senior.png" alt="">
+                        <p>高阶会员（1501-3000）</p>
+                    </div>
+                    <p>可以积分</p>
+                    <p>享受8.5折优惠</p>
+                    <p>新品体验券2张</p>
+                </div>
+                <!--尊客会员-->
+                <div class="col-xs-2 guest">
+                    <div class="text-center">
+                        <img src="images/guest.png" alt="">
+                        <p>尊客会员（3001-5000）</p>
+                    </div>
+                    <p>可以积分</p>
+                    <p>享受8折优惠</p>
+                    <p>新品体验券2张</p>
+                </div>
+            </div>
+
+            <div class="col-xs-offset-1 col-xs-10">
+                <p class="rules">果实规则：</p>
+                <p>1、订单实际支付金额每满10元，则将自动获得1颗果实，以此类推。累积果实可升级，并享受各级会员权益。
+                    订单中使用优惠券、订单促销等优惠抵扣的金额不参与消费金额的累积，还可以产生积分兑换（一颗果币相当于一个积分）。
+                </p>
+                <p>
+                    2、每90天内未产生购买，果实减一颗，若果实减少为下一等级数量时，等级相应降低，上一级别的固定权益失效。
+                </p>
+                <p>
+                    3、所获得的权益自获得日起，一年内有效。
+                </p>
+                <a href="/announcement.do">了解更多>></a>
+            </div>
+        </div>
+    </div>
+</section>
+<%-include('footer.ejs')%>
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="js/userCenter.js"></script>
+</body>
+</html>

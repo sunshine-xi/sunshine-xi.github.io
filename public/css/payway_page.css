@@ -1,0 +1,173 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#pay_page{
+    padding: 4% 6.4% 10% 6.4%;
+}
+
+#h_left_box p{
+    font-size: 16px;
+    color: rgb(104,64,41);
+    font-weight:bold;;
+}
+#h_left_box span{
+    color:rgb(189,189,189) ;
+}
+#h_right_box{
+    float: right;
+    font-size: 16px;
+    font-weight: bold;
+}
+#h_right_box span:nth-of-type(1){
+    color: rgb(104,64,41);
+
+}
+#h_right_box span:nth-of-type(2){
+    color: rgb(255,113,77);
+}
+#title_box{
+    border: 1px solid rgb(225,225,225);
+    color: rgb(104,64,41);
+    font-size: 14px;
+    margin-top: 2%;
+    padding:1%;
+    background-color: rgb(251,251,251);
+}
+#payway_box{
+    border: 1px solid rgb(225,225,225);
+    padding: 3%;
+    margin: 2% 0;
+}
+#payway_box li{
+    list-style: none;
+    float: left;
+    color: rgb(104,64,41);
+    font-size: 12px;
+}
+#payway_box li label {
+    font-weight: normal;
+    width:100%;
+}
+
+/*========================radio样式===============================*/
+/*<!--选择是要个人发票还是公司发票 ,配送方式的选择，选择果实币-->*/
+
+#payway_box>ul>li>label>input{
+    visibility: hidden;
+}
+#payway_box>ul>li:nth-of-type(1)>label>i:nth-of-type(1),
+#payway_box>ul>li:nth-of-type(2)>label>i:nth-of-type(2),
+#payway_box>ul>li:nth-of-type(3)>label>i:nth-of-type(2)
+{
+    display: none;
+}
+
+#payway_box>ul>li:nth-of-type(1)>label>i:nth-of-type(2),
+#payway_box>ul>li:nth-of-type(2)>label>i:nth-of-type(1),
+#payway_box>ul>li:nth-of-type(3)>label>i:nth-of-type(1)
+{
+    display: inline-block;
+}
+
+#payway_box>ul>li:nth-of-type(1)>label>i:nth-of-type(1),
+#payway_box>ul>li:nth-of-type(2)>label>i:nth-of-type(1),
+#payway_box>ul>li:nth-of-type(3)>label>i:nth-of-type(1)
+{
+    font-size: 20px;
+    color: rgb(207, 207, 214);
+}
+#payway_box>ul>li:nth-of-type(1)>label>i:nth-of-type(2),
+#payway_box>ul>li:nth-of-type(2)>label>i:nth-of-type(2),
+#payway_box>ul>li:nth-of-type(3)>label>i:nth-of-type(2)
+{
+    font-size: 20px;
+    color: rgb(209, 188, 162);
+}
+
+
+
+
+/*==============================================*/
+
+
+/*支付方式选择框的样式*/
+#payway_box li img{
+    height:42px;
+}
+#payway_box li input{
+    display: inline-block;
+    zoom:1.4;
+    vertical-align: middle;
+    margin-right:5%;
+}
+#payway_foot{
+    height:50px;
+}
+#payway_foot span:nth-of-type(1){
+     font-size: 12px;
+     color: rgb(104,64,41);
+     display: inline-block;
+     position: relative;
+     top: -14px;
+}
+#payway_foot span:not(:first-child){
+    position: relative;
+    top: -14px;
+    font-size: 12px;
+    color: rgb(255,113,77);
+    display: inline-block;
+}
+#payway_foot>button{
+    margin-left:1%;
+    width:12%;
+    background-color: rgb(104,64,41);
+    border: 2px solid rgb(104,64,41);
+    border-radius: 3px;
+    outline: none;
+    box-shadow: none;
+    height: 42px;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-bottom: 3%;
+}
+/*<!--提示模态框-->*/
+#prompt_modal>div{
+    margin-top:15%;
+    width: 30%;
+    border: none;
+    background: none;
+}
+#prompt_modal .modal-content{
+    border: 1px solid rgba(73, 43, 26, 0.64);
+    border-radius: 1px;
+    background-color:rgba(73, 43, 26, 0.64);
+    /*box-shadow: none;*/
+    padding: 4% 2%;
+}
+/*#prompt_modal*/
+#prompt_modal .modal-header{
+    font-size: 14px;
+    color: #e4e4e4;
+    border-bottom: none;
+    line-height:28px;
+}
+#prompt_modal .modal-footer{
+    border-top: none;
+}
+#prompt_modal .modal-footer button{
+    height:40px;
+    width:32%;
+    border:1px solid rgba(73, 43, 26, 0.6);
+    box-shadow: none;
+    outline: none;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    background-color:rgba(73, 43, 26, 0.9);
+    color: #e4e4e4;
+}
+#prompt_modal .modal-footer button:hover{
+    background-color: rgb(56, 33, 19);
+
+}

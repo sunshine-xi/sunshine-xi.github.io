@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蛋糕详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/cakeMessage.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+<%-include('nav.ejs')%>
+<div class="container-fuild slide"><!--banner图-->
+    <div class="row slide1">
+        <div class="backOne">
+            <img src="<%=banner%>" alt="">
+        </div>
+    </div>
+</div>
+<!--产品详情内容-->
+<section class="container">
+    <div class="row">
+        <h1 class="col-lg-12 pro-list-title"><%=name%></h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 lauExplane">
+            /谁动了我的奶酪/
+            <br/>
+            /Who touched my cheese? A silky smooth cheese cake fit for the king of mice.Rich
+            and tempting  <br/> with a crunchy biscuit base. No cats allowed! /
+            <br/>
+            <strong>*订购五磅及以上规格，默认为小切块</strong>
+            <br/>
+        </div>
+        <div class="col-lg-5 col-lg-offset-1">
+            <span class="detail-price">¥<%=price%>/1.0磅</span>
+        </div>
+    </div>
+    <div class="row pro-details-cont">
+        <div class="col-lg-6 pro-details-left"><!--产品详情内容左边-->
+            <ul class="details-leftli col-lg-12">
+                <li>
+                    <img src="<%=pro_simg_one%>" alt=" ">
+                    <span><%=mydata[0].pro_simg_one_desc%></span>
+                </li>
+                <li>
+                    <img src="<%=pro_simg_two%>" alt=" ">
+                    <span><%=mydata[0].pro_simg_two_desc%></span>
+                </li>
+            </ul>
+            <ul class="details-distribution col-lg-12">
+                <li class="distribution-sweet sweetx">
+                    <img src="images/sweet.png" alt="">
+                    <span class="dis">参考甜度:</span>
+                    <span class="sweet-icon sweet-lau">
+                        <img src="images/sweet_02.png" alt="">
+                        <img src="images/sweet_02.png" alt="">
+                        <img src="images/sweet_02.png" alt="">
+                        <img src="images/sweet_01.png" alt="">
+                        <img src="images/sweet_01.png" alt="">
+                    </span>
+                </li>
+                <li class="distribution-sweet">
+                    <img src="images/icon_06.png" alt="">
+                    <span class="dis">配送时间:</span>
+                    <span class="sweet-lau">
+                        现在订购最早明天 09:30配送。每日最晚配送时间21:30
+                    </span>
+                </li>
+                <li class="distribution-sweet">
+                    <img src="images/icon_07.png" alt="">
+                    <span class="dis">保鲜条件:</span>
+                    <span class="sweet-lau">
+                        0－4℃保藏12小时，5℃食用为佳
+                    </span>
+                </li>
+                <li class="distribution-sweet">
+                    <img src="images/icon_09.png" alt="">
+                    <span class="dis">标准配件:</span>
+                    <span class="sweet-lau">
+                        含标配餐具，可添加巧克力生日牌，不含蜡烛
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-6 pro-details-right"><!--产品详情内容右边-->
+            <div class="outer-box col-lg-12">
+                <div class="outer-box-img">
+                    <img src="images/1.00P-full-12.00.jpg" class="detail-img" alt="">
+                    <ul class="outer-box-lau">
+                        <li>
+                            <img src="images/icon_11.png" alt="">
+                            <span class="size">12x12cm</span>
+                        </li>
+                        <li>
+                            <img src="images/icon_12.png" alt="">
+                            <span class="share">适合3~4人分享</span>
+                        </li>
+                        <li>
+                            <img src="images/icon_15.png" alt="">
+                            <span class="cooking">含五套餐具</span>
+                        </li>
+                        <li>
+                            <img src="images/icon_17.png" alt="">
+                            <span class="time">需提前6小时预定</span>
+                        </li>
+                    </ul>
+                </div>
+                <dl class="col-lg-12 inputGroup">
+                    <dt class="col-lg-3">商品规格:</dt>
+                    <dd>
+                        <ul class="inGro col-lg-9">
+                            <li>
+                                <div id="changeBg1" onclick="choseSize(this)">
+                                    <span>1.0磅</span>
+                                    <img src="images/birthday8.jpg" class="pic" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div id="changeBg2" onclick="choseSize(this)">
+                                    <span>1.5磅</span>
+                                    <img src="images/birthday8.jpg" class="pic" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div id="changeBg3" onclick="choseSize(this)">
+                                    <span>2.0磅</span>
+                                    <img src="images/birthday8.jpg" class="pic" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div id="changeBg4" onclick="choseSize(this)">
+                                    <span>3.0磅</span>
+                                    <img src="images/birthday8.jpg" class="pic" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div id="changeBg5" onclick="choseSize(this)">
+                                    <span>5.0磅</span>
+                                    <img src="images/birthday8.jpg" class="pic" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div id="changeBgn" onclick="choseSize(this)">
+                                    <span>更多磅数</span>
+                                    <img src="images/birthday8.jpg" class="pic" alt="">
+                                </div>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <div class="col-lg-12 btnList">
+                    <button class="buy btnAll" onclick="cakeShop()" type="button">立即购买</button>
+                    <button class="addShop btnAll" onclick="cakeShop()" type="button">加入购物车</button>
+                </div>
+            </div>
+        </div>
+        <div class="container pro-detail-last">
+            <div class="row lastOne">
+                <div class="col-lg-12 lastOne-part1">
+                    <p class="lastOne-lau1">Who touched my cheese? A silky smooth cheese cake fit for the king of mice.
+                        Rich and tempting with a crunchy biscuit base. No cats allowed!</p>
+                    <p>/谁动了我的奶酪？!/</p>
+                </div>
+                <div class="col-lg-12">
+                    <img src="<%=mydata[0].pro_descript_img_one%>" alt="" style="width: 100%">
+                </div>
+                <div class="col-lg-12">
+                    <img src="<%=mydata[0].pro_descript_img_two%>" alt="">
+                </div>
+                <div class="col-lg-12">
+                    <img src="<%=mydata[0].pro_descript_img_three%>" alt="">
+                </div>
+                <div class="col-lg-12">
+                    <img src="<%=mydata[0].pro_descript_img_four%>" alt="">
+                </div>
+                <div class="col-lg-12">
+                    <img src="<%=mydata[0].pro_descript_img_five%>" alt="" style="width:100%;">
+                </div>
+                <div class="col-lg-12">
+                    <img src="<%=mydata[0].pro_descript_img_six%>" alt="">
+                </div>
+                <div class="col-lg-12">
+                    <img src="<%=mydata[0].pro_descript_img_seven%>" alt="">
+                </div>
+                <div class="col-lg-12">
+                    <img src="<%=mydata[0].pro_descript_img_eight%>" alt="">
+                </div>
+                <div class="col-lg-12">
+                    <img src="<%=mydata[0].pro_descript_img_nine%>" alt="">
+                </div>
+                <div class="col-lg-12">
+                    <img src="<%=mydata[0].pro_descript_img_ten%>" alt="">
+                </div>
+                <div class="col-lg-12">
+                    <img src="<%=mydata[0].pro_descript_img_eleven%>" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="container"><!--页脚详情描述-->
+            <div class="row">
+                <div class="col-lg-12 last-part2">
+                    <ol>
+                        <li class="col-lg-12">
+                            小提示:
+                        <li>1、蛋糕规格及免费配送餐具 ：</li>
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>1.0磅：约13×13(cm)</td>
+                                <td>适合3-4人食用</td>
+                                <td>免费配送5套餐具</td>
+                            </tr>
+                            <tr>
+                                <td>2.0磅：约17×17(cm)</td>
+                                <td>适合7-8人食用</td>
+                                <td>免费配送10套餐具</td>
+                            </tr>
+                            <tr>
+                                <td>3.0磅：约23×23(cm)</td>
+                                <td>适合11-12人食用</td>
+                                <td>免费配送15套餐具</td>
+                            </tr>
+                            <tr>
+                                <td>5.0磅：约30×30(cm)</td>
+                                <td>适合15-20人食用</td>
+                                <td>免费配送20套餐具</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        </li>
+                        <li>2、蛋糕在收到后2-3小时内食用为佳。</li>
+                        <li>3、如对上述食材有过敏经历者，请选择其它款蛋糕。</li>
+                        <li>4、以上图片仅供参考，请以收到实物为准。</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="farway"></div>
+        <div class="container"><!--商品推荐-->
+            <div class="row">
+                <h4>商品推荐</h4>
+                <ul class="row pro-list-pr"><!--蛋糕图片清单-->
+                    <li class="list-goods-pr1 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第一幅蛋糕图片-->
+                        <a href="/message.do?name=images/3001.jpg">
+                            <img src="images/3001.jpg" class="img-responsive" alt="平安夜">
+                        </a>
+                    </li>
+                    <li class="list-goods-pr2 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第2幅蛋糕图片-->
+                        <a href="/message.do?name=images/3003.jpg">
+                            <img src="images/3003.jpg" class="img-responsive" alt="黑森林">
+                        </a>
+                    </li>
+                    <li class="list-goods-pr3 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第3幅蛋糕图片-->
+                        <a href="/message.do?name=images/3005.jpg">
+                            <img src="images/3005.jpg" class="img-responsive" alt="生日蛋糕">
+                        </a>
+                    </li>
+                    <li class="list-goods-pr4 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第4幅蛋糕图片-->
+                        <a href="/message.do?name=images/3007.jpg">
+                            <img src="images/3007.jpg" class="img-responsive" alt="多莓之都">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<%-include('footer.ejs')%>
+<!--登陆提示模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" id="prompt_modal" aria-hidden="true" data-backdrop="static" data-show="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                请登陆!
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="prompt_sure_btn" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="js/cakeMessage.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

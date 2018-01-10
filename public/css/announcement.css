@@ -1,0 +1,215 @@
+*{
+    padding: 0;
+    margin: 0;
+    /*color: rgb(125, 77, 50);*/
+}
+#gonggao_box{
+    padding:0 6%;
+    margin-top:4%;
+}
+#gonggao_box>div:nth-child(1){
+    border-bottom: 1px solid rgb(238, 233, 228);
+    font-size:18px;
+    line-height:38px;
+}
+#gonggao_box>div:nth-child(1)>div:nth-child(1){
+    padding-left: 1%;
+    background-color: rgb(249,246,241);
+}
+#gonggao_box>div:nth-child(1)>div:nth-child(2) {
+    padding-left: 2%;
+}
+#gonggao_box>div:nth-child(1) p{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+#gonggao_box>div:nth-child(1) span{
+    font-size: 14px;
+    color: rgb(104,64,41);
+    font-weight:600;
+}
+#gonggao_box #h_righttitlebox dt{
+    font-size: 12px;
+}
+/*左边导航*/
+
+/*联系我们*/
+#gonggao_box>div:nth-child(2)>div:nth-child(1) {
+    background-color: rgb(249,246,241);
+}
+#gonggao_box>div:nth-child(2)>div:nth-child(2){
+    padding-left:2%;
+    color: rgb(104,64,41);
+}
+#gonggao_box dl{
+    margin-bottom: 0;
+}
+#gonggao_box>div>div:nth-child(1) dd,#gonggao_box>div>div:nth-child(1) dt{
+    padding: 4% 0 4% 2%;
+    border-bottom: 1px solid #ededed;
+}
+#gonggao_box>div>div:nth-child(1) dd:hover{
+    background-color: rgba(104,64,41,.3);
+
+}
+#gonggao_box>div>div:nth-child(1) dd a{
+    text-decoration: none;
+    color: rgb(104,64,41);
+    font-size: 12px;
+}
+#gonggao_box>div>div:nth-child(2) dt{
+    padding:.7% 0;
+}
+#gonggao_box>div>div:nth-child(2) p{
+    line-height:40px;
+}
+#gonggao_box>div>div:nth-child(2) dd{
+    font-size: 13px;
+    padding:.4% 0;
+}
+#gonggao_box>div:nth-of-type(2)>div:nth-of-type(2)>div>div:nth-of-type(1)>span{
+    color: rgb(186, 174, 166);
+    font-size: 12px;
+    line-height:24px;
+}
+#gonggao_box>div>div>div>div{
+    padding-top: 20px
+}
+
+/*#h_lxwomen{*/
+/*display: none;*/
+/*}*/
+
+/*企业合作*/
+#gonggao_box #h_hezuo>span{
+    color: rgb(104,64,41);
+    font-size: 13px;
+}
+#h_hezuo{
+    display: none;
+}
+
+/*<!--品牌历史品牌历史-->*/
+#gonggao_box #h_pinpai ul li{
+    list-style: none;
+    font-size: 14px;
+    height: 26px;
+}
+#gonggao_box #h_pinpai ul{
+    margin-top: 1%;
+}
+#h_pinpai{
+    display: none;
+}
+/*<!--产品理念-->*/
+#gonggao_box #h_chanpin>span,#gonggao_box #h_chanpin>p{
+    color: rgb(104,64,41);
+    font-size: 13px;
+    line-height: 26px;
+}
+#h_chanpin{
+    display: none;
+}
+/*隐私保护政策*/
+#gonggao_box #h_yinsi>span{
+    color: rgb(104,64,41);
+    font-size: 13px;
+}
+#gonggao_box #h_yinsi>span:nth-of-type(1){
+    display: inline-block;
+    margin-top: 1%;
+}
+#gonggao_box #h_yinsi>span{
+    color: rgb(104,64,41);
+    font-size: 13px;
+    line-height:26px;
+}
+#h_yinsi{
+    display: none;
+}
+/*<!--会员注册协议-->*/
+#gonggao_box #h_zhuce>span{
+    display: inline-block;
+    margin-top: 1%;
+    color: rgb(104,64,41);
+    font-size: 12px;
+}
+#h_zhuce{
+    display: none;
+}
+/*<!--会员体系-->*/
+#gonggao_box #h_hytixi>div:nth-of-type(2){
+    margin-top: 1%;
+    color: rgb(104,64,41);
+    font-size: 13px;
+    line-height: 24px;
+}
+#h_hytixi{
+    display: none;
+}
+/*<!--代金卡使用说明-->*/
+#gonggao_box #h_djinka>span{
+    color: rgb(104,64,41);
+    font-size: 13px;
+    line-height: 24px;
+}
+#gonggao_box #h_djinka .cuti{
+    font-weight: bold;
+}
+#h_djinka{
+    display: none;
+}
+/*<!--优惠券使用说明-->*/
+#gonggao_box #h_yhuiquan>span{
+    color: rgb(104,64,41);
+    font-size: 13px;
+    line-height: 24px;
+}
+#gonggao_box #h_yhuiquan .cuti{
+    font-weight: bold;
+}
+#h_yhuiquan{
+    display: none;
+}
+/*<!--发票信息说明-->*/
+#gonggao_box #h_fapiao>span{
+    color: rgb(104,64,41);
+    font-size: 13px;
+    line-height: 24px;
+}
+#gonggao_box #h_fapiao .cuti{
+    font-weight: bold;
+}
+#h_fapiao{
+    display: none;
+}
+/*修改订单详细说明*/
+#gonggao_box #h_xiugai>span{
+    color: rgb(104,64,41);
+    font-size: 13px;
+    line-height: 24px;
+}
+#gonggao_box #h_xiugai .cuti{
+    font-weight: bold;
+}
+#h_xiugai{
+    display: none;
+}
+/*<!--配送范围说明-->*/
+#gonggao_box #h_fanwei>span{
+    color: rgb(104,64,41);
+    font-size: 13px;
+    line-height: 24px;
+}
+#gonggao_box #h_fanwei .cuti{
+    font-weight: bold;
+}
+#h_fanwei{
+    display: none;
+}
+#gonggao_box{
+    margin-top: 9%;
+    margin-bottom:9%;
+}
+/*尾部*/

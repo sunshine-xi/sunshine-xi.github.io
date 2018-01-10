@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="configuration/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/gouwuche.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!--导航-->
+<%-include("nav.ejs")%>
+
+<!--内容部分最外层的容器-->
+<div class="container-fluid">
+    <!--中间内容部分-->
+    <div class="row">
+        <div class="col-md-12 text-center h_box h_box1">
+            <img class="center-block" src="images/cartempty.png">
+            <p>您的购物车里还没有商品</p>
+            <a href="cake.do">
+                去购物 >>
+            </a>
+        </div>
+    </div>
+    <!--商品推荐部分-->
+    <div class="container"><!--商品推荐-->
+        <div class="row">
+            <h4>商品推荐</h4>
+            <ul class="row pro-list-pr"><!--蛋糕图片清单-->
+                <li class="list-goods-pr1 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第一幅蛋糕图片-->
+                    <a href="/message.do?name=images/3001.jpg">
+                        <img src="images/3001.jpg" class="img-responsive" alt="平安夜">
+                    </a>
+                </li>
+                <li class="list-goods-pr2 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第2幅蛋糕图片-->
+                    <a href="/message.do?name=images/3003.jpg">
+                        <img src="images/3003.jpg" class="img-responsive" alt="黑森林">
+                    </a>
+                </li>
+                <li class="list-goods-pr3 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第3幅蛋糕图片-->
+                    <a href="/message.do?name=images/3005.jpg">
+                        <img src="images/3005.jpg" class="img-responsive" alt="生日蛋糕">
+                    </a>
+                </li>
+                <li class="list-goods-pr4 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第4幅蛋糕图片-->
+                    <a href="/message.do?name=images/3007.jpg">
+                        <img src="images/3007.jpg" class="img-responsive" alt="多莓之都">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<!--footer部分-->
+<footer class="container-fluid">
+    <div class="row">
+        <ul class="row">
+            <li class="col-xs-offset-1 col-xs-2 ">联系我们</li>
+            <li class="col-xs-2">订购帮助</li>
+            <li class="col-xs-2">企业合作</li>
+            <li class="col-xs-2">生产经营资质</li>
+            <li class="col-xs-2">公告专区</li>
+        </ul>
+        <ul class="row">
+            <li class="col-xs-12 col-sm-2 col-md-2 col-lg-2 col-sm-offset-3"><i class="fa fa-weixin fa-2x footer_bg"></i></li>
+            <li class="col-xs-12 col-sm-2 col-md-2 col-lg-2"><i class="fa fa-weibo fa-2x footer_bg"></i></li>
+            <li class="col-xs-12 col-sm-2 col-md-2 col-lg-2"><i class="fa fa-qq fa-2x footer_bg"></i></li>
+        </ul>
+        <p class="col-xs-12 text-center">订购专线：400 820 8820（服务时间 08:00–22:00）客服电话：021-6666666（全国） | lucky@21cake.com（邮箱）</p>
+        <p class="col-xs-12 text-center">网站注册公司名称: 成都小幸运食品有限公司 地址: 成都市小幸运经济技术开发区幸运二街5号院20号楼</p>
+        <p class="col-xs-12 hr"></p>
+        <p class="col-xs-12 text-center">Copyright© small lucky蛋糕官网商城 2007-2017, 版权所有 京ICP备14006254号-1</p>
+    </div>
+</footer>
+
+
+<script src="configuration/js/jquery-1.8.2.min.js"></script>
+<script src="configuration/bootstrap-3.3.5-dist/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

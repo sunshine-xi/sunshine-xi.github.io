@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>企业试吃申请详情页面</title>
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/companydetail.css"/>
+</head>
+<body>
+<%-include("nav.ejs")%>
+<div class="container">
+    <div class="row jiange"></div>
+</div>
+
+<section class="container select-bj">
+    <div class="row">
+        <form action="/apply.do" method="post">
+            <div>
+                <img src="images/birthday16.png" alt=""/><span>企业试吃</span>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">企业名称（只能输入汉字或英文）</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="companyName" placeholder="请输入企业名称">
+                <div class="companyName"></div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail2">企业试吃人数</label>
+                <input type="text" class="form-control" id="exampleInputEmail2" name="number" min="20" maxlength="100" placeholder="请输入试吃人数">
+                <div class="companyNum"></div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">企业所在城市</label>
+                <select  name="city" id="city" onchange="changeCity()" class="form-control">
+                    <option value="0">请选择</option>
+                    <option value="成都">成都</option>
+                    <option value="上海">上海</option>
+                    <option value="北京">北京</option>
+                    <option value="杭州">杭州</option>
+                    <option value="苏州">苏州</option>
+                    <option value="天津">天津</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail3">企业地址</label>
+                <input type="text" class="form-control" id="exampleInputEmail3" name="address" placeholder="请输入企业地址">
+                <div class="compangAds"></div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">试吃品类</label>
+                <select  name="" id="goods" onchange="changeGoods()"  class="form-control">
+                    <option value="0">蛋糕</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail4">预约人姓名</label>
+                <input type="text" class="form-control" id="exampleInputEmail4" name="bookname" placeholder="请输入输入预约人姓名">
+                <div class="bookName"></div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail5">手机号码</label>
+                <input type="text" class="form-control" id="exampleInputEmail5" name="telephone" placeholder="请准确填写手机号码，方便联系试吃时间">
+                <div class="bookPhone"></div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail6">邮箱</label>
+                <input type="text" class="form-control" id="exampleInputEmail6" name="email" placeholder="请准确填写邮箱">
+                <div class="Email"></div>
+            </div>
+            <textarea class="form-control" cols="30" rows="10" name="message" placeholder="留言"></textarea>
+            <div class="tip">
+                <p> *试吃申请提示： </p>
+                <p>1、企业试吃人数超过20人，可申请试吃。</p>
+                <p>2、申请信息提交后，小幸运cake会统一进行汇总，并电话联系预约人确认相关信息以便确认是否申请成功。</p>
+                <p>3、申请试吃企业需提供一个能容纳15-20人左右的试吃空间；</p>
+                <p>4、试吃结束，我们期待您宝贵的反馈意见。</p>
+            </div>
+            <div class="row text-center">
+                <button type="submit" class="btn">提交</button>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="kongge"></div>
+    </div>
+</section>
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<div class="Applypage"></div>-->
+<!--</div>-->
+<!--</div>-->
+<%-include("footer.ejs")%>
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="js/companydetail.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单支付</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="configuration/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/h_payindex.css">
+
+</head>
+<body>
+<!--导航-->
+<%-include('nav.ejs')%>
+
+<div class="container-fluid" id="h_payindexbox">
+    <div class="row">
+        <div class="col-md-12">
+            <p>微信支付</p>
+            <span>订单号：<%=mydata[0].final_orderid%></span>
+            <span>收款方：小幸运烘焙食品有限公司</span>
+            <span>您需支付：￥<%=mydata[0].totalmoney%></span>
+
+        </div>
+    </div>
+    <div  class="row text-center">
+        <div class="col-md-6" id="h_paypicbox">
+            <div class="row">
+                <img src="images/payway2.png" class="img-responsive col-md-5 col-md-offset-7" id="h_paypic">
+            </div>
+            <div class="row">
+                <h3 class="col-md-6 col-md-offset-5">微信扫一扫支付</h3>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="images/weixin-tips.png"  class="img-responsive" id="h_mobilepic">
+        </div>
+    </div>
+</div>
+
+<!--footer部分-->
+<%-include('footer.ejs')%>
+
+<script src="configuration/js/jquery-1.8.2.min.js"></script>
+<script src="configuration/bootstrap-3.3.5-dist/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="js/h_payindex.js"></script>
+
+
+</body>
+</html>

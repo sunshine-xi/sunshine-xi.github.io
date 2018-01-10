@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>专属定制</title>
+    <!--<link rel="stylesheet" type="text/css" href="http://www.helloweba.com/demo/css/main.css" />-->
+    <link rel="stylesheet" href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/customized.css">
+</head>
+<body>
+<!--导航栏-->
+<%-include('nav.ejs')%>
+
+<!--定制页面的banner图-->
+<div class="container-fluid">
+    <div class="row" id="header">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h1>专属定制</h1>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row" id="DingZhi">
+        <!--底座选择-->
+        <div class="col-lg-2 col-md-12" id="diZuo">
+            <p>底座选择</p>
+            <div>
+                <img src="images/lianduodizuo.png" alt="" id="dianji1">
+            </div>
+            <div>
+                <img src="images/xinxingdizuo.png" alt="" id="dianji2">
+            </div>
+            <div>
+                <img src="images/yuanxingdizuo.png" alt="" id="dianji3">
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="zhufuhuayu">祝福话语：</label>
+                    <textarea class="form-control" rows="5" id="zhufuhuayu" placeholder="请在这里写上您衷心的祝福，我们将替您传达您的心意"></textarea>
+                </div>
+            </form>
+        </div>
+        <!--及时预览界面-->
+        <div class="col-lg-4 col-md-12">
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-11" id="w">
+                    <!--<p>及时预览</p>-->
+                    <div class="yuLan">
+                        <div class="row">
+
+                        </div>
+                        <img src="images/lianduo-XZ.png" alt="" id="img1">
+                        <img src="images/xinxing-XZ.png" alt="" id="img2">
+                        <img src="images/yuanxing-XZ.png" alt="" id="img3">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--定制的细节调整：尺寸，颜色，样式，包装-->
+        <div class="col-lg-5 col-md-12" >
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-11" id="xiJie">
+                    <p>细节调整</p>
+                    尺寸：
+                    <span>
+                        <i class="fa fa-square-o">1.0磅</i>
+                        <i class="fa fa-square-o">3.0磅</i>
+                        <i class="fa fa-square-o">5.0磅</i>
+                    </span>
+                    <form>
+                        <div class="form-group">
+                            <label for="typeInout">请选择主材料：</label>
+                            <select  class="form-control" id="typeInout">
+                                <option value="">---请选择---</option>
+                                <option value="奶油">奶油</option>
+                                <option value="翻糖">翻糖</option>
+                                <option value="芝士">芝士</option>
+                                <option value="慕斯">慕斯</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="typeInout">请选择辅助材料：</label>
+                            <select  class="form-control" id="typeInout1">
+                                <option value="">---请选择---</option>
+                                <option value="草莓">草莓</option>
+                                <option value="蓝莓">蓝莓</option>
+                                <option value="芒果">芒果</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="typeInout">请选择装饰：</label>
+                            <select  class="form-control" id="typeInout2">
+                                <option value="">---请选择---</option>
+                                <option value="蓝色海星">蓝色海星</option>
+                                <option value="浪漫双人舞">浪漫双人舞</option>
+                                <option value="薰衣草花海">薰衣草花海</option>
+                            </select>
+                        </div>
+                    </form>
+                    <!--包装盒选择-->
+                    <p>包装选择</p>
+                    <div class="baozhuang">
+                        <button type="radio" class="baozhuangBox"><img src="images/baozhuang-1.jpg" alt=""></button>
+                        <button type="radio" class="baozhuangBox"><img src="images/baozhuang-2.jpg" alt=""></button>
+                        <button type="radio" class="baozhuangBox"><img src="images/baozhuang-3.jpg" alt=""></button>
+                        <button type="radio" class="baozhuangBox"><img src="images/baozhuang-4.jpg" alt=""></button>
+                        <button type="radio" class="baozhuangBox"><img src="images/baozhuang-5.jpg" alt=""></button>
+                        <button type="radio" class="baozhuangBox"><img src="images/baozhuang-6.jpg" alt=""></button>
+                        <button type="radio" class="baozhuangBox"><img src="images/baozhuang-7.jpg" alt=""></button>
+                        <button type="radio" class="baozhuangBox"><img src="images/baozhuang-8.jpg" alt=""></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row" id="tijiao">
+        <div class="col-lg-5 col-md-4"></div>
+        <div class="col-lg-5 col-md-4">
+            <input type="submit" onclick="cakeShop(this)" class="btn btn-default" id="submit" value="提交订单">
+        </div>
+        <div class="col-lg-2 col-md-4"></div>
+    </div>
+</div>
+<!--页脚-->
+<%-include('footer.ejs')%>
+<!--登陆提示模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" id="prompt_modal"aria-hidden="true" data-backdrop="static" data-show="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                请登陆!
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="prompt_sure_btn" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="js/customized.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>品牌故事</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/Brandstory.css">
+</head>
+<body>
+
+<%-include("nav.ejs")%>
+
+
+<div class="container" style="margin-top: 80px">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <img src="images/3/1.gif" class="img-responsive" alt="">
+            <img src="images/3/2.gif" class="img-responsive" alt="">
+            <img src="images/3/3.gif" class="img-responsive" alt="">
+        </div>
+    </div>
+</div>
+
+<%-include("footer.ejs")%>
+
+<!--===========侧边在线联系===========-->
+<div class="side">
+    <ul style="list-style: none">
+        <li>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=2757952601&site=Vipcake&menu=yes" target="_blank">
+                <div class="sidebox">
+                    <img src="images/4/side_icon04.png">
+                    QQ售后
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=2757952601&site=Vipcake&menu=yes" target="_blank">
+                <div class="sidebox">
+                    <img src="images/4/side_icon04.png">
+                    QQ售前
+                </div>
+            </a>
+        </li>
+        <li style="border:none;">
+            <a href="javascript:goTop();" class="sidetop">
+                <img src="images/4/side_icon05.png">
+            </a>
+        </li>
+    </ul>
+</div>
+
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/jquery-3.1.1.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="js/nav.js"></script>
+<script>//回到顶部
+
+    $(document).ready(function(){
+        $(".side ul li").hover(function(){
+            $(this).find(".sidebox").stop().animate({"width":"124px"},200).css({"opacity":"1","filter":"Alpha(opacity=100)","background":"#603721"})
+        },function(){
+            $(this).find(".sidebox").stop().animate({"width":"54px"},200).css({"opacity":"0.8","filter":"Alpha(opacity=80)","background":"#432719"})
+        });
+
+    });
+
+    function goTop(){
+        $('html,body').animate({'scrollTop':0},600); //滚回顶部的时间，越小滚的速度越快~
+    }
+
+
+</script>
+</body>
+</html>

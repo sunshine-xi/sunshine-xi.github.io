@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>专区页面</title>
+
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="configuration/swiper/css/swiper.min.css"/>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/zone.css"/>
+</head>
+<body>
+<%-include("nav.ejs")%>
+<div class="jiange"></div>
+<section class="container-fluid">
+    <div class="row">
+        <div id="kinMaxShow">
+            <div>
+                <img src="<%=bannerIMmg1%>" class="img-responsive  banner"   />
+                <div>
+                    <!--<img class="sub_1_1" src="images/sub_1_1.png"  />-->
+                    <img class="sub_1_2 img-responsive" src="images/sub_1_1.png" usemap="#Map_1_2"  border="0" />
+                    <map name="Map_1_2" id="Map_1_2">
+                        <area shape="rect" coords="2,96,106,123" href="/tjgoods.do?name1=images/birthday23.jpg" />
+                    </map>
+                </div>
+            </div>
+            <div> <img src="<%=bannerIMmg2%>" class="img-responsive banner"  />
+                <div>
+                    <!--<img class="sub_2_1" src="images/sub_2_1.png"  />-->
+                    <img class="sub_2_2 img-responsive" src="images/sub_2_1.png" usemap="#Map_2_2"  border="0" />
+                    <map name="Map_2_2" id="Map_2_2">
+                        <area shape="rect" coords="3,97,104,124" href="/giftdetailshow.do" />
+                    </map>
+                </div>
+            </div>
+            <div> <img src="<%=bannerIMmg3%>" class="img-responsive banner"   />
+                <div>
+                    <!--<img class="sub_3_1" src="images/sub_1_1.png"/>-->
+                    <img class="sub_3_2 img-responsive" src="images/sub_3_2.png" usemap="#Map_3_2"  border="0" />
+                    <map name="Map_3_2" id="Map_3_2">
+                        <area shape="rect" coords="1,98,106,124" href="/tjgoods.do?name1=images/birthday26.jpg" />
+                    </map>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--专区小板块-->
+<section class="container zone-detail">
+    <div class="row">
+        <ul>
+            <li class="col-lg-4 zone-img text-center">
+                <a href="/birthdayzone.do">
+                    <div class="zone-mengban"><span>生日专区</span></div>
+                    <img src="<%=zoneImg1%>" class="img-responsive zone-active center-block" alt=""/>
+                </a>
+            </li>
+            <li class="col-lg-4 zone-img text-center">
+                <a href="/companyzone.do">
+                    <div class="zone-mengban"><span>企业专区</span></div>
+                    <img src="<%=zoneImg2%>" class="img-responsive zone-active center-block" alt=""/>
+                </a>
+            </li>
+            <li class="col-lg-4 zone-img text-center">
+                <a href="/teacherdesgin.do">
+                    <div class="zone-mengban"><span>礼品专区</span></div>
+                    <img src="<%=zoneImg3%>" class="img-responsive zone-active center-block" alt=""/>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+<%-include("footer.ejs")%>
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/swiper/js/swiper.jquery.min.js"></script>
+<script src="js/zone.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/jquery.kinMaxShow-1.0.min.js"></script>
+<!--<script src="configuration/bootstrap-3.3.7-dist/js/jquery.kinMaxShow-1.0.src.js"></script>-->
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

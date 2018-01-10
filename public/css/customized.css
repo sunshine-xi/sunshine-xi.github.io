@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+}
+
+/*banner图*/
+#header{
+    background-image:url("../images/dingzhi-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    background-size: 100%;
+}
+/*banner图上面的字*/
+#header>div>h1{
+    margin-top: 250px;
+    font-weight: 600;
+    letter-spacing:8px;
+    color:#684029;
+}
+#DingZhi{
+    padding-left:4%;
+}
+#diZuo{
+    margin-left: 2%;
+    color:#684029;
+    background-color: #FAFAFA;
+}
+/*底座选择字体样式*/
+#diZuo>p{
+    text-align: center;
+    font-size: 24px;
+    color:#684029;
+}
+/*祝福话语*/
+#diZuo>form{
+    margin-top: 100px;
+}
+/*底座单选框*/
+#diZuo>input{
+    display: block;
+}
+
+/*底座选择图片上下间距*/
+#diZuo>div{
+    margin-top: 5px;
+}
+/*预览区域*/
+#yuLan{
+    height: 600px;
+    /*border: 1px solid red;*/
+    background-color: #FAFAFA;
+}
+/*及时预览字体样式*/
+#yuLan>p{
+    text-align: center;
+    font-size: 24px;
+    color:#684029;
+}
+.yuLan{
+    margin-top: 100px;
+    height: 500px;
+    position: relative;
+}.yuLan img{
+     position: absolute;
+     display: none;
+ }
+
+/*细节调整区域*/
+#xiJie{
+    height: 600px;
+    /*border: 1px solid red;*/
+    color:#684029;
+    background-color: #FAFAFA;
+}
+#xiJie>p{
+    text-align: center;
+    font-size: 24px;
+    color:#684029;
+}
+#xiJie>form{
+    margin-top: 10px;
+}
+/*包装图片的移入效果*/
+.baozhuang>img:hover{
+    border: 1px solid #BB9772;
+    box-shadow: 2px 2px 10px;
+}
+.baozhuang>img{
+    margin: 1px;
+}
+#tijiao{
+    margin-top: 10px;
+}
+
+/*提交按钮样式*/
+#submit{
+    border-radius: 3px;
+    height: 50px;
+    width: 200px;
+    border: none;
+    background-color: #684029;
+    margin: 30px 0;
+    color: white;
+}
+/*<!--提示模态框-->*/
+#prompt_modal>div{
+    margin-top:15%;
+    width: 30%;
+    border: none;
+    background: none;
+}
+#prompt_modal .modal-content{
+    border: 1px solid rgba(73, 43, 26, 0.64);
+    border-radius: 1px;
+    background-color:rgba(73, 43, 26, 0.64);
+    /*box-shadow: none;*/
+    padding: 4% 2%;
+}
+/*#prompt_modal*/
+#prompt_modal .modal-header{
+    font-size: 14px;
+    color: #e4e4e4;
+    border-bottom: none;
+    line-height:28px;
+}
+#prompt_modal .modal-footer{
+    border-top: none;
+}
+#prompt_modal .modal-footer button{
+    height:40px;
+    width:32%;
+    border:1px solid rgba(73, 43, 26, 0.6);
+    box-shadow: none;
+    outline: none;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    background-color:rgba(73, 43, 26, 0.9);
+    color: #e4e4e4;
+}
+#prompt_modal .modal-footer button:hover{
+    background-color: rgb(56, 33, 19);
+}
+.pro-list-linkOne{
+    cursor: pointer;
+}
+.pro-list-linkOne:hover{
+    color: #BB9AA6;
+}
+.fa-square-o,.fa-check-square{
+    cursor: pointer;
+    margin: 0 10px;
+}

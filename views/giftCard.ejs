@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>代金卡</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/giftCard.css">
+</head>
+<body>
+<%-include('nav.ejs')%>
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-10 giftCardInf">
+            <p>我的代金卡</p>
+            <div class="row">
+                <div class="col-xs-12">
+                    代金卡列表
+                </div>
+            </div>
+            <div class="row giftCardTitle">
+                <div class="col-xs-2 text-center">
+                    卡编号
+                </div>
+                <div class=" col-xs-3 text-center">
+                    使用状态
+                </div>
+                <div class=" col-xs-3 text-center">
+                    有效期
+                </div>
+                <div class=" col-xs-1 text-center">
+                    金额
+                </div>
+                <div class=" col-xs-3 text-center">
+                    对应订单
+                </div>
+            </div>
+            <div class="row giftCardContent">
+                <%if(mydata==""){%>
+                    <div class="col-xs-12 text-center giftCard">
+                        暂无代金卡记录
+                    </div>
+                <%}else{%>
+                    <%for(var i=0;i<mydata.length;i++){%>
+                        <div class="col-xs-12 text-center giftCard">
+                            <div class="row">
+                                <div class="col-xs-2 text-center">
+                                    <%=mydata[i].giftCard_id%>
+                                </div>
+                                <div class=" col-xs-3 text-center">
+                                    <%=mydata[i].giftCard_status%>
+                                </div>
+                                <div class=" col-xs-3 text-center">
+                                    <%=mydata[i].giftCard_time%>
+                                </div>
+                                <div class=" col-xs-1 text-center">
+                                    <%=mydata[i].giftCard_money%>
+                                </div>
+                                <div class=" col-xs-3 text-center">
+                                    <%if(mydata[i].order_id==null){%>
+                                        暂无订单
+                                    <%}else{%>
+                                        <%=mydata[i].order_id%>
+                                    <%}%>
+                                </div>
+                            </div>
+                        </div>
+                    <%}%>
+                <%}%>
+            </div>
+        </div>
+    </div>
+</section>
+<%-include('footer.ejs')%>
+</body>
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</html>

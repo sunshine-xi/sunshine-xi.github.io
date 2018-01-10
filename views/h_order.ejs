@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单成功</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="configuration/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/h_order.css">
+</head>
+<body>
+
+
+<div class="container-fluid" id="order_success">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <i></i>
+            <span>
+                您的订单创建成功！
+            </span>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul>
+                <li>
+                    <span>订单编号：<%=mydata[0].final_orderid%></span>
+                    &nbsp;
+                    <a href="/details.do">查看详情</a>
+                    <a href="/index.do">继续购物</a>
+                    &nbsp;
+                    <span>您还可以：</span>
+                </li>
+                <li>
+                    <span>配送时间：<%=mydata[0].senddate%> <%=mydata[0].sendtime%></span>
+                </li>
+                <li>
+                    <span>配送地址：<%=mydata[0].userdress%></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <img src="images/Qrcode.png">
+            <p>
+                关注 Small lucky,时了解订单状态
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="configuration/js/jquery-1.8.2.min.js"></script>
+<script src="configuration/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

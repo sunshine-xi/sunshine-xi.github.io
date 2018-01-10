@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="configuration/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/gouwuche2.css">
+</head>
+<body>
+<!--导航-->
+<%-include("nav.ejs")%>
+
+<!--内容部分最外层的容器-->
+<div class="container-fluid">
+    <!--中间内容部分有订单时-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-hover" id="oder_tble">
+                    <thead id="oder_head">
+                    <%if(buydata.length!=0){%>
+                    <tr class="maginTop"></tr>
+                    <tr>
+                        <th colspan="2">商品</th>
+                        <th>生日牌</th>
+                        <th>单价</th>
+                        <th>数量</th>
+                        <th>金额</th>
+                        <th class="hideth" colspan="2"></th>
+                    </tr>
+                    </thead>
+                    <tbody id="oder_tbody">
+                    <tr class="maginTop">
+
+                    </tr>
+                    <%for(var i=0;i<buydata.length;i++){%>
+                    <%if(buydata[i].ptype_id==1){%>
+                    <tr class="shoping">
+                        <td class="tbdy_td1">
+                            <a href="#"><img src="<%=buydata[i].pro_orimg%>"></a>
+                        </td>
+                        <td class="tbdy_td2">
+                            <ul>
+                                <li>
+                                    <a href="#"><%=buydata[i].pro_name%></a>
+                                </li>
+                                <li>
+                                    <span>规格：</span>
+                                    <span class="h_guige"><%=buydata[i].order_pounds%></span>
+                                    <span><%=buydata[i].pro_specification%></span>
+                                </li>
+                                <li>
+                                    <img src="images/canju.jpg">
+                                    <span>赠送</span>
+                                    <span>10</span>
+                                    <span>套餐具</span>
+                                </li>
+
+                            </ul>
+                        </td>
+                        <td class="tbdy_td3">
+                            <div onclick="hshow(this)" class="card">
+                                <div >选择生日牌</div>
+
+                                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </div>
+                            <ul>
+                                <li>生日快乐</li>
+                                <li>Happy birthday</li>
+                                <li>节日快乐</li>
+                                <li>自定义</li>
+                                <li>
+                                    <input placeholder="最多可输入12个字" maxlength="12" type="text">
+                                    <button>确定</button>
+                                </li>
+
+                            </ul>
+
+
+                        </td>
+                        <td class="tbdy_td4">
+                            <span>￥</span>
+                            <span class="h_price"><%=String(buydata[i].order_price)+".00"%></span>
+                        </td>
+                        <td class="tbdy_td5">
+                            <input type="button" value="-"><input readonly="readonly" class="form-control" type="text" value="<%=buydata[i].order_num%>"><input type="button" value="+">
+                        </td>
+                        <td class="tbdy_td6">
+                            <span>￥</span>
+                            <span class="h_totalprice"><%=String(buydata[i].order_price*buydata[i].order_num)+".00"%></span>
+
+
+                        </td>
+                        <td class="tbdy_td7">
+                            <span>x</span>
+                        </td>
+                        <td style="width: 2%"></td>
+                    </tr>
+                    <%}else{%>
+                    <tr class="peijian shoping">
+                        <td class="tbdy_td1">
+                            <a href="#"><img src="<%=buydata[i].pro_orimg%>"></a>
+                        </td>
+                        <td class="tbdy_td2">
+                            <ul>
+                                <li>
+                                    <a href="#"><%=buydata[i].pro_name%></a>
+                                </li>
+                                <li>
+                                    <span>规格：</span>
+                                    <span class="h_guige"><%=buydata[i].order_pounds%></span>
+                                    <span><%=buydata[i].pro_specification%></span>
+                                </li>
+
+
+                            </ul>
+                        </td>
+                        <td class="tbdy_td3">
+                            <div >
+                                <div></div>
+                            </div>
+                        </td>
+                        <td class="tbdy_td4">
+                            <span>￥</span>
+                            <span class="h_price"><%=String(buydata[i].order_price)+".00"%></span>
+                        </td>
+                        <td class="tbdy_td5">
+                            <input type="button" value="-"><input readonly="readonly" class="form-control" type="text" value="<%=buydata[i].order_num%>"><input type="button" value="+">
+                        </td>
+                        <td class="tbdy_td6">
+                            <span>￥</span>
+                            <span class="h_totalprice"><%=String(buydata[i].order_price*buydata[i].order_num)+".00"%></span>
+                        </td>
+                        <td class="tbdy_td7">
+                            <span>x</span>
+                        </td>
+                        <td style="width: 2%"></td>
+                    </tr>
+                    <%}%>
+                    <%}%>
+                    <%}%>
+                    </tbody>
+
+                </table>
+                <table class="table table-hover" id="oder_tble">
+                    <thead id="oder_head">
+                    <%if(condata!=0){%>
+                    <tr class="maginTop"></tr>
+                    <tr class="convert">
+                        <th colspan="2">兑换商品</th>
+                        <th>生日牌</th>
+                        <th>单价</th>
+                        <th>数量</th>
+                        <th>果实币</th>
+                        <th class="hideth" colspan="2"></th>
+                    </tr>
+                    </thead>
+                    <tbody id="oder_tbody">
+                    <tr class="maginTop"></tr>
+                    <%for(var i=0;i<condata.length;i++){%>
+                    <tr class="convert">
+                        <!--<td></td>-->
+                        <td class="tbdy_td1">
+                            <a href="#"><img src="<%=condata[i].pro_orimg%>"></a>
+                        </td>
+                        <td class="tbdy_td2">
+                            <ul>
+                                <li>
+                                    <a href="#" class="conName"><%=condata[i].pro_name%></a>
+                                </li>
+                                <li>
+                                    <span>规格：</span>
+                                    <span></span>
+                                    <span><%=condata[i].pro_specification%></span>
+                                </li>
+                                <li>
+                                    <img src="images/canju.jpg">
+                                    <span>赠送</span>
+                                    <span>10</span>
+                                    <span>套餐具</span>
+                                </li>
+
+                            </ul>
+                        </td>
+                        <td class="tbdy_td3">
+                            <div onclick="hshow(this)" >
+
+                            </div>
+
+                        </td>
+                        <td class="tbdy_td4">
+                            <span>￥</span>
+                            <span class="h_price"><%=condata[i].pro_price%></span>
+                        </td>
+                        <td class="tbdy_td5">
+                            <input type="button" value="-"><input readonly="readonly" class="form-control" type="text" value="<%=condata[i].conver_num%>"><input type="button"  value="+">
+                        </td>
+                        <td class="tbdy_td6">
+                            <span></span>
+                            <span class="c_totalprice"><%=String(condata[i].integral_score*condata[i].conver_num)%></span>
+                        </td>
+                        <td class="tbdy_td7">
+                            <span>x</span>
+                        </td>
+                        <td style="width: 2%"></td>
+                    </tr>
+
+                    <%}%>
+                    <%}%>
+                    </tbody>
+
+                </table>
+                <ul id="peijian">
+                    <li>
+                        <img src="images/lazu.jpg">
+                        <div>
+                            <p><em>方形蜡烛</em> <span>配件</span></p>
+                            <span>￥<em>5.00</em>/个</span>
+                            <br>
+                            <i class="fa fa-cart-plus addAccessories" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/canju.jpg">
+                        <div>
+                            <p><em>餐具配件</em> <span>配件</span></p>
+                            <span>￥<em>1.00</em>/套</span>
+                            <br>
+                            <i class="fa fa-cart-plus addAccessories" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/xiaoqiekuai.jpg">
+                        <div>
+                            <p><em>小切块-芒果慕斯</em> <span>配件</span></p>
+                            <span>￥<em>36.00</em>/份</span>
+                            <br>
+                            <i class="fa fa-cart-plus addAccessories" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/xiaoqiekuai2.jpg">
+                        <div>
+                            <p><em>小切块-黑白巧克力</em> <span>配件</span></p>
+                            <span>￥<em>36.00</em>/份</span>
+                            <br>
+                            <i class="fa fa-cart-plus addAccessories" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!--公告部分-->
+    <div class="row" id="h_box5">
+        <div class="col-md-12">
+            <ul>
+                <li>
+                    <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                    您还可以参加【小幸运蛋糕注册未下单用户，首次购买2磅（正价298元）及以上规格磅数蛋糕，随单赠送：小切块蛋糕2块。（随单随机配送）】
+                </li>
+                <li>
+                    <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                    您还可以参加【新注册用户首单预订黑白慕斯（撒粉生日）获赠small luck纪念钢勺，再赠经典方形蜡烛.(在small luck官网注册后，第一次下单购物)】
+                </li>
+                <li>
+                    <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                    您还可以参加【小幸运蛋糕注册未下单用户，首次购买2磅（正价298元）及以上规格磅数蛋糕，随单赠送：小切块蛋糕2块。（随单随机配送）】
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <!--去结算-->
+    <div class="row" id="h_box6">
+        <div class="col-md-12 text-right">
+            <p>
+                <span class="text-left">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    <a href="deleteAll.do">全部清空</a>
+                </span>
+
+                商品金额：¥ <span>343.00</span>
+            </p>
+            <p class="delivery">配送费：¥ <span>0.00</span></p>
+            <p>活动优惠：¥ <span>0.00</span></p>
+            <p>
+                <span></span>
+            </p>
+            <p>合计：¥ <span>343.00</span></p>
+            <p>订单已满 ￥<span>100.00</span>元,享免费配送服务</p>
+            <button type="submit" class="btn settlement">去结算</button>
+
+        </div>
+
+    </div>
+
+    <!--商品推荐部分-->
+    <div class="container"><!--商品推荐-->
+        <div class="row">
+            <h4>商品推荐</h4>
+            <ul class="row pro-list-pr"><!--蛋糕图片清单-->
+                <li class="list-goods-pr1 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第一幅蛋糕图片-->
+                    <a href="/message.do?name=images/3001.jpg">
+                        <img src="images/3001.jpg" class="img-responsive" alt="平安夜">
+                    </a>
+                </li>
+                <li class="list-goods-pr2 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第2幅蛋糕图片-->
+                    <a href="/message.do?name=images/3013.jpg">
+                        <img src="images/3013.jpg" class="img-responsive" alt="黑森林">
+                    </a>
+                </li>
+                <li class="list-goods-pr3 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第3幅蛋糕图片-->
+                    <a href="/message.do?name=images/3005.jpg">
+                        <img src="images/3005.jpg" class="img-responsive" alt="生日蛋糕">
+                    </a>
+                </li>
+                <li class="list-goods-pr4 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第4幅蛋糕图片-->
+                    <a href="/message.do?name=images/3014.jpg">
+                        <img src="images/3014.jpg" class="img-responsive" alt="多莓之都">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<!--提示模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" id="prompt_modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                请输入优惠券号/尊享卡号
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="prompt_sure_btn" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--footer部分-->
+<%-include("footer.ejs")%>
+
+<script src="configuration/js/jquery-1.8.2.min.js"></script>
+<script src="configuration/bootstrap-3.3.5-dist/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="js/gouwuche2.js"></script>
+
+
+
+</body>
+</html>

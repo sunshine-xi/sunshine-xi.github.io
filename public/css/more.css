@@ -1,0 +1,328 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    list-style: none;
+    text-decoration: none;
+    /*border: 0 solid transparent !important;*/
+
+}
+/*body>table>tr>td{*/
+    /*border: 0 solid transparent !important;*/
+/*}*/
+
+/*头部*/
+.header{
+    height: 80px;
+    box-shadow: 1px 1px 5px 0 grey;
+    color: #684029;
+    background-color: #FFFFFF;
+    margin: 0;
+}
+
+/*导航*/
+.nav{
+    padding-left: 20px;
+}
+/*左边导航*/
+.nav_left{
+    background-color: #FFFFFF;
+    height: 78px;
+    margin-top: 0;
+}
+.nav_left>li{
+    float: left;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    width: 60px;
+}
+.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>li>ul>li>a{
+    display: inline-block;
+    color: #684029;
+    padding: 0;
+}
+.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>ul>li>a:hover{
+    color: #BB9772;
+    text-decoration: none;
+}
+/*logo图片*/
+.logoImg{
+    height:80px;
+    margin-left: 2%;
+}
+/*专区*/
+.zone{
+    position:relative;
+}
+/*专区的子菜单*/
+.zoneInfo{
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    z-index: 999;
+    width: 100px;
+    border: 1px solid #EDEDED;
+    background-color: #FFFFFF;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s linear;
+}
+.zoneInfo>li{
+    height: 40px;
+    line-height: 40px;
+}
+.zone:hover .zoneInfo{
+    visibility: visible;
+    opacity: 1;
+}
+.zoneInfo>li:hover{
+    color: #684029;
+}
+/*右边导航*/
+.navbar-right>li:not(:nth-child(3)){
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    width: 80px;
+}
+.nav_left>li:hover,.navbar-right>li:not(:nth-child(3)):hover{
+    color: #BB9772;
+    cursor: pointer;
+}
+.navbar-right>li:nth-child(3)>span>a{
+    color: #684029;
+}
+.navbar-right>li:nth-child(3)>span>a:hover{
+    color: #BB9772;
+    text-decoration: none;
+}
+.navbar-right>li:nth-child(3)>span:hover{
+    color: #BB9772;
+    cursor: pointer;
+}
+/*地址下拉列表*/
+.navbar-right #address{
+    border: none;
+    background-color: rgba(0,0,0,0);
+}
+/*窗口缩小时的菜单栏*/
+.navbar-toggle{
+    margin-top: 20px;
+}
+/*app下载*/
+.app{
+    position: relative;
+}
+/*二维码*/
+.Qrcode{
+    position: absolute;
+    margin-left: -50px;
+    left: 50%;
+    margin-top: -10px;
+    z-index: 999;
+}
+.Qrcode>li>img{
+    width: 100px;
+    display: none;
+}
+.app:hover .Qrcode>li>img{
+    display: block;
+}
+.navbar-collapse.in{
+    height: 200px;
+}
+.navLogin{
+    padding: 0 10px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+.shoppingCart{
+    font-size: 18px;
+    margin-left: -10px;
+}
+
+body{overflow:hidden;}
+html{overflow-y:scroll;}
+header>nav{
+    z-index: 2;
+}
+section .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+    z-index: 1;
+}
+
+section .middle{
+    max-width:1920px;
+    min-width:1000px;
+    margin:0 auto 30px;
+
+}
+
+section .middle_word{
+    width: 1200px;
+    margin:0 auto;
+    font-size: 14px;
+}
+section .kz{
+    background-color: #BB9772;
+    text-align: center;
+    font-size: 20px;
+    height: 50px ;
+    margin-top: 50px;
+    line-height: 50px;
+    color:white;
+}
+
+section .bm{
+    background-color: #BB9772;
+    text-align: center;
+    font-size: 20px;
+    height: 50px ;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 50px;
+    color:white;
+}
+section .table{
+    background-color: #F6F5F3;
+    color: #988575;
+}
+section .middle_top{
+    width: 1200px;
+    height:280px;
+    min-width:1000px;
+    text-align: center;
+}
+section .word{
+    display: inline-block;
+    font-size: 20px;
+    color:white;
+    letter-spacing:2px;
+    line-height:45px;
+    margin-top: 100px;
+    text-align: left;
+}
+section .middle_tel{
+    width: 800px;
+    height:140px;
+    float:left;
+    margin-left: 318px;
+    margin-top: 35px;
+}
+section .middle_tel_word{
+    display: block;
+    font-size: 20px;
+    color: #1e1e1e;
+    letter-spacing:2px;
+    line-height:45px;
+}
+section #contact .btn-default{
+    background-color: #442818;
+    color: white;
+    position: absolute;
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+}
+
+
+section .z1,.z2,.z3,.z4,.z5,.z6{
+    margin-top: 20px;
+    text-align: center;
+    padding: 0;
+}
+section .thumbnail{
+    background-color: transparent;
+    border: none;
+    width: 100%;
+}
+/*<!--提示模态框-->*/
+#prompt_modal>div{
+    margin-top:15%;
+    width: 30%;
+    border: none;
+    background: none;
+}
+#prompt_modal .modal-content{
+    border: 1px solid rgba(73, 43, 26, 0.64);
+    border-radius: 1px;
+    background-color:rgba(73, 43, 26, 0.64);
+    /*box-shadow: none;*/
+    padding: 4% 2%;
+}
+/*#prompt_modal*/
+#prompt_modal .modal-header{
+    font-size: 14px;
+    color: #e4e4e4;
+    border-bottom: none;
+    line-height:28px;
+}
+#prompt_modal .modal-footer{
+    border-top: none;
+}
+#prompt_modal .modal-footer button{
+    height:40px;
+    width:32%;
+    border:1px solid rgba(73, 43, 26, 0.6);
+    box-shadow: none;
+    outline: none;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    background-color:rgba(73, 43, 26, 0.9);
+    color: #e4e4e4;
+}
+#prompt_modal .modal-footer button:hover{
+    background-color: rgb(56, 33, 19);
+}
+
+/*尾部*/
+footer{
+    background-color: #333333;
+}
+/*字体颜色*/
+footer .row{
+    color: white;
+}
+/*第一排ul*/
+footer .row ul:first-child{
+    margin: 50px 0;
+    /*width: 60%;*/
+    height: 30px;
+}
+footer .row ul:first-child>li{
+    /*width: 160px;*/
+    float: left;
+    text-align: center;
+}
+footer .row ul:first-child>li:not(:last-child){
+    border-right: 1px solid white;
+}
+/*第二排小图标*/
+footer .row ul:nth-child(2){
+    height: 50px;
+    margin: 0 0 50px;
+}
+footer .row ul:nth-child(2)>li{
+    /*width: 160px;*/
+    float: left;
+    text-align: center;
+}
+footer .row ul:nth-child(2)>li>.footer_bg{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: rgba(255,255,255,.1);
+    line-height: 50px;
+}
+/*分割线*/
+footer .hr{
+    border: 1px solid #616161;
+    margin-top: 30px;
+}
+footer .row p:last-child{
+    line-height: 50px;
+}

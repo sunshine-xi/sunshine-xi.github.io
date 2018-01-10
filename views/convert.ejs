@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>果实币兑换</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!-- Bootstrap -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/convert.css">
+    <link rel="stylesheet" href="css/gouwuche2.css">
+</head>
+<body>
+<!--导航-->
+<%-include("nav.ejs")%>
+<p class="Integral"><%=userIntegral%></p>
+<section>
+    <div class="content-box"><!--内容-->
+        <ul class="row pro-list-pr"><!--蛋糕图片清单-->
+            <%for(var i = 0; i<mydata.length; i++){%>
+            <li class="list-goods-pr1 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第一幅蛋糕图片-->
+                <a href="#">
+                    <img src="<%=mydata[i].pro_bimg%>" alt="">
+                    <h3>
+                        <p><%=mydata[i].pro_name%></p>
+                        <span><em><%=mydata[i].integral_score%></em>果实币</span>
+                    </h3>
+                </a>
+                <a  class="pro-list-linkOne">
+                    <img src="images/exchange.png" alt="">
+                    兑换
+                </a>
+            </li>
+            <%}%>
+        </ul>
+    </div>
+</section>
+<!--提示模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" id="prompt_modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                请输入优惠券号/尊享卡号
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="prompt_sure_btn" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<%-include('footer.ejs')%>
+
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="js/convertHtml.js"></script>
+</body>
+</html>

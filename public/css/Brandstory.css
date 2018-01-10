@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    list-style: none;
+    text-decoration: none;
+}
+
+/*头部*/
+.header{
+    height: 80px;
+    box-shadow: 1px 1px 5px 0 grey;
+    color: #684029;
+    background-color: #FFFFFF;
+    margin: 0;
+}
+
+/*导航*/
+.nav{
+    padding-left: 20px;
+}
+/*左边导航*/
+.nav_left{
+    background-color: #FFFFFF;
+    height: 78px;
+    margin-top: 0;
+}
+.nav_left>li{
+    float: left;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    width: 60px;
+}
+.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>li>ul>li>a{
+    display: inline-block;
+    color: #684029;
+    padding: 0;
+}
+.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>ul>li>a:hover{
+    color: #BB9772;
+    text-decoration: none;
+}
+/*logo图片*/
+.logoImg{
+    height:80px;
+    margin-left: 2%;
+}
+/*专区*/
+.zone{
+    position:relative;
+}
+/*专区的子菜单*/
+.zoneInfo{
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    z-index: 999;
+    width: 100px;
+    border: 1px solid #EDEDED;
+    background-color: #FFFFFF;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s linear;
+}
+.zoneInfo>li{
+    height: 40px;
+    line-height: 40px;
+}
+.zone:hover .zoneInfo{
+    visibility: visible;
+    opacity: 1;
+}
+.zoneInfo>li:hover{
+    color: #684029;
+}
+/*右边导航*/
+.navbar-right>li:not(:nth-child(3)){
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    width: 80px;
+}
+.nav_left>li:hover,.navbar-right>li:not(:nth-child(3)):hover{
+    color: #BB9772;
+    cursor: pointer;
+}
+.navbar-right>li:nth-child(3)>span>a{
+    color: #684029;
+}
+.navbar-right>li:nth-child(3)>span>a:hover{
+    color: #BB9772;
+    text-decoration: none;
+}
+.navbar-right>li:nth-child(3)>span:hover{
+    color: #BB9772;
+    cursor: pointer;
+}
+/*地址下拉列表*/
+.navbar-right #address{
+    border: none;
+    background-color: rgba(0,0,0,0);
+}
+/*窗口缩小时的菜单栏*/
+.navbar-toggle{
+    margin-top: 20px;
+}
+/*app下载*/
+.app{
+    position: relative;
+}
+/*二维码*/
+.Qrcode{
+    position: absolute;
+    margin-left: -50px;
+    left: 50%;
+    margin-top: -10px;
+    z-index: 999;
+}
+.Qrcode>li>img{
+    width: 100px;
+    display: none;
+}
+.app:hover .Qrcode>li>img{
+    display: block;
+}
+.navbar-collapse.in{
+    height: 200px;
+}
+.navLogin{
+    padding: 0 10px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+.shoppingCart{
+    font-size: 18px;
+    margin-left: -10px;
+}
+
+
+
+header>nav{
+    z-index: 2;
+}
+.container{
+    z-index: 1;
+}
+
+
+/* qq在线客服 */
+.side{
+    position:fixed;
+    width:54px;
+    height:275px;
+    right:0;
+    top:214px;
+    z-index:100;
+}
+.side ul li{
+    width:54px;
+    height:54px;
+    float:left;
+    position:relative;
+    border-bottom:1px solid #444;
+}
+.side ul li .sidebox{
+    position:absolute;
+    width:54px;
+    height:54px;
+    top:0;
+    right:0;
+    transition:all 0.3s;
+    background:#432719;
+    opacity:0.8;
+    filter:Alpha(opacity=80);
+    color:#fff;
+    font:14px/54px "微软雅黑";
+    overflow:hidden;
+}
+.side ul li .sidetop{
+    width:54px;
+    height:54px;
+    line-height:54px;
+    display:inline-block;
+    background:#432719;
+    opacity:0.8;
+    filter:Alpha(opacity=80);
+    transition:all 0.3s;
+}
+.side ul li .sidetop:hover{
+    background:#8B7860;
+    opacity:1;
+    filter:Alpha(opacity=100);
+}
+.side ul li img{
+    float:left;
+    border:0;
+}
+
+
+
+
+
+/*尾部*/
+footer{
+    background-color: #333333;
+}
+/*字体颜色*/
+footer .row{
+    color: white;
+}
+/*第一排ul*/
+footer .row ul:first-child{
+    margin: 50px 0;
+    /*width: 60%;*/
+    height: 30px;
+}
+footer .row ul:first-child>li{
+    /*width: 160px;*/
+    float: left;
+    text-align: center;
+}
+footer .row ul:first-child>li:not(:last-child){
+    border-right: 1px solid white;
+}
+/*第二排小图标*/
+footer .row ul:nth-child(2){
+    height: 50px;
+    margin: 0 0 50px;
+}
+footer .row ul:nth-child(2)>li{
+    /*width: 160px;*/
+    float: left;
+    text-align: center;
+}
+footer .row ul:nth-child(2)>li>.footer_bg{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: rgba(255,255,255,.1);
+    line-height: 50px;
+}
+/*分割线*/
+footer .hr{
+    border: 1px solid #616161;
+    margin-top: 30px;
+}
+footer .row p:last-child{
+    line-height: 50px;
+}

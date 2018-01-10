@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下午茶</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <link rel="stylesheet" href="css/Creamtea.css">
+</head>
+<body>
+<%-include('nav.ejs')%>
+<section>
+    <div class="content-box"><!--内容-->
+        <div class="pro-list"><!--口味分类-->
+            <dl class="cat-list">
+                <dt class="styleAll">分类 :</dt>
+                <dl>
+                    <dd class="eatStyle" onclick="choseSty(this)">全部分类</dd>
+                    <dd class="eatStyle" id="cccx" onclick="choseSty(this)">冰淇淋</dd>
+                    <dd class="eatStyle" id="cccx" onclick="choseSty(this)">小切块</dd>
+                    <dd class="eatStyle" id="cccx" onclick="choseSty(this)">常温蛋糕</dd>
+                    <dd class="eatStyle" id="cccx" onclick="choseSty(this)">咖啡</dd>
+                </dl>
+            </dl>
+            <dl class="tag-list">
+                <dt class="eatSty">口味 :</dt>
+                <dl>
+                    <dd class="sub-title eatStyle" onclick="choseSty(this)">全部口味</dd>
+                    <dd class="sub-tag1 eatStyle" onclick="choseSty(this)">乳脂奶油</dd>
+                    <dd class="sub-tag2 eatStyle" onclick="choseSty(this)">慕斯</dd>
+                    <dd class="sub-tag4 eatStyle" onclick="choseSty(this)">巧克力</dd>
+                    <dd class="sub-tag5 eatStyle" onclick="choseSty(this)">坚果</dd>
+                    <dd class="sub-tag6 eatStyle" onclick="choseSty(this)">水果</dd>
+                    <dd class="sub-tag8 eatStyle" onclick="choseSty(this)">咖啡</dd>
+                </dl>
+            </dl>
+        </div>
+        <div class="pro-list-box"><!--中间分隔字-->
+            <div class="pro-list-title">
+                <h2>
+                    ＋Gelato10
+                    <span class="name">10天生命的意式杰拉朵冰淇淋</span>
+                </h2>
+            </div>
+        </div>
+        <ul class="row pro-list-pr" id="allList"><!--蛋糕图片清单-->
+            <%for(var i=0;i<mydata.length;i++){%>
+            <li class="list-goods-pr1 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第一幅蛋糕图片-->
+                <a href="/teaMessage.do?name=<%=mydata[i].pro_img%>">
+                    <img src="<%=mydata[i].pro_img%>" class="img-responsive" alt="平安夜">
+                    <div id="mesvalue">
+                        <p class="name"><%=mydata[i].pro_name%></p>
+                        <p class="price">¥<%=mydata[i].pro_price%></p>
+                    </div>
+                </a>
+                <div class="pro-list-linkOne" onclick="cakeShop(this)">
+                    <img src="images/icon_08.png" alt="">
+                    加入购物车
+                </div>
+            </li>
+            <%}%>
+        </ul>
+        <div class="pro-list-box"><!--尾部分隔字-->
+            <div class="pro-list-titleTwo">
+                <h2>
+                    小切块
+                    <span class="name">55g，6种口味</span>
+                </h2>
+            </div>
+        </div>
+        <ul class="row pro-list-pr">
+            <%for(var i=0;i<smallcake.length;i++){%>
+            <li class="list-goods-pr1 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第一幅蛋糕图片-->
+                <a href="/teaMessage.do?name=<%=smallcake[i].pro_img%>">
+                    <img src="<%=smallcake[i].pro_img%>" class="img-responsive" alt="平安夜">
+                    <h3 id="mesvalue">
+                        <p class="name"><%=smallcake[i].pro_name%></p>
+                        <span class="price">¥<%=smallcake[i].pro_price%></span>
+                    </h3>
+                </a>
+                <div class="pro-list-linkOne" onclick="cakeShop(this)">
+                    <img src="images/icon_08.png" alt="">
+                    加入购物车
+                </div>
+            </li>
+            <%}%>
+        </ul>
+        <div class="pro-list-box"><!--尾部分隔字-->
+            <div class="pro-list-titleTwo">
+                <h2>
+                    常温蛋糕
+                    <span class="name">方便携带，可配送至全国</span>
+                </h2>
+            </div>
+        </div>
+        <ul class="row pro-list-pr"><!--售罄部分-->
+            <%for(var i=0;i<normal.length;i++){%>
+            <li class="list-goods-pr1 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第一幅蛋糕图片-->
+                <a href="/teaMessage.do?name=<%=normal[i].pro_img%>">
+                    <img src="<%=normal[i].pro_img%>" class="img-responsive" alt="平安夜">
+                    <h3 id="mesvalue">
+                        <p class="name"><%=normal[i].pro_name%></p>
+                        <span class="price">¥<%=normal[i].pro_price%></span>
+                    </h3>
+                </a>
+                <div class="pro-list-linkOne" onclick="cakeShop(this)">
+                    <img src="images/icon_08.png" alt="">
+                    加入购物车
+                </div>
+            </li>
+            <%}%>
+        </ul>
+        <div class="pro-list-box"><!--尾部分隔字-->
+            <div class="pro-list-titleTwo">
+                <h2>
+                    配饮
+                    <span class="name">挂耳咖啡</span>
+                </h2>
+            </div>
+        </div>
+        <ul class="row pro-list-pr">
+            <%for(var i=0;i<coffee.length;i++){%>
+            <li class="list-goods-pr1 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第一幅蛋糕图片-->
+                <a href="/teaMessage.do?name=<%=coffee[i].pro_img%>">
+                    <img src="<%=coffee[i].pro_img%>" class="img-responsive" alt="平安夜">
+                    <h3 id="mesvalue">
+                        <p class="name"><%=coffee[i].pro_name%></p>
+                        <span class="price">¥<%=coffee[i].pro_price%></span>
+                    </h3>
+                </a>
+                <div class="pro-list-linkOne" onclick="cakeShop(this)">
+                    <img src="images/icon_08.png" alt="">
+                    加入购物车
+                </div>
+            </li>
+            <%}%>
+        </ul>
+    </div>
+</section>
+<%-include('footer.ejs')%>
+<!--登陆提示模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" id="prompt_modal"aria-hidden="true" data-backdrop="static" data-show="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                请登陆!
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="prompt_sure_btn" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="js/Creamtea.js"></script>
+</body>
+</html>

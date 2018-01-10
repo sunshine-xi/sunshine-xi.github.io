@@ -1,0 +1,441 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "微软雅黑";
+}
+h4{
+    color: #684029;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #CECAC7;
+}
+em{
+    font-style: normal;
+}
+
+.table-bordered{
+    border:1px solid rgb(233, 233, 240);
+}
+/*当购物车为空的时候的样式*/
+.h_box1{
+    padding: 0 6%;
+    height: 700px;
+    background-color:white;
+}
+.h_box1 img{
+    margin-top:16%;
+    width: 206px;
+}
+.h_box1 p{
+    font-size: 14px;
+    color:rgb(213,191,167);
+    margin-top:8px;
+}
+.h_box1 a{
+    font-size: 16px;
+    text-decoration: none;
+    color: rgb(94, 81, 66);
+}
+.h_box1 a:hover{
+    color: rgb(204, 183, 161);
+}
+/*商品推荐*/
+
+#tj_title{
+    padding: 1% 6%;
+}
+#tj_title>div{
+    padding: 1%;
+    border-bottom: 2px solid rgb(206,202,199) ;
+}
+#tj_title span{
+    font-size: 18px;
+    font-weight:500;
+    color: rgb(94, 81, 66);
+}
+#tj_box{
+    padding: 0 6%;
+    margin-bottom: 2%;
+}
+#tj_box>div{
+    padding:3%;
+}
+#tj_box>div>a{
+    border: 1px solid white;
+}
+#tj_box>div>a:hover{
+    border:1px solid rgb(206,202,199);
+}
+
+/*购物车有订单的时候table里面的样式*/
+
+/*订单头*/
+#oder_head>tr>th{
+    text-align: center;
+    border: none;
+    height:50px;
+    color:#684029;
+    font-weight: normal;
+    font-size:15px;
+    vertical-align: middle;
+    letter-spacing:1px;
+    background-color:rgb(250,250,250)
+}
+/*订单内容*/
+#oder_box{
+    height: 100%;
+    /*padding: 0 2%;*/
+    border:1px solid rgb(233, 233, 240);
+}
+#oder_tble {
+    border:none;
+}
+#oder_tbody td {
+    background-color: white;
+    vertical-align: middle;
+    border: none;
+    padding:3% 0;
+    border-bottom: 3px dashed rgb(225, 225, 232);
+    text-align: center  ;
+}
+
+#oder_tbody>tr:last-child>td{
+    border-bottom: 3px solid rgb(225, 225, 232);
+}
+#oder_tbody>tr>td:nth-of-type(6){
+    max-width:8%;
+}
+#oder_tbody ul li{
+    list-style: none;
+}
+
+#oder_tbody .tbdy_td2{
+    text-align: left;
+    padding: 0 5px;
+    width: 17%;
+}
+.tbdy_td1>a{
+    display: block;
+}
+.tbdy_td1>a>img{
+    border:1px solid rgb(236, 236, 244);
+
+    width:100px;
+    height:100px;
+}
+.tbdy_td2>ul{
+    /*width: 60%;*/
+}
+.tbdy_td2>ul>li{
+    margin: 2% 0;
+}
+.tbdy_td2>ul>li>a{
+    font-size: 14px;
+    color:#684029;
+    text-decoration:none;
+}
+.tbdy_td2>ul>li>a:hover{
+    color:rgb(186,153,120);
+}
+.tbdy_td2>ul>li:nth-child(2)>span{
+    font-size: 14px;
+    color:rgb(186,153,120);
+}
+.tbdy_td2>ul>li:nth-child(3)>span{
+    font-size: 12px;
+    color:rgb(196,196,203);
+}
+.tbdy_td2>ul>li:nth-child(3)>img{
+    width: 35px;
+    border:1px solid rgb(236, 236, 244);
+}
+.tbdy_td3{
+    position: relative;
+    color:rgb(186,153,120);
+    font-size: 14px;
+    width:24%;
+}
+.tbdy_td3>.card{
+    position: relative;
+    line-height: 30px;
+    height: 32px;
+    width:100%;
+    padding: 0 3%;
+    border: 1px solid rgb(214, 214, 221);
+}
+.tbdy_td3>div>i{
+    position: absolute;
+    right:3%;
+    top:30%
+}
+/*隐藏ul*/
+.tbdy_td3>ul{
+    position: absolute;
+    border: 1px solid rgb(237, 237, 244);
+    width:100%;
+    padding:2% 0;
+    z-index:2;
+    display: none;
+}
+.tbdy_td3>ul>li{
+    height: 42px;
+    line-height: 30px;
+    padding:6px 4%;
+    background-color:white;
+    cursor: pointer;
+}
+.tbdy_td3>ul>li:hover{
+    background-color: rgba(236, 233, 222, 0.98);
+}
+.tbdy_td3>ul>li:last-child{
+    display: none;
+}
+.tbdy_td3>ul>li>input{
+    width:70%;
+    padding-left:2%;
+    border:1px solid rgb(214, 214, 221);
+}
+.tbdy_td3>ul>li>input::-webkit-input-placeholder{
+    color: rgba(177, 145, 114, 0.44);
+}
+.tbdy_td3>ul>li>button{
+    height:30px;
+    width:20%;
+    line-height:28px;
+    color: white;
+    background-color: rgb(103,63,43);
+    border: 2px solid rgb(103,63,43);
+    border-radius:2px;
+    font-size: 12px;
+}
+.tbdy_td4 span:nth-child(1){
+    padding-left:26%;
+
+}
+.tbdy_td4 span,.tbdy_td6 span{
+    font-size: 14px;
+    color:#684029;
+}
+.tbdy_td5>input:nth-child(1),.tbdy_td5>input:nth-child(3){
+    line-height: 28px;
+    height:30px;
+    width: 18%;
+    font-size: 22px;
+    background: none;
+    box-shadow: none;
+    outline: none;
+    border: 1px solid rgb(214, 214, 221);
+    vertical-align: middle;
+    color: #9a5f3c;
+}
+.tbdy_td5{
+    width:12%;
+}
+.tbdy_td5>input:nth-child(2){
+    border: 1px solid rgb(214, 214, 221);
+    vertical-align: middle;
+    display: inline-block;
+    width:28%;
+    height:30px;
+    outline: none;
+    box-shadow: none;
+    border-radius:0;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    padding: 0;
+    background-color: white;
+}
+.tbdy_td6>span{
+    color: rgb(255,113,77);
+}
+.tbdy_td7 span {
+    color: rgb(219, 219, 226);
+    font-size: 22px;
+    font-weight: normal;
+    margin: 50%;
+    cursor: pointer;
+}
+.tbdy_td7 span:hover{
+    color: rgb(158, 158, 163);
+}
+/*订单标号隐藏*/
+.tbdy_td8{
+    display: none;
+}
+/*配件*/
+#peijian{
+    width: 100%;
+    height:140px;
+    margin-bottom: 18px;
+    padding-left:5%;
+}
+#peijian li{
+    width: 25%;
+    list-style: none;
+    float: left;
+    vertical-align: middle;
+    margin-top:2%;
+}
+#peijian li img{
+    width:30%;
+    border:1px solid rgb(236, 236, 244);
+}
+#peijian li div{
+    width:70%;
+    float:right;
+    /*padding-top:1%;*/
+    padding-left:4%;
+}
+#peijian li div p{
+    font-size: 14px;
+    color:#684029;;
+}
+#peijian li div p span{
+    font-size: 12px;
+    color:white;
+    background-color:rgb(213,191,167);
+    padding:0 3%;
+    border: 1px solid rgb(213,191,167);
+    border-radius: 2px;
+    margin-left: 4%;
+}
+#peijian li div span{
+    color:rgb(213,191,167);
+}
+#peijian li div i{
+    color: rgb(161, 120, 86);
+    font-size:34px;
+}
+#peijian li div i:hover{
+    color:rgb(213,191,167);
+}
+/*公告栏部分*/
+#h_box5{
+    padding:2% 6%;
+}
+#h_box5>div{
+    position:relative;
+    padding:0 3%;
+    overflow:hidden;
+    height:100px;
+    background-color: rgb(247, 247, 247);
+}
+#h_box5>div>ul{
+    position: absolute;
+    top:0;
+    width: 100%;
+}
+#h_box5>div>ul>li{
+    list-style: none;
+    /*height:200px;*/
+    font-size: 14px;
+    color:#684029;
+    line-height:100px;
+}
+#h_box5>div>ul>li>i{
+    margin-right:1%;
+    font-size: 22px;
+}
+/*<!--去结算-->*/
+
+#h_box6{
+    padding: 0 6%;
+}
+#h_box6>div{
+    background-color: rgb(251,251,251);
+    border:1px solid rgb(233, 233, 240);
+    padding: 3% 6%;
+}
+#h_box6>div>p{
+    font-size: 14px;
+    color:#684029;
+}
+#h_box6>div>p:nth-child(1)>span:nth-child(1){
+    float: left;
+    color: rgb(214,195,172);
+    line-height:30px;
+    width:9%;
+    cursor: pointer;
+}
+#h_box6>div>p:nth-child(1)>span:nth-child(1)>i{
+    font-size: 28px;
+}
+#h_box6>div>p:nth-child(1)>span:nth-child(1)>a{
+    color:#684029;
+    padding-left:8%;
+    text-decoration: none;
+}
+#h_box6>div>p:nth-child(1)>span:nth-child(1):hover>a{
+    color: rgb(214,195,172);
+}
+#h_box6>div>p:nth-child(4)>span{
+    display: inline-block;
+    width: 25%;
+    height: 3px;
+    background-color: rgb(234, 234, 241);
+}
+#h_box6>div>p:nth-child(5)>span{
+    color:rgb(255,113,82);
+    font-size: 16px;
+}
+#h_box6>div>p:nth-child(6){
+    margin-top: 1.5%;
+    color: rgb(214,195,172);
+}
+#h_box6>div>button{
+    outline: none;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 1px;
+    width: 20%;
+    padding:1% 0;
+    background-color:rgb(104,64,41) ;
+    border-radius: 3px;
+}
+#h_box6>div>button:hover{
+    background-color:rgb(68,40,24) ;
+
+}
+
+/*<!--提示模态框-->*/
+#prompt_modal>div{
+    margin-top:15%;
+    width: 30%;
+    border: none;
+    background: none;
+}
+#prompt_modal .modal-content{
+    border: 1px solid rgba(73, 43, 26, 0.64);
+    border-radius: 1px;
+    background-color:rgba(73, 43, 26, 0.64);
+    /*box-shadow: none;*/
+    padding: 4% 2%;
+}
+/*#prompt_modal*/
+#prompt_modal .modal-header{
+    font-size: 14px;
+    color: #e4e4e4;
+    border-bottom: none;
+    line-height:28px;
+}
+#prompt_modal .modal-footer{
+    border-top: none;
+}
+#prompt_modal .modal-footer button{
+    height:40px;
+    width:32%;
+    border:1px solid rgba(73, 43, 26, 0.6);
+    box-shadow: none;
+    outline: none;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    background-color:rgba(73, 43, 26, 0.9);
+    color: #e4e4e4;
+}
+#prompt_modal .modal-footer button:hover{
+    background-color: rgb(56, 33, 19);
+
+}
+.maginTop{
+    height: 30px;
+}

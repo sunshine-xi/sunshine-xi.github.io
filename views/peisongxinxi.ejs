@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>配送信息</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="configuration/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="configuration/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="css/peisongxinxi.css">
+</head>
+<body>
+<!--导航-->
+<%-include('nav.ejs')%>
+<!--/*配送信息头*/-->
+<div class="container-fluid" id="ps_box">
+    <div class="row" id="ps_box1">
+        <div class="col-md-12">
+            配送信息
+        </div>
+    </div>
+</div>
+<!--/*配送信息身体部分*/-->
+<div class="container-fluid" id="infor_box1">
+    <div class="container-fluid" id="infor_box2">
+        <div class="row" id="infor_top">
+            <div class="col-md-8" id="addressGet">
+                <%if(mydata.length>0){%>
+                <%var mybtn=false%>
+                <%for(var k=0;k<mydata.length;k++){%>
+                <%if(mydata[k].address_status==1){%>
+                <%mybtn=true%>
+                <p id="infor_top_p1">
+                    <span id="h_name"><%=mydata[k].address_name%></span>
+                    <span>默认地址</span>
+                    <span class="h_adressid"><%=mydata[k].address_id%></span>
+                </p>
+                <p>
+                    <i class="fa fa-mobile" aria-hidden="true"></i>
+                    <span id="h_phone"><%=mydata[k].address_tel%></span>
+                </p>
+                <p>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span id="h_adress"><%=mydata[k].address%></span>
+                </p>
+                <%}%>
+                <%}%>
+                <%if(mybtn==false){%>
+                <p id="infor_top_p1">
+                    <span id="h_name"><%=mydata[0].address_name%></span>
+                    <span></span>
+
+                    <span class="h_adressid"><%=mydata[0].address_id%></span>
+                </p>
+                <p>
+                    <i class="fa fa-mobile" aria-hidden="true"></i>
+                    <span id="h_phone"><%=mydata[0].address_tel%></span>
+                </p>
+                <p>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span id="h_adress"><%=mydata[0].address%></span>
+                </p>
+                <%}%>
+                <%}%>
+            </div>
+            <div class="col-md-4 text-right" id="xz_address">
+                <a id="qh_address" href="#">切换地址（<span id="adress_nums"><%=mydata1[0].address_nums%></span>）</a>
+                <p></p>
+                <a id="add_address" href="#">+添加新地址</a>
+            </div>
+        </div>
+        <!--选择配送时间-->
+        <div class="row" id="infor_mid">
+            <div class="col-md-12 calendarWarp" style="">
+
+                <span>配送时间</span>
+                <input type="text" placeholder="请选择配送日期" name="h_date" id="h_date" class='ECalendar' >
+                <!--<input type="text" placeholder="请选择配送日期"   name="date" class='ECalendar' id="ECalendar_date">-->
+
+
+                <select name="h_time" id="h_time">
+                    <option value="">时间</option>
+                    <option value="09:30-10:00">09:30-10:00</option>
+                    <option value="10:00-10:30">10:00-10:30</option>
+                    <option value="10:30-11:00">10:30-11:00</option>
+                    <option value="11:00-11:30">11:00-11:30</option>
+                    <option value="11:30-12:00">11:30-12:00</option>
+                    <option value="12:00-12:30">12:00-12:30</option>
+                    <option value="12:30-13:00">12:30-13:00</option>
+                    <option value="13:00-13:30">13:00-13:30</option>
+                    <option value="13:30-14:00">13:30-14:00</option>
+                    <option value="14:00-14:30">14:00-14:30</option>
+                    <option value="14:30-15:00">14:30-15:00</option>
+                    <option value="15:00-15:30">15:00-15:30</option>
+                    <option value="15:30-16:00">15:30-16:00</option>
+                    <option value="16:00-16:30">16:00-16:30</option>
+                    <option value="16:30-17:00">16:30-17:00</option>
+                    <option value="17:00-17:30">17:00-17:30</option>
+                    <option value="17:30-18:00">17:30-18:00</option>
+                    <option value="18:00-18:30">18:00-18:30</option>
+                    <option value="18:30-19:00">18:30-19:00</option>
+                    <option value="19:00-19:30">19:00-19:30</option>
+                    <option value="19:30-20:00">19:30-20:00</option>
+                    <option value="20:00-20:30">20:00-20:30</option>
+                    <option value="20:30-21:00">20:30-21:00</option>
+                    <option value="21:00-21:30">21:00-21:30</option>
+                    <option value="21:30-22:00">21:30-22:00</option>
+                </select>
+                <span>配送时间有前后15分钟误差</span>
+            </div>
+        </div>
+
+
+        <!--配送方式选择-->
+        <div class="row" id="infor_botm">
+            <div class="col-md-12">
+                <span>配送方式</span>
+                <label>
+                    <input type="radio" name="ps_way" value="1" id="ps_way1" checked="checked">
+                    <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                    <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                    &nbsp;Small lucky 配送
+                </label>
+                <label id="qj_btn">
+                    <input type="radio" name="ps_way" value="2" id="ps_way2">
+                    <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                    <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                    &nbsp;站点自取
+                </label>
+                <span>地址：</span>
+                <span id="qj_adress">自己去站点取件</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--订单详情最外面的box-->
+<div class="container-fluid">
+    <!--/*商品信息头 id="sp_infor_head"*/-->
+    <div class="row" id="sp_infor_head">
+        <div class="col-md-12">
+            <ul class="row">
+                <li class="col-md-4 col-sm-4 col-xs-4 text-center">商品</li>
+                <li class="col-md-3 col-sm-3 col-xs-3 text-center">生日牌</li>
+                <li class="col-md-2 col-sm-2 col-xs-2 text-center">单价</li>
+                <li class="col-md-1 col-sm-1 col-xs-1 text-center">数量</li>
+                <li class="col-md-2 col-sm-2 col-xs-2 text-center">金额</li>
+            </ul>
+        </div>
+    </div>
+    <!--商品信息内容 id="sp_infor_body"-->
+    <div class="row" id="sp_infor_body">
+        <div class="col-md-12">
+            <table class="table table-bordered" id="oder_tble">
+                <tbody id="oder_tbody">
+                <%for(var j=0;j<data5.length;j++){%>
+                <tr>
+                    <td class="tbdy_td1 col-md-2 text-center">
+                        <div class="10 col-sm-8 col-md-7 col-lg-6 col-lg-offset-5 col-md-offset-4 col-sm-offset-3">
+                            <a href="#" class="thumbnail"><img src="<%=data5[j].pro_orimg%>"></a>
+                        </div>
+
+                    </td>
+                    <td class="tbdy_td2 col-md-2 text-left">
+                        <ul>
+                            <li>
+                                <a href="#"><%=data5[j].pro_name%></a>
+                            </li>
+                            <li>
+                                <span>规格：</span>
+                                <span> <%=data5[j].order_pounds%></span>
+                            </li>
+                            <%if(data5[j].ptype_id=="11"){%>
+
+                            <%}else{%>
+                            <li>
+
+                                <img src="images/canju.jpg">
+                                <span>赠送</span>
+                                <span class="h_guige">10</span>
+                                <span>套餐具</span>
+                            </li>
+                            <%}%>
+                        </ul>
+
+                    </td>
+                    <%if(data5[j].order_birth_card=="选择生日牌"){%>
+                    <td class="tbdy_td3 col-md-3 text-center">
+                    </td>
+                    <%}else{%>
+                    <td class="tbdy_td3 col-md-3 text-center">
+                        <%=data5[j].order_birth_card%>
+                    </td>
+                    <%}%>
+
+                    <td class="tbdy_td4 col-md-2 text-center">
+                        <span>￥</span>
+                        <span class="h_price"><%=data5[j].order_price%>.00</span>
+                    </td>
+                    <td class="tbdy_td5 col-md-1 text-center"><%=data5[j].order_num%>
+                    </td>
+                    <td class="tbdy_td6 col-md-2 text-center">
+                        <span>￥</span>
+                        <span class="h_totalprice">
+                            <%=String(data5[j].order_price*data5[j].order_num+".00")%>
+                        </span>
+                    </td>
+                </tr>
+                <%}%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--订单留言  id="leave_message"-->
+    <div class="row" id="leave_message">
+        <div class="col-md-2">
+            <span>订单留言:</span>
+        </div>
+        <div class="col-md-10">
+            <textarea class="form-control" rows="1" id="hliuyan" name="hliuyan"  placeholder="请留下您对订单或商品的特殊要求，200字以内"></textarea>
+        </div>
+    </div>
+
+</div>
+
+<!--订单详情最外面的box-->
+<div class="container-fluid">
+    <!--/*商品信息头 id="sp_infor_head"*/-->
+    <div class="row" id="dh_infor_head">
+        <div class="col-md-12">
+            <ul class="row">
+                <li class="col-md-4 col-sm-4 col-xs-4 text-center">兑换商品</li>
+                <li class="col-md-3 col-sm-3 col-xs-3 text-center">生日牌</li>
+                <li class="col-md-2 col-sm-2 col-xs-2 text-center">单价</li>
+                <li class="col-md-1 col-sm-1 col-xs-1 text-center">数量</li>
+                <li class="col-md-2 col-sm-2 col-xs-2 text-center">果实币</li>
+            </ul>
+        </div>
+    </div>
+    <!--果实币兑换商品信息内容 id="sp_infor_body"-->
+    <div class="row" id="dh_infor_body">
+        <div class="col-md-12">
+            <table class="table table-bordered" id="dh_tble">
+                <tbody id="dh_tbody">
+                <%for(var j=0;j<data7.length;j++){%>
+                <tr>
+                    <td class="tbdy_td1 col-md-2 text-center">
+                        <div class="10 col-sm-8 col-md-7 col-lg-6 col-lg-offset-5 col-md-offset-4 col-sm-offset-3">
+                            <a href="#" class="thumbnail"><img src="<%=data7[j].pro_bimg%>"></a>
+                        </div>
+
+                    </td>
+                    <td class="tbdy_td2 col-md-2 text-left">
+                        <ul>
+                            <li>
+                                <a href="#"><%=data7[j].pro_name%></a>
+                            </li>
+                            <li>
+                                <span>规格：</span>
+                                <span> <%=data7[j].pro_specification%></span>
+                            </li>
+                            <%if(data7[j].ptype_id=="11"||data7[j].ptype_id=="16"){%>
+
+                            <%}else{%>
+                            <li>
+
+                                <img src="images/canju.jpg">
+                                <span>赠送</span>
+                                <span class="h_guige">10</span>
+                                <span>套餐具</span>
+                            </li>
+
+                            <%}%>
+
+
+                        </ul>
+
+                    </td>
+                    <%if(data7[j].order_birth_card=="选择生日牌"){%>
+                    <td class="tbdy_td3 col-md-3 text-center">
+                    </td>
+                    <%}else{%>
+                    <td class="tbdy_td3 col-md-3 text-center">
+
+                        <%=data7[j].order_birth_card%>
+                    </td>
+                    <%}%>
+
+                    <td class="tbdy_td4 col-md-2 text-center">
+                        <!--<span></span>-->
+                        <span class="h_price">￥<%=data7[j].pro_price%></span>
+                    </td>
+                    <td class="tbdy_td5 col-md-1 text-center"><%=data7[j].order_num%>
+                    </td>
+                    <td class="tbdy_td6 col-md-2 text-center">
+                        <!--<span>￥</span>-->
+                        <span class="h_totalprice">
+                            <%=data7[j].integral_score%>
+
+                        </span>
+                    </td>
+                </tr>
+                <%}%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--invoice发票,优惠券最外层box-->
+<div class="container-fluid" id="invoice_box1">
+    <div class="container-fluid" id="invoice_box2">
+        <div class="row" id="invoice_head">
+            <div class="col-md-12">
+                <label>
+                    <span>发票</span>
+                    <input type="checkbox" id="xz_invoice" name="my_fapiao">
+                    <i class="fa fa-square-o" aria-hidden="true"></i>
+                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                    &nbsp;
+                </label>
+            </div>
+        </div>
+        <!--勾选发票后出现的内容-->
+        <div class="row" id="invoice_top">
+            <div class="col-md-12">
+                <div>
+                    <a href="#">电子发票</a>
+                    <a href="/announcement.do" target="_self">什么的电子发票？</a>
+                </div>
+                <!--选择是要个人发票还是公司发票-->
+                <div >
+                    <label>
+                        <input type="radio" value="gongsi" name="invoice_lei" id="company" checked >
+                        <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                        <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                        &nbsp;
+                        公司发票
+                    </label>
+                    <label>
+
+                        <input type="radio" value="geren" name="invoice_lei" id="personal">
+                        <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                        <i class="fa fa-dot-circle-o" aria-hidden="true" style="display: none"></i>
+                        &nbsp;
+                        个人发票
+                    </label>
+                </div>
+                <!--选择公司发票或个人发票出现的部分-->
+                <div>
+                    <form class="form-inline">
+                        <input id="h_nasuiren" class="form-control" type="text" placeholder="纳税人识别号或统一社会信用代码(必填)">
+                        <!--<br>-->
+                        <input class="form-control" type="text" placeholder="发票抬头(必填)">
+                        <input class="form-control" type="text" placeholder="收票人手机(必填)">
+                        <input class="form-control" type="text" placeholder="收件人邮箱">
+                        <select class="form-control">
+                            <option>蛋糕</option>
+                            <option>冰淇淋</option>
+                            <option>咖啡</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--/*发票下面的那根横线*/-->
+        <div></div>
+
+    </div>
+    <div class="container-fluid" id="youhui_box1">
+        <!--优惠券-->
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="youhui" >
+                    <a class="yh_active">使用优惠券</a>
+                    <a class="yh_noactive">添加优惠券/尊享卡</a>
+                </div>
+                <!--/*使用优惠券*/-->
+                <div id="use_youhui">
+                    <span><%=mydata3[0].youhui_nums%> 张可用优惠券。</span>
+                    <a> 查看全部优惠券</a>
+                    <br/>
+                    <div id="h_allzhekou">
+                       <ul>
+                           <%for(var i=0;i<mydata4.length;i++){%>
+                               <li><span class="vou_zhekou"><%=mydata4[i].voucher_zhekou%></span><span> 折优惠券</span><img src="images/arch1.png"/><span class="voucherid"><%=mydata4[i].voucher_id%></span><i class="fa fa-check" aria-hidden="true"></i></li>
+                           <%}%>
+
+                           <!--<li><span>5折优惠券</span ><img src="images/arch1.png"/><span class="voucherid"></span><i class="fa fa-check" aria-hidden="true"></i></li>-->
+                           <!--<li><span>5折优惠券</span ><img src="images/arch1.png"/><span class="voucherid"></span><i class="fa fa-check" aria-hidden="true"></i></li>-->
+                       </ul>
+                    </div>
+                </div>
+                <!--添加优惠券-->
+                <div id="add_youhui">
+                    <form action="" class="form-inline">
+                        <input type="text" class="form-control" id="add_yhquan" placeholder="请输入优惠券号/尊享卡号">
+                        <button type="button" class="btn">添加</button>
+                    </form>
+                    <span>
+                        *优惠券只能同时使用1张
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--支付方式最外层-->
+<div class="container-fluid" id="pay_way">
+    <div class="row">
+        <div class="col-md-5">
+            <p>支付方式</p>
+            <div id="xz_payway">
+                <a>在线支付</a>
+                <a class="hide_a">货到付现金</a>
+                <a class="hide_a">货到刷卡</a><span> 展开>> </span>
+            </div>
+            <!--选择果实币-->
+            <div id="xz_gbi">
+                <p>
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                    使用果实币（余额：<span id="h_yegb">
+                    <%if(data9[0].totalgb==null){%>
+                        <%=data6[0].integral%>
+
+                        <%}else {%>
+                        <%=data6[0].integral-data9[0].totalgb%>
+                        <%}%>
+                    </span>
+                    个）
+                </p>
+                <!--选择果实币-->
+                <label>
+                    <input type="checkbox" id="xz_gbiinput">
+                    <i class="fa fa-square-o" aria-hidden="true"></i>
+                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                    &nbsp;
+                    抵扣 ￥ <span>
+                        <%if(data9[0].totalgb==null){%>
+                        <%=parseFloat((data6[0].integral)/10).toFixed(2)%>
+
+                        <%}else {%>
+                        <%=parseFloat((data6[0].integral-data9[0].totalgb)/10).toFixed(2)%>
+
+                        <%}%>
+                    </span>
+                    元
+                </label>
+                <%if(data9[0].totalgb!=null){%>
+                <span id="h_dhgb">果实币兑换：<%=data9[0].totalgb%>个</span>
+                <%}%>
+            </div>
+            <!--选择金卡-->
+            <div id="xz_goldcard">
+                <p>
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                    使用代金卡
+                </p>
+                <div id="show_addgold">
+                    <button class="btn" id="add_gold_btn">添加代金卡</button>
+                    <br>
+                    <span>＊不能与优惠券同时使用</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-7 clearfix" id="pay_way_right">
+            <ul>
+                <li>
+                    <span>商品金额</span>
+                    <span>
+                        <span>￥</span>
+                            <%if(data8[0].totalprice>0){%>
+                            <span id="pretotalmaoey"><%=data8[0].totalprice%>.00</span>
+                            <%}else {%>
+                           <span id="pretotalmaoey">0.00</span>
+                            <%}%>
+
+                    </span>
+
+                </li>
+                <li>
+                    <span>配送费</span>
+                    <span>
+                        <span>￥</span>
+                        <span id="h_sendprice">0.00</span>
+                    </span>
+
+                </li>
+                <li>
+                    <span>优惠抵扣</span>
+                    <span>
+                        <span>- ￥</span>
+                        <span id="h_yhzekou">0.00</span>
+                    </span>
+
+                </li>
+                <li>
+                    <span>果实币抵扣</span>
+                    <span>
+                        <span>-￥</span>
+                        <span id="h_gsbdikou">0.00</span>
+                    </span>
+
+                </li>
+                <li>
+                    <span>代金卡抵扣</span>
+                    <span>
+                        <span>-￥</span>
+                        <span id="h_giftmoney">0.00</span>
+                    </span>
+                </li>
+            </ul>
+            <div id="pay_way_right_line"></div>
+            <div>
+                <p class="text-right">
+                    <span>您总共需要支付</span>
+                    <span>￥</span>
+                    <span id="pay_total_price">0.00</span>
+                </p>
+                <br>
+            </div>
+            <button id="h_jiesuanbtn" class="btn">下单结算</button>
+
+            <!--最后按钮下面的送货信息-->
+            <div id="sure_order">
+                <p class="text-right">
+                    <span id="sure_name"></span>
+                    <span id="sure_phone"></span>
+                </p>
+                <p class="text-right" id="sure_address"></p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!--模态框-->
+
+<!-- Modal -->
+
+<!--/*点击站点自取模态框*/-->
+<div class="modal fade" tabindex="-1" role="dialog" id="qj_modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h5 class="modal-title">选择自取站点</h5>
+            </div>
+            <div class="modal-body">
+                <ul id="zhandianul">
+
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                <button type="button" id="qj_sure_btn" class="btn btn-primary center-block">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--切换地址模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" id="qh_modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h5 class="modal-title">选择自取站点</h5>
+            </div>
+            <div class="modal-body">
+
+                <%if(mydata.length>0){%>
+                    <%for(var b=0;b<mydata.length;b++){%>
+                    <%if(mydata[b].address_status==1){%>
+                <div class="qh_address_div">
+
+                    <p>
+                    <span><%=mydata[b].address_name%></span>
+                    <span>默认地址</span>
+                    <span class='h_adressid'><%=mydata[b].address_id%></span>
+
+                    </p>
+                    <p>
+                        <i class="fa fa-mobile" aria-hidden="true"></i>
+                        <span><%=mydata[b].address_tel%></span>
+                    </p>
+                    <p>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span><%=mydata[b].address%></span>
+                    </p>
+                </div>
+                    <%}%>
+
+                    <%}%>
+
+                    <%}%>
+
+
+
+                <div id="last_add" class="text-center">
+                    <a href="#" id="qh_add_address">+添加新地址</a>
+                </div>
+            </div>
+            <div class="modal-footer center-block">
+                <!--<button type="button" id="qh_close_btn" class="btn btn-default " data-dismiss="modal">取消</button>-->
+                <button type="button" id="qh_sure_btn" class="btn btn-primary center-block">使用</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--添加地址模态框 address_modal-->
+<div class="modal fade" tabindex="-1" role="dialog" id="address_modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h5 class="modal-title">选择自取站点</h5>
+            </div>
+            <div class="modal-body" style="padding-bottom: 0">
+                <form class="form-horizontal" method="post" id="h_addressform">
+                    <div class="form-group">
+                        <label for="shoujianren" class="col-sm-2 control-label">收货人：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="shoujianren" id="shoujianren" placeholder="收货人姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_way" class="col-sm-2 control-label">联系方式：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control"  name="contact_way" id="contact_way" placeholder="收货人手机号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="city" class="col-sm-2 control-label">城市：</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="city" id="city">
+                                <option>成都</option>
+                                <option>上海</option>
+                                <option>广州</option>
+                                <option>深圳</option>
+                                <option>北京</option>
+                                <option>天津</option>
+                                <option>杭州</option>
+
+                            </select>                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="location" class="col-sm-2 control-label">位置：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="location" id="location" placeholder="路名/写字楼/小区">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Detailed_address" class="col-sm-2 control-label">详细地址：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Detailed_address" id="Detailed_address" placeholder="楼号/门牌号">
+                        </div>
+                    </div>
+                    <div class="form-group" id="h_morendress">
+                        <label for="default_address">
+
+                            <input type="checkbox" id="default_address" name="h_gxmoren" value="1">
+                            <span>设为默认地址</span>
+                            &nbsp;
+                            <i class="fa fa-square-o" aria-hidden="true"></i>
+                            <i class="fa fa-check-square" aria-hidden="true"></i>
+                        </label>
+                    </div>
+                </form>
+                <div class="text-left" id="input_prompt">
+                    请填写手机号
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="add_close_btn" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" id="add_sure_btn" class="btn btn-primary">使用</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--添加代金卡模态框 gold_modal-->
+<div class="modal fade" tabindex="-1" role="dialog" id="gold_modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h5 class="modal-title">添加代金卡</h5>
+            </div>
+            <div class="modal-body">
+                <div class="center-block">
+                    <form class="center-block">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="car_no" placeholder="代金卡号">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="car_pwd" placeholder="防伪编码">
+                        </div>
+
+                        <button type="button" class="btn btn-default" id="add_giftcard">添加</button>
+                        <span id="h_tishi">提示文字</span>
+                    </form>
+                    <p>
+                        同一订单只可使用一张代金卡，代金卡抵扣金额出订单部分作废处理，不兑换现金。
+                    </p>
+                    <span>
+                        注意：请妥善保管好您的尊享卡，以便配送员回收。
+                    </span>
+                    <div id="h_showgiftbox">
+                        <span>已添加的代金卡:</span>
+                        <span  id="h_showgift"></span>
+                        <span>（金额：<span id="h_giftmoney2"></span> 元）</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                <button type="button" id="gold_sure_btn" class="btn btn-primary center-block">使用</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--提示模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" id="prompt_modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                请输入优惠券号/尊享卡号
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="prompt_sure_btn" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--footer部分-->
+<%-include('footer.ejs')%>
+
+<script src="configuration/js/jquery-1.8.2.min.js"></script>
+<script src="configuration/bootstrap-3.3.5-dist/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="js/peisongxinxi.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

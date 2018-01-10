@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>优惠券</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/coupons.css">
+</head>
+<body>
+<%-include('nav.ejs')%>
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-10 couponsInf">
+            <p>我的优惠券</p>
+            <div class="row">
+                <div class="col-xs-12 text-right">
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#add">绑定优惠券</button>
+                </div>
+            </div>
+            <div class="row couponsTitle">
+                <div class="col-xs-4 text-center">
+                    优惠券号码
+                </div>
+                <div class=" col-xs-2 text-center">
+                    名称
+                </div>
+                <div class=" col-xs-2 text-center">
+                    有效期
+                </div>
+                <div class=" col-xs-4 text-center">
+                    状态
+                </div>
+            </div>
+            <div class="row couponsContent">
+                <%if(mydata==""){%>
+                    <div class="col-xs-12 text-center coupons">
+                        暂无优惠券
+                    </div>
+                <%}else{%>
+                    <%for(var i=0;i<mydata.length;i++){%>
+                        <div class="col-xs-12 text-center coupons">
+                            <div class="row">
+                                <div class="col-xs-4 text-center">
+                                    <%=mydata[i].voucher_id%>
+                                </div>
+                                <div class=" col-xs-2 text-center">
+                                    <%=mydata[i].voucher_name%>
+                                </div>
+                                <div class=" col-xs-2 text-center">
+                                    <%=mydata[i].voucher_time%>
+                                </div>
+                                <div class=" col-xs-4 text-center">
+                                    <%=mydata[i].voucher_status%>
+                                </div>
+                            </div>
+                        </div>
+                    <%}%>
+                <%}%>
+            </div>
+        </div>
+    </div>
+    <!--绑定优惠券号码 -->
+    <div class="modal fade bs-example-modal-sm" id="add" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"aria-hidden="true" data-backdrop="static" data-show="false">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close cancelAdd" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">绑定优惠券号码</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div>
+                            <label for="name">优惠券号码</label>
+                            <input type="text" class="addText form-control" id="name" placeholder="优惠券号码">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success addTo" data-dismiss="modal">确认绑定</button>
+                    <button type="button" class="btn btn-default cancelAdd" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<%-include('footer.ejs')%>
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="js/coupons.js"></script>
+</body>
+</html>

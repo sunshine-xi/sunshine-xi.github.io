@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>企业专区页面</title>
+
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="configuration/swiper/css/swiper.min.css"/>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/company.css"/>
+</head>
+<body>
+
+<%-include("nav.ejs")%>
+
+<div class="jiange"></div>
+<!--轮播图-->
+<section class="container-fluid">
+    <div class="row">
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="<%=bannerIMmg1%>" class="img-responsive" alt=""/>
+                </div>
+                <div class="swiper-slide">
+                    <a href="/giftdetailshow.do">
+                        <img src="<%=bannerIMmg2%>" class="img-responsive" alt=""/>
+                    </a>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </div>
+</section>
+<!--内容-->
+<section class="container">
+    <div class="row">
+        <div>
+            <img src="<%=companyImg1%>" class="img-responsive" alt=""/>
+        </div>
+    </div>
+</section>
+
+<!--详情-->
+<section class="container bus-model">
+    <div class="row">
+        <img src="<%=companyImg2%>" class="img-responsive Img-center" alt=""/>
+    </div>
+    <div class="row">
+        <a href="/giftdetailshow.do">
+            <img src="<%=companyImg3%>" class="img-responsive Img-center" alt=""/>
+        </a>
+    </div>
+</section>
+<!--联系我们-->
+<section class="container bus-model">
+    <div class="row">
+        <img src="<%=companyImg4%>" class="img-responsive Img-center" alt=""/>
+    </div>
+    <div class="row text-center">
+        <select id="City" onchange="changeCity()" class="cont-city" >
+            <option value="0">成都</option>
+            <option value="1">上海</option>
+            <option value="2">天津</option>
+            <option value="3">杭州</option>
+            <option value="4">苏州</option>
+        </select>
+    </div>
+    <div class="row text-center">
+        <div class="Phone ">联系电话：<span class="PhoneAear">021-6666666</span></div>
+        <div class="Email">联系邮箱：lucky@21cake.com</div>
+    </div>
+    <div class="row">
+        <div class="kongge"></div>
+    </div>
+</section>
+
+<div class="container bus-model">
+    <div class="row col-lg-12 line"></div>
+    <div class="row text-center">
+        <div class="col-lg-12 detail">
+            <a href="companydetail.do">
+                <h4 >企业免费试吃活动
+                    <!--<i class="glyphicon glyphicon-menu-right"></i>-->
+                </h4>
+                <!--<p>点击了解更多 <i class="glyphicon glyphicon-menu-right"></i></p>-->
+            </a>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center detail">
+                <p>因为工作忙碌，我们没有大把时间享受闲庭信步的悠然，</p>
+                <p>此时足够致命的诱惑下午茶就散发出巨大的魔力，</p>
+                <p>不仅为忙碌繁重的工作带来一丝放松的惬意，更为生活添加了色彩。</p>
+                <p>小幸运cake蛋糕免费试吃客，您公司的福利负责人知道吗？</p>
+                <p>快快告诉TA，为大家申请免费福利~！</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row kongge"></div>
+</div>
+
+<%-include("footer.ejs")%>
+
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/swiper/js/swiper.jquery.min.js"></script>
+<script src="js/company.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

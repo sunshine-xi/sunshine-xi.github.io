@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>ECalendar</title>
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<style media="screen">
+		body{padding:100px;font-size: 14px;}
+		h1{font-size: 26px;}
+		p{font-size: 14px; margin-top: 10px;}
+		pre{background:#eee;border:1px solid #ddd;border-left:4px solid #f60;padding:15px;margin-top: 15px;}
+		h2{font-size: 20px;margin-top: 20px;}
+		.case{margin-top: 15px}
+		.ECalendar{width:400px;height:30px;}
+	</style>
+</head>
+
+<body>
+	<h1>ECalendar 日历插件</h1>
+	<p>
+		多功能jQuery日期控件 ECalendar 提供了WEB时间日历选择趋近完美的解决方案。
+	</p>
+	<h2>引用文件：</h2>
+	<pre>
+&lt;link rel="stylesheet" href="css/style.css" /&gt;
+&lt;script src="js/jQuery-2.1.4.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/Ecalendar.jquery.min.js"&gt;&lt;/script&gt;</pre>
+
+	<h2>调用代码：</h2>
+	<pre>
+&lt;div class="calendarWarp"&gt;
+	&lt;input type="text" name="date" class='ECalendar' id="ECalendar_date"  value="2017-3-1 15:32"/&gt;
+&lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;
+	$(function(){
+		$("#ECalendar_date").ECalendar({
+			 type:"time",   //模式，time: 带时间选择; date: 不带时间选择;
+			 stamp : false,   //是否转成时间戳，默认true;
+			 offset:[0,2],   //弹框手动偏移量;
+			 format:"yyyy年mm月dd日",   //时间格式 默认 yyyy-mm-dd hh:ii;
+			 skin:3,   //皮肤颜色，默认随机，可选值：0-8,或者直接标注颜色值;
+			 step:10,   //选择时间分钟的精确度;
+			 callback:function(v,e){} //回调函数
+		});
+	})
+&lt;/script&gt;</pre>
+<h2>案例一：日期选择</h2>
+<div class="case">
+	<div class="calendarWarp" style="">
+		<input type="text" name="date" class='ECalendar' id="ECalendar_case1"	/>
+	</div>
+</div>
+<h2>案例二：日期时间</h2>
+<div class="case">
+	<div class="calendarWarp" style="">
+		<input type="text" name="date" class='ECalendar' id="ECalendar_case2"  value="2017-3-1 15:32"/>
+	</div>
+</div>
+<h2>案例三：回调函数</h2>
+<div class="case">
+	<div class="calendarWarp" style="">
+		<input type="text" name="date" class='ECalendar' id="ECalendar_case3"  value="2017-3-1 15:32"/>
+	</div>
+	<div class="callback">
+		您选择的时间是： <span></span>
+	</div>
+</div>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script src="js/Ecalendar.jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+				$("#ECalendar_case1").ECalendar({
+						 type:"date",
+						 skin:"#233",
+						 offset:[0,2]
+				});
+				$("#ECalendar_case2").ECalendar({
+						 type:"time",
+						 offset:[0,2]
+				});
+				$("#ECalendar_case3").ECalendar({
+						 type:"time",
+						 stamp:false,
+						 skin:5,
+						 format:"yyyy年mm月dd日 hh时ii分",
+						 callback:function(v,e)
+						 {
+							 $(".callback span").html(v)
+						 }
+				});
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>了解更多</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/more.css">
+    <link rel="stylesheet" href="configuration/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="configuration/bootstrap-datetimepicker.css">
+</head>
+<body>
+
+<%-include("nav.ejs")%>
+<section>
+    <div class="container-fluid" style="margin-top: 80px">
+        <div class="row">
+            <div class="col-lg-12">
+                <img src="images/header.png" class="img-responsive" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="middle_word">
+            <div class="kz">课程信息</div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <table class="table table-bordered" >
+                            <tr>
+                                <th class="text-center">时段</th>
+                                <th class="text-center">上课时间</th>
+                                <th class="text-center">星期一</th>
+                                <th class="text-center">星期二</th>
+                                <th class="text-center">星期三</th>
+                                <th class="text-center">星期四</th>
+                                <th class="text-center">星期五</th>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" style="line-height: 700%">上午</td>
+                                <td>9:00-9:50</td>
+                                <td>葡萄辫子制作</td>
+                                <td>多拿滋制作</td>
+                                <td>起酥克林姆制作</td>
+                                <td>丹麦手撕制作</td>
+                                <td>水果丹麦制作</td>
+                            </tr>
+                            <tr>
+                                <!--<td></td>-->
+                                <td>10:00-10:50</td>
+                                <td>披萨的制作</td>
+                                <td>多拿滋制作</td>
+                                <td>贝壳面包制作</td>
+                                <td>丹麦手撕制作</td>
+                                <td>香肠起酥制作</td>
+                            </tr>
+                            <tr>
+                                <!--<td></td>-->
+                                <td>11:00-11:50</td>
+                                <td>蓝莓面包卷制作</td>
+                                <td>多拿滋制作</td>
+                                <td>红豆起酥面包制作</td>
+                                <td>丹麦吐司制作</td>
+                                <td>芝士丹麦制作</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="7" style="background-color:white;"></td>
+                                <!--<td></td>-->
+                                <!--<td></td>-->
+                                <!--<td></td>-->
+                                <!--<td></td>-->
+                                <!--<td></td>-->
+                                <!--<td></td>-->
+                                <!--<td></td>-->
+                            </tr>
+                            <tr>
+                                <td rowspan="3" style="line-height: 700%">下午</td>
+                                <td>14:00-14:50</td>
+                                <td>火腿肉松演示</td>
+                                <td>酥皮制作</td>
+                                <td>可松牛角制作</td>
+                                <td>丹麦手撕练习</td>
+                                <td>水果丹麦练习</td>
+                            </tr>
+                            <tr>
+                                <!--<td></td>-->
+                                <td>15:00-15:50</td>
+                                <td>火腿肉松演示</td>
+                                <td>酥皮练习</td>
+                                <td>可松牛角制作</td>
+                                <td>丹麦手撕练习</td>
+                                <td>香肠起酥练习</td>
+                            </tr>
+                            <tr>
+                                <!--<td></td>-->
+                                <td>16:00-16:50</td>
+                                <td>麦穗演示</td>
+                                <td>酥皮练习</td>
+                                <td>可松牛角制作</td>
+                                <td>丹麦吐司练习</td>
+                                <td>芝士丹麦练习</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <section id="contact" class="scroll-section clearfix">
+                    <span class="dash-top"></span>
+                    <div class="contact-inner clearfix">
+                        <div class="bm">报名课程</div>
+                        <form >
+                            <div class="form-group" >
+                                <input type="text" class="form-control" id="name" placeholder="姓名">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" id="tel" placeholder="联系电话">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="text" placeholder="报名课程">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class='ECalendar form-control' id="ECalendar_date" placeholder="报名时间">
+                                <div style="float: right">
+                                    <a href="/mores.do" style="color:#BB9772">我的课程>></a>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-default " onclick="cakeShop()">提交</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+            <div class="middle_tel">
+                    <span class="middle_tel_word">
+                        咨询电话：400 820 8820（服务时间 08:00–22:00）<br />
+                        扫码关注官方微信，获取更多最新课程安排
+                    </span>
+            </div>
+            <div class="text-center" >
+                <img src="images/Qrcode.png" alt="">
+            </div>
+
+        </div>
+    </div>
+    <div class="container-fluid zz" style="background-color: #555555">
+        <div class="row">
+            <div class="col-xs-12 text-center" style="margin-top:50px;font-size: 18px;color: white">
+               学员作品展示
+            </div>
+        </div>
+        <div class="row" style="padding: 3%;">
+            <div class="col-lg-3 col-md-3 z2">
+                <img src="images/image1.png" class="thumbnail"  alt="">
+            </div>
+            <div class="col-lg-3 col-md-3 z3">
+                <!--芒果千层蛋糕-->
+                <img src="images/image2.png" class="thumbnail"  alt="">
+            </div>
+            <div class="col-lg-3 col-md-3 z4">
+                <!--草莓慕斯-->
+                <img src="images/image3.png" class="thumbnail"  alt="">
+            </div>
+            <div class="col-lg-3 col-md-3 z5">
+                <!--蛋黄酥-->
+                <img src="images/image4.png" class="thumbnail"  alt="">
+            </div>
+
+        </div>
+
+        <div class="row" style="padding: 3%;">
+            <div class="col-lg-3 col-md-3 z2">
+                <!--蔓越莓曲奇-->
+                <img src="images/image5.png" class="thumbnail"  alt="">
+            </div>
+            <div class="col-lg-3 col-md-3 z3">
+                <img src="images/image6.png" class="thumbnail"  alt="">
+            </div>
+            <div class="col-lg-3 col-md-3 z4">
+                <img src="images/image7.png" class="thumbnail"  alt="">
+            </div>
+            <div class="col-lg-3 col-md-3 z5">
+                <img src="images/image8.png" class="thumbnail"  alt="">
+            </div>
+        </div>
+
+        <div class="row" style="padding: 3%;">
+            <div class="col-lg-3 col-md-3 z2" style="">
+                <!--<a href="" class="thumbnail" >-->
+                <img src="images/image9.png"alt="" class="thumbnail">
+                <!--</a>-->
+            </div>
+            <div class="col-lg-3 col-md-3 z3">
+                <img src="images/image10.png" class="thumbnail" alt="">
+            </div>
+            <div class="col-lg-3 col-md-3 z4">
+                <img src="images/image11.png"  class="thumbnail" alt="">
+            </div>
+            <div class="col-lg-3 col-md-3 z5">
+                <img src="images/image12.png"  class="thumbnail" alt="">
+            </div>
+
+        </div>
+        <div class="row" style="padding: 3%;">
+
+            <div class="col-lg-3 col-md-3 z2">
+                <img src="images/image13.png" class="thumbnail"  alt="">
+            </div>
+            <div class="col-lg-3 col-md-3 z3">
+                <img src="images/image14.png" class="thumbnail"  alt="">
+            </div>
+            <div class="col-lg-3 col-md-3 z4">
+                <img src="images/image15.png" class="thumbnail"  alt="">
+            </div>
+            <div class="col-lg-3 col-md-3 z5">
+                <img src="images/image16.png" class="thumbnail"  alt="">
+            </div>
+        </div>
+
+    </div>
+</section>
+<%-include("footer.ejs")%>
+<!--登陆提示模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" id="prompt_modal" aria-hidden="true" data-backdrop="static" data-show="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                请登陆!
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="prompt_sure_btn" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/jquery-3.1.1.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
+
+<script>
+    $("#ECalendar_date").datetimepicker({
+        format: 'yyyy-mm-dd',
+        minView:'month',
+        language: 'zh-CN',
+        autoclose:true,
+        startDate:new Date()
+    });
+</script>
+<script type="text/javascript">
+    $("#prompt_sure_btn").click(function(){
+        window.location.href="/relogin.do";
+    });
+    function cakeShop(obj){
+        $.ajax({
+            type: "POST",
+            url: "notice.do",
+            data: {
+
+            },
+            success:function(data){
+                if(data==""){
+                    $("#prompt_modal").modal("show")
+                }else{
+                    if($("#name").val()!="" && $("#tel").val()!="" && $("#text").val()!="" && $("#ECalendar_date").val()!=""){
+                        $.ajax({
+                            url:'/tijiao.do',
+                            type:'POST',
+                            data: {
+                                u_name:$("#name").val(),
+                                u_tel:$("#tel").val(),
+                                u_text:$("#tel").val(),
+                                u_time:$("#ECalendar_date").val()
+                            },
+                            success:function(data){
+                                //成功之后操作
+                                window.location.href="/mores.do"
+                            }
+                        })
+                    }
+                    if($("#name").val()==""){
+                        $("#name").val("姓名不能为空").css("color", "red");
+                    }
+                    if($("#tel").val()==""){
+                        $("#tel").val("联系电话不能为空").css("color", "red");
+                    }
+                    if($("#text").val()==""){
+                        $("#text").val("报名课程不能为空").css("color", "red");
+                    }
+                    if($("#ECalendar_date").val()==""){
+                        $("#ECalendar_date").val("报名时间不能为空").css("color", "red");
+                    }
+                }
+            }
+        })
+    }
+    $("#name").focus(function(){
+        if($(this).val()=="姓名不能为空"){
+            $(this).val("").css("color","black");
+        }
+    });
+    $("#tel").focus(function(){
+        if($(this).val()=="联系电话不能为空"){
+            $(this).val("").css("color","black");
+        }
+    });
+    $("#text").focus(function(){
+        if($(this).val()=="报名课程不能为空"){
+            $(this).val("").css("color","black");
+        }
+    });
+    $("#ECalendar_date").focus(function(){
+        if($(this).val()=="报名时间不能为空"){
+            $(this).val("").css("color","black");
+        }
+    });
+</script>
+</body>
+</html>

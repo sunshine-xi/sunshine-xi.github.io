@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>体验子页面</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <!--<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>-->
+    <!--<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>-->
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/play.css">
+
+    <style>
+        .row{
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<%-include("nav.ejs")%>
+
+
+
+<div class="container-fluid" style="margin-top: 80px">
+    <div class="row">
+        <div class="video">
+            <video autoplay loop>
+                <source src="images/1/home_video_1.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div>
+            <div class="bg">
+                <a href="/more.do">
+                    <img src="images/1/word01.png" class="img-responsive center-block" alt="">
+                </a>
+
+            </div>
+        </div>
+
+        <div>
+            <div class="bg1">
+                <a href="/more1.do">
+                    <img src="images/1/word02.png" class="img-responsive center-block" alt="">
+                </a>
+            </div>
+        </div>
+
+        <div>
+            <div class="bg2">
+                <a href="/more2.do">
+                    <img src="images/1/word03.png" class="img-responsive center-block" alt="">
+                </a>
+
+            </div>
+        </div>
+
+        <!--<div>-->
+        <!--<div class="bg3">-->
+        <!--<a href="more.html">-->
+        <!--<img src="images/1/word04.png" class="img-responsive center-block" alt="">-->
+        <!--</a>-->
+
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+
+<%-include("footer.ejs")%>
+
+
+
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/jquery-3.1.1.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

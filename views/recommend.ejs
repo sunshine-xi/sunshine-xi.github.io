@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>商品推荐</title>
+
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/birthday.css"/>
+</head>
+<body>
+
+<%-include("nav.ejs")%>
+
+
+<div class="jiange"></div>
+<!--banner图-->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 birth-banner" >
+            <img src="images/banner.jpg" class="img-responsive" alt="精彩生活"/>
+        </div>
+    </div>
+</div>
+<!--内容区一-->
+<%for(var i= 0;i<mydata.length;i++){%>
+<section class="container-fluid birthbg">
+    <div class="row">
+        <div class="col-lg-5 col-lg-offset-1 text-center">
+            <a href="brhgoodss.do?name=<%=mydata[i].pro_orimg%>"><img src="<%=mydata[i].pro_orimg%>" class="img-responsive" alt=""/></a>
+        </div>
+        <div class="col-lg-4 col-lg-offset-1">
+            <div class="kongge"></div>
+            <a href="brhgoodss.do?name=<%=mydata[i].pro_orimg%>"><%=mydata[i].pro_descript%>
+                <br/>
+                <%=mydata[i].pro_descript1%>
+            </a>
+            <p><%=mydata[i].pro_descript2%>
+                <br/>
+                <%=mydata[i].pro_descript3%></p>
+            <h4>搭配组合</h4>
+            <div class="row xuxian"></div>
+            <div class="row birth-team">
+                <div class="col-lg-12 birthday-list">
+                    <ul>
+                        <li class="col-lg-3">
+                            <img src="images/icecream1.jpg" alt="方形蜡烛"/>
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="Productone" value="5" checked/>
+                                    <span>￥：5.00</span>
+                                </label>
+                            </p>
+                        </li>
+                        <li class="col-lg-3">
+                            <img src="images/icecream2.jpg" alt="设计师关灯许愿蜡烛"/>
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="Productone" value="60"/>
+                                    <span>￥：60.00</span>
+                                </label>
+                            </p>
+                        </li>
+                        <li class="col-lg-3">
+                            <img src="images/icecream3.jpg" alt="设计八音盒"/>
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="Productone" value="80"/>
+                                    <span>￥：80.00</span>
+                                </label>
+                            </p>
+                        </li>
+                        <li class="col-lg-3 " >
+                            <img src="images/box.jpg" alt="设计师光之沙漏时光"/>
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="Productone" value="99"/>
+                                    <span>￥：99.00</span>
+                                </label>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row birthday-btn">
+                    <p class="col-lg-6">
+                        组合价：￥
+                        <span class="first-price"><%=mydata[i].pro_price%></span>
+                        <!-&#45;&#45;-->
+                        <!--<span class="last-price"></span>-->
+                    </p>
+                    <button class="col-lg-2 col-lg-offset-1 bth-btn">加入购物车</button>
+                </div>
+            </div>
+            <div class="row birth-select">
+                <ul class="col-lg-12 birth-size">
+                    <p>
+                        请选择
+                        <span><%=mydata[i].pro_descript%></span>
+                        的商品规格:
+                    </p>
+                    <li>
+                        <input type="radio" name="w-name" value="0"/>
+                        <a href="" class="size-toggle"><span class="value">2.0磅</span></a>
+                    </li>
+                    <li>
+                        <input type="radio" name="w-name" value="200"/>
+                        <a href="" class="size-toggle"><span class="value">3.0磅</span></a>
+                    </li>
+                    <li>
+                        <input type="radio" name="w-name" value="300"/>
+                        <a href="" class="size-toggle"><span class="value">5.0磅</span></a>
+                    </li>
+                </ul>
+                <div class="row birthday-text">
+                    <p class="col-lg-4">
+                        组合价：￥
+                        <span><%=mydata[i].pro_price%></span>
+                    </p>
+                    <button type="button" class="bth-no col-lg-2 btn-giveup">取消</button>
+                    <div class="gouwu">
+                        <button type="button" class="bth-ok col-lg-2 col-lg-offset-1" onclick="cakeShop(this)">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row section-jiange"></div>
+        </div>
+        <div class="container-fluid hexian">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 birth-hx"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<%}%>
+
+<!--&lt;!&ndash;内容区二&ndash;&gt;-->
+<!--<section class="container-fluid birthbg">-->
+<!--<div class="row">-->
+<!--<div class="col-lg-4 col-lg-offset-2 text-center">-->
+<!--<a href="brhgoods.html"><img src="" class="img-responsive" alt="产品一"/></a>-->
+<!--</div>-->
+
+<!--<div class="col-lg-4 col-lg-offset-1">-->
+<!--<div class="kongge"></div>-->
+<!--<a href="brhgoods.html">Black and White Chocolate Mousse-->
+<!--<br/>-->
+<!--黑白巧克力慕斯-->
+<!--</a>-->
+<!--<p>/不仅可以选择口味和款式/-->
+<!--<br/>-->
+<!--/现在，黑白慕斯接受图案撒粉定制。/</p>-->
+<!--<h4>搭配组合</h4>-->
+<!--<div class="row xuxian"></div>-->
+<!--<div class="row birth-team">-->
+<!--<div class="col-lg-12 birthday-list">-->
+<!--<ul>-->
+<!--<li class="col-lg-2">-->
+<!--<img src="images/birthday4.jpg" alt="方形蜡烛"/>-->
+<!--<p>-->
+<!--<label>-->
+<!--<input type="checkbox" name="Productone" value="5" checked/>-->
+<!--<span>￥：5.00</span>-->
+<!--</label>-->
+<!--</p>-->
+<!--</li>-->
+<!--<li class="col-lg-2">-->
+<!--<img src="images/birthday5.jpg" alt="设计师关灯许愿蜡烛"/>-->
+<!--<p>-->
+<!--<label>-->
+<!--<input type="checkbox" name="Productone" value="60"/>-->
+<!--<span>￥：60.00</span>-->
+<!--</label>-->
+<!--</p>-->
+<!--</li>-->
+<!--<li class="col-lg-2">-->
+<!--<img src="images/birthday6.jpg" alt="设计八音盒"/>-->
+<!--<p>-->
+<!--<label>-->
+<!--<input type="checkbox" name="Productone" value="80"/>-->
+<!--<span>￥：80.00</span>-->
+<!--</label>-->
+<!--</p>-->
+<!--</li>-->
+<!--<li class="col-lg-2">-->
+<!--<img src="images/birthday7.jpg" alt="设计师光之沙漏时光"/>-->
+<!--<p>-->
+<!--<label>-->
+<!--<input type="checkbox" name="Productone" value="99"/>-->
+<!--<span>￥：99.00</span>-->
+<!--</label>-->
+<!--</p>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--<div class="row birthday-btn">-->
+<!--<p class="col-lg-6">-->
+<!--组合价：￥-->
+<!--<span class="first-price">450</span>-->
+<!--<!-&#45;&#45;&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="last-price"></span>&ndash;&gt;-->
+<!--</p>-->
+<!--<button class="col-lg-2 col-lg-offset-1 bth-btn">加入购物车</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="row birth-select">-->
+<!--<ul class="col-lg-12 birth-size">-->
+<!--<p>-->
+<!--请选择-->
+<!--<span>黑白巧克力慕斯</span>-->
+<!--的商品规格:-->
+<!--</p>-->
+<!--<li>-->
+<!--<input type="radio" name="w-name" value="398"/>-->
+<!--<a href="" class="size-toggle"><span class="value">2.0磅</span></a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<input type="radio" name="w-name" value="500"/>-->
+<!--<a href="" class="size-toggle"><span class="value">3.0磅</span></a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<input type="radio" name="w-name" value="600"/>-->
+<!--<a href="" class="size-toggle"><span class="value">5.0磅</span></a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<div class="row birthday-text">-->
+<!--<p class="col-lg-4">-->
+<!--组合价：￥-->
+<!--<span>450</span>-->
+<!--</p>-->
+<!--<button type="button" class="bth-no col-lg-2 btn-giveup">取消</button>-->
+<!--<button type="button" class="bth-ok col-lg-2 col-lg-offset-1">确定</button>-->
+
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="container">-->
+<!--<div class="row section-jiange"></div>-->
+<!--</div>-->
+<!--<div class="container-fluid hexian">-->
+<!--<div class="row">-->
+<!--<div class="col-lg-10 col-lg-offset-1 birth-hx"></div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</section>-->
+<!--&lt;!&ndash;内容区三&ndash;&gt;-->
+<!--<section class="container-fluid birthbg">-->
+<!--<div class="row">-->
+<!--<div class="col-lg-4 col-lg-offset-2 text-center">-->
+<!--<a href="/brhgoods.do"><img src="" class="img-responsive" alt="产品一"/></a>-->
+<!--</div>-->
+
+<!--<div class="col-lg-4 col-lg-offset-1">-->
+<!--<div class="kongge"></div>-->
+<!--<a href="/brhgoods.do">A Picture of Durian Grey-->
+<!--<br/>-->
+<!--榴莲飘飘-->
+<!--</a>-->
+<!--<p>/榴莲控的生日/-->
+<!--<br/>-->
+<!--/必须得吃到最好的榴莲奶油蛋糕。/</p>-->
+<!--<h4>搭配组合</h4>-->
+<!--<div class="row xuxian"></div>-->
+<!--<div class="row birth-team">-->
+<!--<div class="col-lg-12 birthday-list">-->
+<!--<ul>-->
+<!--<li class="col-lg-2">-->
+<!--<img src="images/birthday4.jpg" alt="方形蜡烛"/>-->
+<!--<p>-->
+<!--<label>-->
+<!--<input type="checkbox" name="Productone" value="5" checked/>-->
+<!--<span>￥：5.00</span>-->
+<!--</label>-->
+<!--</p>-->
+<!--</li>-->
+<!--<li class="col-lg-2">-->
+<!--<img src="images/birthday5.jpg" alt="设计师关灯许愿蜡烛"/>-->
+<!--<p>-->
+<!--<label>-->
+<!--<input type="checkbox" name="Productone" value="60"/>-->
+<!--<span>￥：60.00</span>-->
+<!--</label>-->
+<!--</p>-->
+<!--</li>-->
+<!--<li class="col-lg-2">-->
+<!--<img src="images/birthday6.jpg" alt="设计八音盒"/>-->
+<!--<p>-->
+<!--<label>-->
+<!--<input type="checkbox" name="Productone" value="80"/>-->
+<!--<span>￥：80.00</span>-->
+<!--</label>-->
+<!--</p>-->
+<!--</li>-->
+<!--<li class="col-lg-2">-->
+<!--<img src="images/birthday7.jpg" alt="设计师光之沙漏时光"/>-->
+<!--<p>-->
+<!--<label>-->
+<!--<input type="checkbox" name="Productone" value="99"/>-->
+<!--<span>￥：99.00</span>-->
+<!--</label>-->
+<!--</p>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--<div class="row birthday-btn">-->
+<!--<p class="col-lg-6">-->
+<!--组合价：￥-->
+<!--<span class="first-price">380</span>-->
+<!--<!-&#45;&#45;&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="last-price"></span>&ndash;&gt;-->
+<!--</p>-->
+<!--<button class="col-lg-2 col-lg-offset-1 bth-btn">加入购物车</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="row birth-select">-->
+<!--<ul class="col-lg-12 birth-size">-->
+<!--<p>-->
+<!--请选择-->
+<!--<span>榴莲飘飘</span>-->
+<!--的商品规格:-->
+<!--</p>-->
+<!--<li>-->
+<!--<input type="radio" name="w-name" value="398"/>-->
+<!--<a href="" class="size-toggle"><span class="value">2.0磅</span></a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<input type="radio" name="w-name" value="500"/>-->
+<!--<a href="" class="size-toggle"><span class="value">3.0磅</span></a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<input type="radio" name="w-name" value="600"/>-->
+<!--<a href="" class="size-toggle"><span class="value">5.0磅</span></a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<div class="row birthday-text">-->
+<!--<p class="col-lg-4">-->
+<!--组合价：￥-->
+<!--<span>380</span>-->
+<!--</p>-->
+<!--<button type="button" class="bth-no col-lg-2 btn-giveup">取消</button>-->
+<!--<button type="button" class="bth-ok col-lg-2 col-lg-offset-1">确定</button>-->
+
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="container">-->
+<!--<div class="row section-jiange"></div>-->
+<!--</div>-->
+<!--<div class="container-fluid hexian">-->
+<!--<div class="row">-->
+<!--<div class="col-lg-10 col-lg-offset-1 birth-hx"></div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</section>-->
+<!--&lt;!&ndash;内容区四&ndash;&gt;-->
+<!--<section class="container-fluid birthbg">-->
+<!--<div class="row">-->
+<!--<div class="col-lg-4 col-lg-offset-2 text-center">-->
+<!--<a href="brhgoods.html"><img src="" class="img-responsive" alt="产品一"/></a>-->
+<!--</div>-->
+
+<!--<div class="col-lg-4 col-lg-offset-1">-->
+<!--<div class="kongge"></div>-->
+<!--<a href="brhgoods.html">Jerry-->
+<!--<br/>-->
+<!--杰瑞-->
+<!--</a>-->
+<!--<p>/特殊造型、水焗芝士、不含酒/-->
+<!--<br/>-->
+<!--/它适合而不止于孩子。/</p>-->
+<!--<h4>搭配组合</h4>-->
+<!--<div class="row xuxian"></div>-->
+<!--<div class="row birth-team">-->
+<!--<div class="col-lg-12 birthday-list">-->
+<!--<ul>-->
+<!--<li class="col-lg-2">-->
+<!--<img src="images/birthday4.jpg" alt="方形蜡烛"/>-->
+<!--<p>-->
+<!--<label>-->
+<!--<input type="checkbox" name="Productone" value="5" checked/>-->
+<!--<span>￥：5.00</span>-->
+<!--</label>-->
+<!--</p>-->
+<!--</li>-->
+<!--<li class="col-lg-2">-->
+<!--<img src="images/birthday5.jpg" alt="设计师关灯许愿蜡烛"/>-->
+<!--<p>-->
+<!--<label>-->
+<!--<input type="checkbox" name="Productone" value="60"/>-->
+<!--<span>￥：60.00</span>-->
+<!--</label>-->
+<!--</p>-->
+<!--</li>-->
+<!--<li class="col-lg-2">-->
+<!--<img src="images/birthday6.jpg" alt="设计八音盒"/>-->
+<!--<p>-->
+<!--<label>-->
+<!--<input type="checkbox" name="Productone" value="80"/>-->
+<!--<span>￥：80.00</span>-->
+<!--</label>-->
+<!--</p>-->
+<!--</li>-->
+<!--<li class="col-lg-2">-->
+<!--<img src="images/birthday7.jpg" alt="设计师光之沙漏时光"/>-->
+<!--<p>-->
+<!--<label>-->
+<!--<input type="checkbox" name="Productone" value="99"/>-->
+<!--<span>￥：99.00</span>-->
+<!--</label>-->
+<!--</p>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--<div class="row birthday-btn">-->
+<!--<p class="col-lg-6">-->
+<!--组合价：￥-->
+<!--<span class="first-price">400</span>-->
+<!--<!-&#45;&#45;&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="last-price"></span>&ndash;&gt;-->
+<!--</p>-->
+<!--<button class="col-lg-2 col-lg-offset-1 bth-btn">加入购物车</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="row birth-select">-->
+<!--<ul class="col-lg-12 birth-size">-->
+<!--<p>-->
+<!--请选择-->
+<!--<span>杰瑞</span>-->
+<!--的商品规格:-->
+<!--</p>-->
+<!--<li>-->
+<!--<input type="radio" name="w-name" value="398"/>-->
+<!--<a href="" class="size-toggle"><span class="value">2.0磅</span></a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<input type="radio" name="w-name" value="500"/>-->
+<!--<a href="" class="size-toggle"><span class="value">3.0磅</span></a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<input type="radio" name="w-name" value="600"/>-->
+<!--<a href="" class="size-toggle"><span class="value">5.0磅</span></a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<div class="row birthday-text">-->
+<!--<p class="col-lg-4">-->
+<!--组合价：￥-->
+<!--<span>400</span>-->
+<!--</p>-->
+<!--<button type="button" class="bth-no col-lg-2 btn-giveup">取消</button>-->
+<!--<button type="button" class="bth-ok col-lg-2 col-lg-offset-1">确定</button>-->
+
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="container">-->
+<!--<div class="row section-jiange"></div>-->
+<!--</div>-->
+<!--<div class="container-fluid hexian">-->
+<!--<div class="row">-->
+<!--<div class="col-lg-10 col-lg-offset-1 birth-hx"></div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</section>-->
+<%-include("footer.ejs")%>
+<!--登陆提示模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" id="prompt_modal"aria-hidden="true" data-backdrop="static" data-show="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                请登陆!
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="prompt_sure_btn" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--js引入-->
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="js/recommend.js"></script>
+</body>
+</html>

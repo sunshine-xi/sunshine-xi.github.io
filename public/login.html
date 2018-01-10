@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top header">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!--缩小时的菜单栏-->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--logo图-->
+                <img src="images/logo.png" alt="" class="logoImg">
+            </div>
+            <div class="collapse navbar-collapse row" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav nav_left">
+                    <li>
+                        <a href="/index.do">
+                            首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/recommend.do">
+                            推荐
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/cake.do">
+                            蛋糕
+                        </a>
+                    </li>
+                    <li class="zone">
+                        <a href="/zone.do">
+                            专区
+                        </a>
+                        <ul class="zoneInfo">
+                            <li>
+                                <a href="/birthday.do">
+                                    生日专区
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company.do">
+                                    企业专区
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/teacherdesgin.do">
+                                    礼品专区
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/Creamtea.do">
+                            下午茶
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/customized.do">
+                            定制
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/baking.do">
+                            体验
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/periphery.do">
+                            周边
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/brandstory.do">
+                            品牌故事
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right hidden-sm hidden-md hidden-xs">
+                    <li class="app">APP下载
+                        <ul class="Qrcode">
+                            <li><img src="images/Qrcode.png" alt=""></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <select name="" id="address">
+                            <option value="成都">成都</option>
+                            <option value="北京">北京</option>
+                            <option value="上海">上海</option>
+                            <option value="天津">天津</option>
+                            <option value="杭州">杭州</option>
+                            <option value="苏州">苏州</option>
+                        </select>
+                    </li>
+                    <li class="navLogin">
+                        <span>
+                            <a href="login.html">登录</a>
+                        </span> /
+                        <span>
+                             <a href="registered.html">注册</a>
+                        </span>
+                    </li>
+                    <li>
+                        <a href="/gouwuche.do" style="position: relative">
+                            <i class="fa fa-cart-plus shoppingCart" aria-hidden="true"></i>
+                            <span class="num" style="position: absolute;top:-10px;background-color:#BA9978;color: white;display: inline-block;font-size:12px;padding: 0 5px">
+
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<section>
+    <!--账号密码登录-->
+    <div class="login pull-right">
+        <div class="loginTitle">
+            <span class="passportLogin">账号密码登录</span>
+            <span class="passportLoginTel">手机验证码登录</span>
+        </div>
+        <form class="form-horizontal" action="/login.do" method="post">
+            <div class="form-group">
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <input type="text" class="form-control" name="username" id="inputAccount" placeholder="请输入您的账号">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <input type="password" class="form-control" name="password" id="inputPassword" placeholder="输入密码">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-1 col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <button type="submit" class="btn_login">登录</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-1 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="checkbox">
+                        <i class="fa fa-square-o"></i> 记住密码
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 forgetPwd">
+                    <a href="/retrievePassword.do">
+                        忘记密码
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 registered">
+                    <a href="/registered.do">
+                        去注册
+                    </a>
+                </div>
+            </div>
+        </form>
+        <div class="row other">
+            <i class="col-xs-offset-1 col-lg-3 col-md-3 col-sm-3 col-xs-3"></i>
+            <span class="col-lg-4 col-md-4 col-sm-4 col-xs-4">其他登录方式</span>
+            <i class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></i>
+        </div>
+        <ul class="row">
+            <li class="col-xs-offset-2 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <i class="fa fa-weixin fa-2x section_bg"></i>
+            </li>
+            <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <i class="fa fa-weibo fa-2x section_bg"></i>
+            </li>
+            <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <i class="fa fa-qq fa-2x section_bg"></i>
+            </li>
+        </ul>
+    </div>
+    <!--手机验证码登录-->
+    <div class="loginTel pull-right">
+        <div class="loginTelTitle">
+            <span class="passportLogin">账号密码登录</span>
+            <span class="passportLoginTel">手机验证码登录</span>
+        </div>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <input type="text" class="form-control" id="inputTwoAccount" placeholder="请输入您的手机号码">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                    <input type="text" class="form-control" id="imgValidation" placeholder="请输入图片字符">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 passport">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <canvas id="canvas" width="120" height="40"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <i class="fa fa-refresh refresh" id="changeImg"></i>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                    <input type="text" class="form-control" id="infValidation" placeholder="短信验证码">
+                </div>
+                <div class="col-xs-offset-1 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                    <button class="btn btn-default" type="button" onclick="sendMsg()">获取短信验证码</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-1 col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <button type="button" class="btn_login checkTelLogin">登录</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-1 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="checkbox">
+                        <i class="fa fa-square-o" ></i> 记住密码
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 forgetPwd">
+                    <a href="retrievePassword.html">
+                        忘记密码
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 registered">
+                    <a href="registered.html">
+                        去注册
+                    </a>
+                </div>
+            </div>
+        </form>
+        <div class="row other">
+            <i class="col-xs-offset-1 col-lg-3 col-md-3 col-sm-3 col-xs-3"></i>
+            <span class="col-lg-4 col-md-4 col-sm-4 col-xs-4">其他登录方式</span>
+            <i class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></i>
+        </div>
+        <ul class="row">
+            <li class="col-xs-offset-2 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <i class="fa fa-weixin fa-2x section_bg"></i>
+            </li>
+            <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <i class="fa fa-weibo fa-2x section_bg"></i>
+            </li>
+            <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <i class="fa fa-qq fa-2x section_bg"></i>
+            </li>
+        </ul>
+    </div>
+</section>
+<footer class="container-fluid">
+    <div class="row">
+        <ul class="row">
+            <li class="col-xs-offset-1 col-xs-2 ">联系我们</li>
+            <li class="col-xs-2">订购帮助</li>
+            <li class="col-xs-2">企业合作</li>
+            <li class="col-xs-2">生产经营资质</li>
+            <li class="col-xs-2">公告专区</li>
+        </ul>
+        <ul class="row">
+            <li class="col-xs-12 col-sm-2 col-md-2 col-lg-2 col-sm-offset-3"><i class="fa fa-weixin fa-2x footer_bg"></i></li>
+            <li class="col-xs-12 col-sm-2 col-md-2 col-lg-2"><i class="fa fa-weibo fa-2x footer_bg"></i></li>
+            <li class="col-xs-12 col-sm-2 col-md-2 col-lg-2"><i class="fa fa-qq fa-2x footer_bg"></i></li>
+        </ul>
+        <p class="col-xs-12 text-center">订购专线：400 820 8820（服务时间 08:00–22:00）客服电话：021-6666666（全国） | lucky@small luckycake.com（邮箱）</p>
+        <p class="col-xs-12 text-center">网站注册公司名称: 成都小幸运食品有限公司 地址: 成都市小幸运经济技术开发区幸运二街5号院20号楼</p>
+        <p class="col-xs-12 hr"></p>
+        <p class="col-xs-12 text-center">Copyright© small lucky蛋糕官网商城 2007-2017, 版权所有 京ICP备14006254号-1</p>
+    </div>
+</footer>
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="configuration/js/jquery.cookie.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

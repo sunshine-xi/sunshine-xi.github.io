@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>设计师礼品专区页面</title>
+
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="configuration/swiper/css/swiper.min.css"/>-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/teacherdesgin.css"/>
+</head>
+<body>
+
+<%-include("nav.ejs")%>
+<div class="jiange"></div>
+<!--当前页面位置-->
+<section class="container">
+    <div class="row">
+        <div class="select-card col-lg-12">
+            <ol>
+                <li>分类：</li>
+                <li>全部分类</li>
+                <li class="active">礼品</li>
+            </ol>
+        </div>
+    </div>
+</section>
+<!--设计师商品展示区-->
+<section class="container">
+    <div class="row title">
+        <div class="tittle col-lg-12">
+            <div class="col-lg-5"></div>
+            <h4 class="col-lg-7">礼品
+                <span>设计师礼品专区</span>
+            </h4>
+        </div>
+    </div>
+    <div class="jiange"></div>
+    <div class="row">
+        <div class="col-lg-12 desgin">
+            <ul>
+                <%for(var i=0;i<mydata.length;i++){%>
+                <li class="col-lg-3 text-center">
+                    <a href="desgingift.do?name=<%=mydata[i].gift_img%>">
+                        <!--<img src="" alt=""/>-->
+                        <img src="<%=mydata[i].gift_img%>" class="img-responsive desginimg" alt=""/>
+                        <h5><%=mydata[i].gift_name%></h5>
+                        <span>￥<%=mydata[i].gift_price%>/个</span>
+                    </a>
+                    <div class="addGoods" onclick="cakeShop(this)">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                        加入购物车
+                    </div>
+                </li>
+                <%}%>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="kongge">
+        </div>
+    </div>
+</section>
+
+<%-include("footer.ejs")%>
+<!--登陆提示模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" id="prompt_modal" aria-hidden="true" data-backdrop="static" data-show="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                请登陆!
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="prompt_sure_btn" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<!--<script src="configuration/swiper/js/swiper.jquery.min.js"></script>-->
+<script src="js/techerdesgin.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

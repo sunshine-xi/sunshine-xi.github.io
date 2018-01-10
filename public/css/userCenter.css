@@ -1,0 +1,374 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    list-style: none;
+    text-decoration: none;
+}
+header{
+    margin-bottom: 100px;
+}
+/*头部*/
+.header{
+    height: 80px;
+    box-shadow: 1px 1px 5px 0 grey;
+    color: #684029;
+    background-color: #FFFFFF;
+}
+
+/*导航*/
+.nav{
+    padding-left: 20px;
+}
+/*左边导航*/
+.nav_left{
+    background-color: #FFFFFF;
+    height: 78px;
+    margin-top: 0;
+}
+.nav_left>li{
+    float: left;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    width: 60px;
+}
+.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>li>ul>li>a{
+    display: inline-block;
+    color: #684029;
+    padding: 0;
+}
+.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>ul>li>a:hover{
+    color: #BB9772;
+    text-decoration: none;
+}
+/*logo图片*/
+.logoImg{
+    height:80px;
+    margin-left: 2%;
+}
+/*专区*/
+.zone{
+    position:relative;
+}
+/*专区的子菜单*/
+.zoneInfo{
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    z-index: 999;
+    width: 100px;
+    border: 1px solid #EDEDED;
+    background-color: #FFFFFF;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s linear;
+}
+.zoneInfo>li{
+    height: 40px;
+    line-height: 40px;
+}
+.zone:hover .zoneInfo{
+    visibility: visible;
+    opacity: 1;
+}
+.zoneInfo>li:hover{
+    color: #684029;
+}
+/*右边导航*/
+.navbar-right>li:not(:nth-child(3)){
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    width: 80px;
+}
+.nav_left>li:hover,.navbar-right>li:not(:nth-child(3)):hover{
+    color: #BB9772;
+    cursor: pointer;
+}
+.navbar-right>li:nth-child(3)>span>a{
+    color: #684029;
+}
+.navbar-right>li:nth-child(3)>span>a:hover{
+    color: #BB9772;
+    text-decoration: none;
+}
+.navbar-right>li:nth-child(3)>span:hover{
+    color: #BB9772;
+    cursor: pointer;
+}
+/*地址下拉列表*/
+.navbar-right #address{
+    border: none;
+    background-color: rgba(0,0,0,0);
+}
+/*窗口缩小时的菜单栏*/
+.navbar-toggle{
+    margin-top: 20px;
+}
+/*app下载*/
+.app{
+    position: relative;
+}
+/*二维码*/
+.Qrcode{
+    position: absolute;
+    margin-left: -50px;
+    left: 50%;
+    margin-top: -10px;
+    z-index: 999;
+}
+.Qrcode>li>img{
+    width: 100px;
+    display: none;
+}
+.app:hover .Qrcode>li>img{
+    display: block;
+}
+.navbar-collapse.in{
+    height: 200px;
+}
+.navLogin{
+    padding: 0 10px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+.shoppingCart{
+    font-size: 18px;
+    margin-left: -10px;
+}
+section>.row>.userInf{
+    background-color: #F6F5F3;
+    height: 240px;
+}
+/*用户头像*/
+section>.row>.userInf>.headPortrait{
+    background-color: white;
+    height:110px ;
+    width:110px;
+    border-radius: 55px;
+    margin: 30px 0 0 20px;
+    position: relative;
+}
+section>.row>.userInf>.headPortrait>img{
+    width: 100px;
+    border-radius: 50px;
+    margin: 5px 10px 0 -10px;
+}
+/*个人信息*/
+section>.row>.userInf:first-child{
+    margin-left: 7%;
+    color: #988575;
+}
+/*用户信息*/
+section>.row>.userInf>.userManger{
+    margin-top:40px;
+    color: #988575;
+}
+section>.row>.userInf>.userManger>p>a{
+    color: #988575;
+}
+section>.row>.userInf>.userManger>p>a:hover{
+    /*color: #988575;*/
+    text-decoration: none;
+}
+section>.row>.userInf>.userManger>p>span,section>.row>.userInf>div>p>span,section>.row>.userInf>.userManger>p>span,section>.row>.userInf>div>p>span>a{
+    color: #FAAF3B;
+    margin-left: 10px;
+}
+section>.row>.userInf>.userManger>p>span,section>.row>.userInf>div>p>span>a:hover{
+    text-decoration: none;
+}
+/*果币*/
+section>.row>.userInf:nth-child(2){
+    margin-left: 30px;
+    color: #988575;
+}
+section>.row>.userInf:nth-child(2) i{
+    color: #5F4F4D;
+}
+section>.row>.userInf:nth-child(2) p{
+    margin: 30px 0;
+}
+section>.row>.userInf:nth-child(2) .cny{
+    background-color:#5F4F4D;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    padding: 0;
+    text-align: center;
+    color: white;
+    line-height: 30px;
+    margin-top: 40px ;
+}
+/*优惠券*/
+section>.row>.userInf:nth-child(2) .arch{
+   margin-top: 30px;
+}
+section>.row>.userInf:nth-child(2) .arch>p{
+    margin-top: 28px;
+}
+/*代金券*/
+section>.row>.userInf:nth-child(2) .vouchers{
+    margin-top: 40px ;
+}
+section>.row>.userInf:nth-child(2) .vouchers>p{
+    margin-top: 30px ;
+}
+/*会员中心*/
+section>.row:nth-child(2)>.userInf{
+    height:720px ;
+    margin-top: 30px;
+    width: 85.5%;
+}
+section>.row:nth-child(2)>.userInf a{
+     display: inline-block;
+     color: #684029;
+     padding: 0;
+}
+section>.row:nth-child(2)>.userInf a:hover{
+    color: #BB9772;
+    text-decoration: none;
+}
+section>.row:nth-child(2)>.userInf>.row>.memberCenter{
+    margin: 30px 0 10px;
+    font-size: 24px;
+    color: #684029;
+}
+
+section>.row:nth-child(2)>.userInf .firstStage,section>.row:nth-child(2)>.userInf .intermediate,section>.row:nth-child(2)>.userInf .senior,section>.row:nth-child(2)>.userInf .guest{
+    border: 1px solid #DDDAD8;
+    padding: 0;
+    margin: 30px 20px 0;
+    height: 270px;
+}
+/*会员享受的优惠*/
+section>.row:nth-child(2)>.userInf .firstStage>div:first-child,section>.row:nth-child(2)>.userInf .intermediate>div:first-child,section>.row:nth-child(2)>.userInf .senior>div:first-child,section>.row:nth-child(2)>.userInf .guest>div:first-child{
+    background-color: #A39591;
+    height: 68px;
+}
+.firstStage,.intermediate,.senior,.guest{
+    color: #988575;
+}
+.firstStage>div,.intermediate>div,.senior>div,.guest>div{
+    padding-top: 2px;
+}
+.firstStage>div>p,.intermediate>div>p,.senior>div>p,.guest>div>p{
+    color:white;
+}
+.firstStage>p,.intermediate>p,.senior>p,.guest>p{
+    margin-left: 30px;
+    line-height: 50px;
+}
+/*规则*/
+section .rules{
+    margin-top: 30px;
+}
+/*尾部*/
+footer{
+    background-color: #333333;
+}
+/*字体颜色*/
+footer .row{
+    color: white;
+}
+/*第一排ul*/
+footer .row ul:first-child{
+    margin: 50px 0;
+    /*width: 60%;*/
+    height: 30px;
+}
+footer .row ul:first-child>li{
+    /*width: 160px;*/
+    float: left;
+    text-align: center;
+}
+footer .row ul:first-child>li:not(:last-child){
+    border-right: 1px solid white;
+}
+/*第二排小图标*/
+footer .row ul:nth-child(2){
+    height: 50px;
+    margin: 0 0 50px;
+}
+footer .row ul:nth-child(2)>li{
+    /*width: 160px;*/
+    float: left;
+    text-align: center;
+}
+footer .row ul:nth-child(2)>li>.footer_bg{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: rgba(255,255,255,.1);
+    line-height: 50px;
+}
+/*分割线*/
+footer .hr{
+    border: 1px solid #616161;
+    margin-top: 30px;
+}
+footer .row p:last-child{
+    line-height: 50px;
+}
+.navLogin{
+    padding: 0 10px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+/*上传头像*/
+#headImg{
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
+    background-size: 100%;
+    border: none;
+    position: absolute;
+    opacity: 0;
+    top:-5px;
+    left: -5px;
+    z-index: 2;
+    cursor: pointer;
+}
+/*蒙版*/
+.masking{
+    height: 110px;
+    width: 110px;
+    position: absolute;
+    top:0 ;
+    left: 0 ;
+    border-radius: 55px;
+    line-height: 110px;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    background-color:rgba(0,0,0,.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
+}
+#headImg:hover+.masking{
+    opacity: 1;
+    visibility: visible;
+    transition: all .5s linear;
+    transform: scale(1);
+}
+.headImg{
+    height: 100px;
+    width: 100px;
+}
+#uploadImg{
+    border: none;
+    color: white;
+    background-color: #866A51;
+    width: 100px;
+    height: 30px;
+    border-radius: 3px;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    opacity: 0;
+ }

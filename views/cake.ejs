@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蛋糕</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/cake.css">
+</head>
+<body>
+<%-include('nav.ejs')%>
+<section>
+    <div class="content-box"><!--内容-->
+        <div class="pro-list"><!--口味分类-->
+            <dl class="cat-list">
+                <dt class="styleAll">分类 :</dt>
+                <dl>
+                    <dd class="eatStyle" onclick="choseSty(this)">全部分类</dd>
+                    <dd class="eatStyle" id="cccx" onclick="choseSty(this)">蛋糕</dd>
+                </dl>
+            </dl>
+            <dl class="tag-list">
+                <dt class="eatSty">口味 :</dt>
+                <dl>
+                    <dd class="sub-title eatStyle" onclick="choseSty(this)">全部口味</dd>
+                    <dd class="sub-tag1 eatStyle" onclick="choseSty(this)">乳脂奶油</dd>
+                    <dd class="sub-tag2 eatStyle" onclick="choseSty(this)">慕斯</dd>
+                    <dd class="sub-tag3 eatStyle" onclick="choseSty(this)">乳酪</dd>
+                    <dd class="sub-tag4 eatStyle" onclick="choseSty(this)">巧克力</dd>
+                    <dd class="sub-tag5 eatStyle" onclick="choseSty(this)">坚果</dd>
+                    <dd class="sub-tag6 eatStyle" onclick="choseSty(this)">水果</dd>
+                    <dd class="sub-tag7 eatStyle" onclick="choseSty(this)">含酒</dd>
+                    <dd class="sub-tag8 eatStyle" onclick="choseSty(this)">咖啡</dd>
+                    <dd class="sub-tag9 eatStyle" onclick="choseSty(this)">冰淇淋</dd>
+                </dl>
+            </dl>
+        </div>
+        <div class="pro-list-box"><!--中间分隔字-->
+            <div class="pro-list-title">
+                <h2>
+                    蛋糕
+                    <span>新鲜乳脂奶油蛋糕</span>
+                </h2>
+            </div>
+        </div>
+        <ul class="row pro-list-pr" id="allList"><!--蛋糕图片清单-->
+            <%for(var i=0;i<cake.length;i++){%>
+            <li class="list-goods-pr1 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12 animated">
+                <a href="/message.do?name=<%=cake[i].pro_img%>">
+                    <img src="<%=cake[i].pro_img%>" class="img-responsive" alt="">
+                    <h3 id="mesvalue">
+                        <span class="name"><%=cake[i].pro_name%></span>
+                        <p>¥<span class="price"><%=cake[i].pro_price%></span>磅</p>
+                    </h3>
+                </a>
+                <div class="pro-list-linkOne" onclick="cakeShop(this)">
+                    <img src="images/icon_08.png" alt="">
+                    加入购物车
+                </div>
+            </li>
+            <%}%>
+        </ul>
+        <div class="pro-list-box"><!--尾部分隔字-->
+            <div class="pro-list-titleTwo">
+                <h2>
+                    季节性下线
+                    <span>在合适的季节，吃恰当的食物</span>
+                </h2>
+            </div>
+        </div>
+        <ul class="row pro-list-pr"><!--售罄部分-->
+            <li class="list-goods-pr17 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第1幅蛋糕图片-->
+                <div class="bgColor">
+                    <a href="#"><span>已售罄</span></a>
+                </div>
+                <a href="#">
+                    <img src="images/3017.jpg" class="img-responsive" alt="芒果奶油蛋糕">
+                    <h3>
+                        芒果奶油蛋糕
+                        <span>¥198.00/2.0磅</span>
+                    </h3>
+                </a>
+                <a class="pro-list-link" role="button" onclick="notice()">
+                    <img src="images/icon_37.png" alt="">
+                    到货通知
+                </a>
+
+            </li>
+            <li class="list-goods-pr18 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第2幅蛋糕图片-->
+                <div class="bgColor">
+                    <a href="#"><span>已售罄</span></a>
+                </div>
+                <a href="#">
+                    <img src="images/3018.jpg" class="img-responsive" alt="慕斯">
+                    <h3>
+                        (撒粉约会)黑白巧克力慕斯
+                        <span>¥298.00/2.0磅</span>
+                    </h3>
+                </a>
+                <a class="pro-list-link" role="button" onclick="notice()">
+                    <img src="images/icon_37.png" alt="">
+                    到货通知
+                </a>
+
+            </li>
+            <li class="list-goods-pr19 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第3幅蛋糕图片-->
+                <div class="bgColor">
+                    <a href="#"><span>已售罄</span></a>
+                </div>
+                <a href="#">
+                    <img src="images/3019.jpg" class="img-responsive" alt="百香果">
+                    <h3>
+                        百香果乳酪慕斯蛋糕
+                        <span>¥268.00/2.0磅</span>
+                    </h3>
+                </a>
+                <a class="pro-list-link" role="button" onclick="notice()">
+                    <img src="images/icon_37.png" alt="">
+                    到货通知
+                </a>
+
+            </li>
+            <li class="list-goods-pr20 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第4幅蛋糕图片-->
+                <div class="bgColor">
+                    <a href="#"><span>已售罄</span></a>
+                </div>
+                <a href="">
+                    <img src="images/3020.jpg" class="img-responsive" alt="魔方">
+                    <h3>
+                        魔方
+                        <span>¥968.00/2.0磅</span>
+                    </h3>
+                </a>
+                <a class="pro-list-link" role="button" onclick="notice()">
+                    <img src="images/icon_37.png" alt="">
+                    到货通知
+                </a>
+
+            </li>
+            <li class="list-goods-pr21 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第5幅蛋糕图片-->
+                <div class="bgColor">
+                    <a href="#"><span>已售罄</span></a>
+                </div>
+                <a href="#">
+                    <img src="images/3021.jpg" class="img-responsive" alt="森林">
+                    <h3>
+                        奇幻森林
+                        <span>¥248.00/2.0磅</span>
+                    </h3>
+                </a>
+                <div class="checkSta"></div>
+                <a class="pro-list-link" role="button" onclick="notice()">
+                    <img src="images/icon_37.png" alt="">
+                    到货通知
+                </a>
+            </li>
+            <li class="list-goods-pr22 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第6幅蛋糕图片-->
+                <div class="bgColor">
+                    <a href="#"><span>已售罄</span></a>
+                </div>
+                <a href="#">
+                    <img src="images/3022.jpg" class="img-responsive" alt="花格">
+                    <h3>
+                        花格
+                        <span>¥298.00/2.0磅</span>
+                    </h3>
+                </a>
+                <a class="pro-list-link" role="button" onclick="notice()">
+                    <img src="images/icon_37.png" alt="">
+                    到货通知
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--成功提示模态框-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="notBox" aria-hidden="true" data-backdrop="static" data-show="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    通知成功！
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="prompt_sure_btn1" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                    <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--登陆提示模态框-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="prompt_modal" aria-hidden="true" data-backdrop="static" data-show="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    请登陆!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="prompt_sure_btn" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                    <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</section>
+<%-include('footer.ejs')%>
+<script src="configuration/js/jquery-1.10.2.min.js"></script>
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="js/ajax.js"></script>
+<script src="js/cake.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: 微软雅黑;
+}
+section{
+    color: #684029;
+}
+ul,li{
+    list-style: none;
+}
+/*a:hover{*/
+/*text-decoration: none;*/
+/*}*/
+/*===========banner图=========*/
+.backOne{
+
+}
+
+.slide{
+    /*background-color: #5cb85c;*/
+    height: 402px;
+    position: relative;
+}
+.slide1{
+    width: 100%;
+    height: 402px;
+    /*min-width: 980px;*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    text-align: center;
+}
+.backOne{
+    position: relative;
+    overflow: hidden;
+    background-image: url("../images/cake_banner.jpeg");
+    background-size: 100%;
+    /*display: inline-block;*/
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 4s linear;
+    transform: scale(1);
+}
+/*===========内容=========*/
+.content-box{
+    width: 88%;
+    margin: 0 auto;
+    background-color: #5cb85c;
+    /*height: 100px;*/
+}
+.pro-list-title{
+    font-size: 20px;
+    line-height: 40px;
+    margin-top: 10px;
+}
+.lauExplane{
+    font-size: 12px;
+    line-height: 2em;
+}
+.detail-price{
+    display: inline-block;
+    margin-top: 75px;
+    font-size: 18px;
+    /*margin-left: 100px;*/
+}
+/*=============左边板块=========*/
+.pro-details-left{
+    border-top: 2px solid #CECAC7;
+    margin-top: 5px;
+}
+.details-leftli>li{
+    float: left;
+    line-height: 80px;
+    margin: 50px 0;
+    height: 80px;
+    padding-right: 70px;
+    overflow: hidden;
+}
+.details-leftli{
+    border-bottom: 2px solid #CECAC7;
+}
+.details-leftli>li>img{
+    width: 80px;
+    height: 80px;
+}
+.details-distribution>li{
+    margin: 20px 0;
+}
+.distribution-sweet>img{
+    width: 30px;
+    height: 40px;
+}
+.dis{
+    margin-left: 15px;
+}
+.sweet-lau{
+    margin-left: 25px;
+}
+.sweetx{
+    margin-top: 20px;
+}
+/*==========右边部分==============*/
+.outer-box{
+    overflow: hidden;
+}
+.detail-img{
+    width: 300px;
+    height: 170px;
+}
+.outer-box-lau{
+    float: right;
+}
+.outer-box-lau img{
+    width: 25px;
+    height: 25px;
+}
+.outer-box-lau{
+    margin-right: 30px;
+    /*margin-top: 40px;*/
+}
+.outer-box-lau li{
+    margin: 10px 0;
+}
+.outer-box-img{
+    margin-top: 20px;
+}
+.inputGroup{
+    overflow: hidden;
+}
+.pro-details-right{
+    margin-top: 5px;
+    border-top: 2px solid #CECAC7;
+}
+dl>dt,dd>ul>li{
+    float: left;
+}
+/*dd>ul>li>input{*/
+/*background-color: white;*/
+/*padding: 3px 10px;*/
+/*margin: 0 10px;*/
+/*border: 1px solid #E7E0DD;*/
+/*}*/
+dt{
+    display: inline-block;
+    font-weight: normal;
+    /*float: left;*/
+    margin-top: 10px;
+}
+.inGro>li>button{
+    padding: 3px 10px;
+    background-color: white;
+    border: 1px solid #E7E0DD;
+    margin: 5px 7px;
+}
+.inGro>li:last-child>button{
+    padding: 3px 0;
+}
+dl{
+    margin-top: 20px;
+}
+/*==========购物按钮=======*/
+.btnList{
+    margin-top: 80px;
+}
+.btnList-notice{
+    background-color: white;
+    border: none;
+    height: 40px;
+}
+.btnList-notice>img{
+    width: 20px;
+    height: 25px;
+    margin-right: 5px;
+}
+/*=============页脚banner图=========*/
+.lastOne-part1{
+    margin-top: 5px;
+    border-top: 2px solid #CECAC7;
+}
+.lastOne-lau1{
+    display: inline-block;
+    margin-top: 10px;
+}
+/*=============页脚详情描述=========*/
+table{
+    width: 40%;
+    margin-left: 20px;
+}
+td{
+    line-height: 25px;
+}
+ol>li{
+    margin: 5px 0;
+}
+.last-part2{
+    border-top: 1px solid #CECAC7;
+    margin-top: 10px;
+}
+.farway{
+    height: 20px;
+}
+.pro-list-pr{
+    width: 100%;
+    /*background-color: #0f0f0f;*/
+}
+.pro-list-su img{
+    height: 246px;
+    width: 228px;
+    margin: 0 auto;
+}
+.pro-list-su{
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    /*height: 400px;*/
+}
+h4{
+    padding-bottom: 15px;
+    border-bottom: 2px solid #CECAC7;
+}

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>申请单</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/success.css"/>
+    <link rel="stylesheet" href="css/nav.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+</head>
+<body>
+<%-include("nav.ejs")%>
+<div class="jiange"></div>
+<section class="container">
+    <div class="row form-head">
+        <h4 class="tittle col-lg-12 text-center">
+            <span class="bot-line">信息确认</span>
+        </h4>
+    </div>
+    <div class="row form-section">
+        <div class="row">
+            <p class="col-lg-3"><i class="fa fa-handshake-o" aria-hidden="true"></i><span>  企业名称：</span> </p>
+            <p class="col-lg-4"><%=companyId%></p>
+        </div >
+        <div class="row">
+            <p class="col-lg-3"><i class="fa fa-user" aria-hidden="true"></i><span> &nbsp;&nbsp;试吃数量：</span></p>
+            <p class="col-lg-3"><%=companyNum%></p>
+        </div>
+        <div class="row">
+        <p class="col-lg-3"><i class="fa fa-address-card-o" aria-hidden="true"></i><span> 所在城市：</span></p>
+        <p class="col-lg-3"><%=companyCity%></p>
+        </div>
+        <div class="row">
+            <p class="col-lg-3"><i class="fa fa-address-card-o" aria-hidden="true"></i><span>  详细地址：</span></p>
+            <p class="col-lg-3"><%=companyAddress%></p>
+        </div>
+        <div class="row">
+            <p class="col-lg-3"><i class="fa fa-id-card-o" aria-hidden="true"></i><span>  申请人姓名：</span></p>
+            <p class="col-lg-3"><%=bookname%></p>
+        </div>
+        <div class="row">
+            <p class="col-lg-3"><i class="fa fa-mobile " aria-hidden="true"></i><span> &nbsp;&nbsp; 申请人电话：</span></p>
+            <p class="col-lg-3"><%=bookphone%></p>
+        </div>
+        <div class="row">
+            <p class="col-lg-3"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>&nbsp;邮箱：</span></p>
+            <p class="col-lg-3"><%=bookemail%></p>
+        </div>
+        <div class="row">
+            <p class="col-lg-3"><i class="fa fa-comments-o" aria-hidden="true"></i><span> &nbsp;留言信息：</span></p>
+            <p class="col-lg-3"><%=message%></p>
+        </div>
+        <div class="row">
+            <ul class="tipple">
+                <li class="col-lg-12">小提示：</li>
+                <li class="col-lg-12">信息确认后，小幸运cake会统一进行汇总，并蓝卡cake会统一进行汇总，并电话联系预约人确认相关信息以便确认是否申请成功。</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container btn">
+        <div class="row">
+            <div class="col-lg-6"><a href="/companymessage.do">
+                    <button type="button" class="btn give-up">修改</button>
+                </a></div>
+            <div class="col-lg-6">
+                <a href="#">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn  que-ren" data-toggle="modal" data-target="#myModal">
+                        确认
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                                    <h4 class="modal-title text-center" id="myModalLabel">申请成功</h4>
+                                </div>
+                                <div class="modal-body text-center">
+                                 小幸运CAKE会尽快联系您！
+                                </div>
+                                <div class="modal-footer">
+                                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                                    <a href="/apppp.do"><button type="button" class="btn btn-primary">确认</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<div class="jiange"></div>
+
+<%-include("footer.ejs")%>
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/jquery-3.1.1.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="js/success.js"></script>
+</body>
+</html>

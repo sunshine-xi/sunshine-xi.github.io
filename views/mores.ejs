@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>了解更多</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="configuration/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.css"/>
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/more.css">
+</head>
+<body>
+<%-include("nav.ejs")%>
+<section>
+    <div class="middle" style="margin-top: 100px">
+        <div class="middle_word">
+            <div class="kz">我的课程</div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <table class="table table-bordered" >
+                            <tr>
+                                <th class="text-center">姓名</th>
+                                <th class="text-center">联系电话</th>
+                                <th class="text-center">报名课程</th>
+                                <th class="text-center">报名时间</th>
+                            </tr>
+                            <%if(mydata.length==0){%>
+                            <tr>
+                                <td colspan="4">
+                                    暂无课程
+                                </td>
+                            </tr>
+                            <%}else{%>
+                            <%for(var i=0;i<mydata.length;i++){%>
+                            <tr>
+                                <td><%=mydata[i].k_name%></td>
+                                <td><%=mydata[i].k_tel%></td>
+                                <td><%=mydata[i].k_kcname%></td>
+                                <td><%=mydata[i].k_time%></td>
+                            </tr>
+                            <%}%>
+                            <%}%>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="middle_tel">
+                    <span class="middle_tel_word">
+                        咨询电话：400 820 8820（服务时间 08:00–22:00）<br />
+                        扫码关注官方微信，获取更多最新课程安排
+                    </span>
+            </div>
+            <div class="text-center" >
+                <img src="images/Qrcode.png" alt="">
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<%-include("footer.ejs")%>
+
+
+
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/jquery-3.1.1.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        $.getJSON('/mores.do',function (data) {
+            $("tbody").empty();
+            console.log(data);
+        })
+    });
+</script>
+
+</body>
+</html>

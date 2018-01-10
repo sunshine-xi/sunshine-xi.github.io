@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>生日专区商品详情</title>
+
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/brhgoods.css"/>
+</head>
+<body>
+<%-include("nav.ejs")%>
+<div class="jiange"></div>
+<!--banner 图-->
+<section class="container-fluid">
+    <div class="row">
+        <div class="bir-banner">
+            <!--<div class="goods-detail">-->
+                <img src="<%=bannerImg%>" class="goods-detail" alt=""/>
+            <!--</div>-->
+        </div>
+    </div>
+</section>
+<!--产品详情内容-->
+<section class="container">
+    <div class="row">
+        <h2 class="col-lg-12"><%=ms1%></h2>
+    </div>
+    <div class="row goods-tittle">
+        <div class="col-lg-6">
+            <p><%=ms2%></p>
+            <p><%=ms3%></p>
+            <p><%=ms4%></p>
+        </div>
+        <div class="col-lg-6">
+            <span class="price">￥<%=bprice%>/2磅</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <ul class="product-detail">
+                <li>
+                    <img src="<%=img8%>" class="product-detail-img " alt=""/>
+                    <span><%=ourdata[0].pro_simg_one_desc%></span>
+                </li>
+                <li>
+                    <img src="<%=img9%>"  class="product-detail-img img-detail" alt=""/>
+                    <span><%=ourdata[0].pro_simg_two_desc%></span>
+                </li>
+                <li>
+                    <img src="<%=img10%>" class="product-detail-img" alt=""/>
+                    <span><%=ourdata[0].pro_simg_icon2_desc%></span>
+                </li>
+            </ul>
+            <div class="clean"></div>
+            <ul class="product-detail">
+                <li>
+                    <img src="images/sweet.png" class="product-detail-img2" alt=""/>
+                    <span>参考甜度：</span>
+                    <i><img src="images/sweet_02.png" alt=""/></i>
+                    <i><img src="images/sweet_02.png" alt=""/></i>
+                    <i><img src="images/sweet_02.png" alt=""/></i>
+                    <i><img src="images/sweet_02.png" alt=""/></i>
+                </li>
+                <li>
+                    <img src="images/icon1.png" class="product-detail-img2" alt=""/>
+                    <span>配送时间：</span>
+                    <span>现在订购最早<span class="now-time"></span>配送，每日最晚配送时间21:30</span>
+                </li>
+                <li>
+                    <img src="images/icon2.png" class="product-detail-img2" alt=""/>
+                    <span>保鲜时间：</span>
+                    <span>0－4℃保藏10小时，5℃食用为佳</span>
+                </li>
+                <li>
+                    <img src="images/icon3.png" class="product-detail-img2" alt=""/>
+                    <span>标准配件：</span>
+                    <span>含标配餐具，可添加巧克力生日牌，不含蜡烛</span>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-6 right-line">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="images/2.00P-full-17.00.jpg" class="product-detail-right-img" alt=""/>
+                </div>
+                <div class="col-lg-6 product-detail-right">
+                    <ul>
+                        <li>
+                            <img src="images/icon4.png" alt=""/>
+                            <span>17~17cm</span>
+                        </li>
+                        <li>
+                            <img src="images/icon5.png" alt=""/>
+                            <span>适合7-8人分享</span>
+                        </li>
+                        <li>
+                            <img src="images/icon6.png" alt=""/>
+                            <span>含10套餐具</span>
+                        </li>
+                        <li>
+                            <img src="images/icon7.png" alt=""/>
+                            <span>需提前6小时预订</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="product-detail-right-price">
+                    <ul class="right-size">
+                        <p>
+                            请选择
+                            <span><%=ms5%></span>
+                            的商品规格:
+                        </p>
+                        <%for(var i=0;i<mydata.length;i++){%>
+                        <%if(mydata[i].ps_name==2.0){%>
+                        <li>
+                            <input type="radio" name="w-name" value="<%=mydata[i].ps_price%>" class="yin-chang"/>
+                            <a href="" class="size-toggle current">
+                                <span class="value"><%=mydata[i].ps_name%>磅</span></a>
+                        </li>
+                        <%}else{%>
+                        <li>
+                            <input type="radio" name="w-name" value="<%=mydata[i].ps_price%>" class="yin-chang"/>
+                            <a href="" class="size-toggle ">
+                                <span class="value"><%=mydata[i].ps_name%>磅</span></a>
+                        </li>
+                        <%}%>
+                        <%}%>
+                        <li>
+                            <input type="radio" name="w-name" value="0" class="yin-chang"/>
+                            <a href="" class="size-toggle"><span class="value">更多磅数</span></a>
+                        </li>
+                        <!--<li>-->
+                            <!--<input type="radio" name="w-name" value="600" class="yin-chang"/>-->
+                            <!--<a href="" class="size-toggle "><span class="value">2.0磅</span></a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<input type="radio" name="w-name" value="600" class="yin-chang"/>-->
+                            <!--<a href="" class="size-toggle"><span class="value">3.0磅</span></a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<input type="radio" name="w-name" value="600" class="yin-chang"/>-->
+                            <!--<a href="" class="size-toggle">-->
+                                <!--<span class="value">5.0磅</span>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<input type="radio" name="w-name" value="600" class="yin-chang"/>-->
+                            <!--<a href="" class="size-toggle"><span class="value">更多磅数</span></a>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="row kongge"></div>
+            <div class="row ">
+                <div class="col-lg-5">
+                    <div class="gouwu">
+                        <button class="btn-give-up" onclick="shop(this)">立即购买</button>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-lg-offset-1 show">
+                    <div class="shoppingDo">
+                        <p>成功加入购物车</p>
+                        <a href="/gouwuche.do">
+                            <div class="chakan">查看购物车</div>
+                        </a>
+                    </div>
+                    <button class="btn-que-ren" onclick="cakeShop(this)">加入购物车</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row">
+        <div class="col-lg-6 bottom-line"></div>
+        <div class="col-lg-6 bottom-line"></div>
+    </div>
+</section>
+<!--组合套餐-->
+<section class="container">
+    <div class="row">
+        <div>
+            <span class="Team-zhuhe">
+                <span class="Team-zhuhe-text">组合套餐</span>
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 Team-zhuhe-img">
+            <div class="Team">
+                <img src="<%=simg2%>" alt="" class="imgban"/>
+                <p class="row text-center"><%=ms5%></p>
+                <input type="text" name="T-price" value="<%=bprice%>"/>
+                <span class="Team-first-price">￥<%=bprice%>/2.0磅</span>
+                <!--<span>-</span>-->
+                <!--<span>￥968.00</span>-->
+            </div>
+            <div class="Team">
+                <span class="jiahao"><i class="fa fa-plus " aria-hidden="true"></i></span>
+            </div>
+            <div class="Team">
+                <a href="/teamdetail.do">
+                    <img src="<%=simg3%>" alt=""/>
+                    <p class="row text-center">Latte Gelato 拿铁冰淇淋</p>
+                </a>
+                <input type="text" name="T-price" value="39.00"/>
+                <span class="Team-price">￥39.00/盒</span>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-3">
+            <div class="Team-btn">
+                <h4>组合价：￥<span></span>/2.0磅</h4>
+                <span class="yuanjia">原价:￥489</span>
+            </div>
+            <div class="gouwu">
+                <button class="btn-team-price" onclick="teamShop(this)">加入购物车</button>
+            </div>
+        </div>
+    </div>
+    <div class="row bottom-line"></div>
+</section>
+<!--图片展示-->
+<section class="container">
+    <div class="row">
+        <div class="picture-view">
+            <img src="<%=img1%>" class="img-responsive" alt=""/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="picture-view">
+            <img src="<%=img2%>" class="img-responsive" alt=""/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="picture-view">
+            <img src="<%=img3%>" class="img-responsive" alt=""/>
+        </div>
+    </div>
+    <div class="row bottom-line-two"></div>
+    <div class="row bottom-line-two"></div>
+</section>
+
+<section class="container">
+    <div class="row Lip-text">
+        <span>小提示：</span>
+        <ul>
+            <li>
+                1、蛋糕规格及免费配送餐具 ：
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>1.0磅：约13×13(cm)</td>
+                        <td>适合3-4人食用  </td>
+                        <td> &nbsp;&nbsp;&nbsp; 免费配送5套餐具  </td>
+                    </tr>
+                    <tr>
+                        <td>2.0磅：约17×17(cm)</td>
+                        <td>适合7-8人食用</td>
+                        <td> &nbsp; &nbsp;&nbsp;免费配送10套餐具</td>
+                    </tr>
+                    <tr>
+                        <td>3.0磅：约23×23(cm)</td>
+                        <td>适合11-12人食用</td>
+                        <td>免费配送15套餐具</td>
+                    </tr>
+                    <tr>
+                        <td>5.0磅：约30×30(cm)</td>
+                        <td>适合15-20人食用</td>
+                        <td>免费配送20套餐具</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p>订购5磅及5磅以上规格的蛋糕，请与客服人员联系，订购电话：400 650 2121</p>
+            </li>
+            <li>2、蛋糕在收到后2-3小时内食用为佳。</li>
+            <li>3、如对上述食材有过敏经历者，请选择其它款蛋糕。</li>
+            <li>4、玫瑰花瓣经过消毒处理，仅用作装饰，不建议食用。夹层玫瑰酱中少量块状物为可食玫瑰花瓣。</li>
+            <li>5、因生产工艺需要，可食用玫瑰蜜饯被切分，均匀分布于慕斯夹心中，丰富口感。</li>
+            <li>6、以上图片仅供参考，请以收到实物为准。</li>
+        </ul>
+    </div>
+</section>
+
+<!--推荐-->
+<section class="container">
+    <div class="row">
+        <div class="col-lg-12 googs-tuijian">
+            <h4>商品推荐</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="goods-view">
+                <li>
+                    <a href="tjgoods.do?name1=<%=img4%>"><img src="<%=img4%>" alt=""/></a>
+                </li>
+                <li>
+                    <a href="tjgoods.do?name1=<%=img5%>"><img src="<%=img5%>" alt=""/></a>
+                </li>
+                <li>
+                    <a href="tjgoods.do?name1=<%=img6%>"><img src="<%=img6%>" alt=""/></a>
+                </li>
+                <li>
+                    <a href="tjgoods.do?name1=<%=img7%>"><img src="<%=img7%>" alt=""/></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<%-include("footer.ejs")%>
+<!--登陆提示模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" id="prompt_modal" aria-hidden="true" data-backdrop="static" data-show="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                请登陆!
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="prompt_sure_btn" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="js/brhgoods.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

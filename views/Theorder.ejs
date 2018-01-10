@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>订单详情</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/Theorder.css">
+</head>
+<body>
+
+<%-include("nav.ejs")%>
+
+<section>
+    <div class="container-fluid" style="margin-top: 80px">
+        <%if(mydata1==""){%>
+        <div class="row">
+            <!--<div class="col-lg-2"></div>-->
+            <div class="col-lg-offset-2 col-lg-8 col-md-8 col-sm-8">
+                <h4>订单信息</h4>
+                <div class="d1">
+                    <p>
+                        <em>订单编号:</em>
+                        <span><%=mydata[0].final_orderid%></span>
+                    </p>
+                    <p>
+                        <em>订单金额:</em>
+                        <span>￥<%=mydata[0].totalmoney%></span>
+                    </p>
+                    <p>
+                        <em>订单详情:</em>
+                        <span>
+                            <%if(mydata[0].finalorder_status==0){%>
+                            加入购物车
+                            <%}%>
+                            <%if(mydata[0].finalorder_status==1){%>
+                            待支付
+                            <%}%>
+                            <%if(mydata[0].finalorder_status==2){%>
+                            已完成
+                            <%}%>
+                        </span>
+                    </p>
+                </div>
+
+                <h4>订单状态详情</h4>
+                <div class="d2">
+                    <p>
+                        <em>时间：</em>
+                        <span>
+                            <%=mydata[0].order_time%>
+                        </span>
+                    </p>
+                    <p>
+                        <em>状态：</em>
+                        <span>
+                            <%if(mydata[0].finalorder_status==0){%>
+                            加入购物车
+                            <%}%>
+                            <%if(mydata[0].finalorder_status==1){%>
+                            待支付
+                            <%}%>
+                            <%if(mydata[0].finalorder_status==2){%>
+                            已完成
+                            <%}%>
+                        </span>
+                    </p>
+                </div>
+
+                <h4>收货信息</h4>
+                <div class="d3">
+                    <!--<p>-->
+                    <!--<em>收货地区:</em>-->
+                    <!--<span>成都</span>-->
+                    <!--</p>-->
+                    <p>
+                        <em>收货地址:</em>
+                        <span><%=mydata[0].userdress%></span>
+                    </p>
+                    <p>
+                        <em>收货人姓名:</em>
+                        <span><%=mydata[0].username%></span>
+                    </p>
+                </div>
+
+                <h4>配送方式</h4>
+                <div class="d4">
+                    <p>
+                        <em>配送方式:</em>
+                        <span>
+                            <%if(mydata[0].Indistribution==1){%>
+                                Small lucky 配送
+                            <%}else{%>
+                                站点自取
+                            <%}%>
+                        </span>
+                    </p>
+                    <p>
+                        <em>配送时间:</em>
+                        <span><%=mydata[0].sendtime%></span>
+                    </p>
+                    <p>
+                        <em>运费:</em>
+                        <span>￥12.00</span>
+                    </p>
+                </div>
+                <h4>支付方式</h4>
+                <div class="d5">
+                    <p>
+                        <em>支付方式:</em>
+                        <span><%=mydata[0].payway%></span>
+                    </p>
+                </div>
+                <table class="table" style="margin-top: 40px">
+                    <tbody>
+                    <tr>
+                        <th>商品</th>
+                        <th class="text-center">销售价</th>
+                        <th class="text-center">数量</th>
+                        <th class="text-center">生日牌</th>
+                        <th class="text-center">优惠金额</th>
+                        <th class="text-center">小计</th>
+                    </tr>
+                    <%for(var i=0;i<mydata.length;i++){%>
+                    <tr>
+                        <td>
+                            <a href="" style="text-decoration: none">
+                                <div>
+                                <span style="float: left">
+                                        <img src="<%=mydata[i].pro_orimg%>"  class="img" alt="">
+                                </span>
+                                    <span style="font-size: 12px"><%=mydata[i].pro_name%>
+                                        <br>
+                                    <span class="bp">标配</span>
+                                    "餐具套装10套"
+                                </span>
+
+                                </div>
+                            </a>
+                        </td>
+                        <td  class="text-center">￥<%=mydata[i].pro_price%></td>
+                        <td  class="text-center"><%=mydata[i].order_num%></td>
+                        <td  class="text-center">
+                            <%if(mydata[i].order_birth_card=="选择生日牌"){%>
+                                Happy Birthday!
+                            <%}else {%>
+                                <%=mydata[i].order_birth_card%></td>
+                            <%}%>
+                        <td  class="text-center"><%=mydata[i].youhuimoney%></td>
+                        <td  class="text-center">￥<%=mydata[i].order_total%>.00</td>
+                    </tr>
+                    <%}%>
+                    </tbody>
+                </table>
+                <div style="font-size: 12px">
+                    <em>订单留言:</em>
+                    <span style="width: 250px;display: inline-block;vertical-align: top"><%=mydata[0].message%></span>
+                </div>
+
+                <div style="float: right" class="wb">
+                    <p>
+                        <em>商品金额:</em>
+                        <b>
+                            <%if(mydata[0].totalmoney<300){%>
+                            ￥<%=Number(mydata[0].totalmoney)-12%>.00
+                            <%}else{%>
+                            ￥<%=Number(mydata[0].totalmoney)%>.00
+                            <%}%>
+                        </b>
+                    </p>
+                    <p>
+                        <em>配送费:</em>
+                        <b>
+                            <span>
+                                <%if(mydata[0].totalmoney<300){%>
+                                ￥12.00
+                                <%}else{%>
+                                ￥0.00
+                                <%}%>
+                            </span>
+                        </b>
+                    </p>
+                    <p>
+                        <em>总金额:</em>
+                        <b>
+                            <span>￥<%=mydata[0].totalmoney%></span>
+                        </b>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <%}else {%>
+        <div class="row">
+            <div class="col-lg-offset-2 col-lg-8 col-md-8 col-sm-8">
+                <h4>订单信息</h4>
+                <div class="d1">
+                    <p>
+                        <em>订单编号:</em>
+                        <span><%=mydata1[0].final_orderid%></span>
+                    </p>
+                    <p>
+                        <em>订单金额:</em>
+                        <span>￥<%=mydata1[0].totalmoney%></span>
+                    </p>
+                    <p>
+                        <em>订单详情:</em>
+                        <span>
+                            <%if(mydata1[0].finalorder_status==0){%>
+                            加入购物车
+                            <%}%>
+                            <%if(mydata1[0].finalorder_status==1){%>
+                            待支付
+                            <%}%>
+                            <%if(mydata1[0].finalorder_status==2){%>
+                            已完成
+                            <%}%>
+                        </span>
+                    </p>
+                </div>
+
+                <h4>订单状态详情</h4>
+                <div class="d2">
+                    <p>
+                        <em>时间：</em>
+                        <span>
+                            <%=mydata1[0].convert_time%>
+                        </span>
+                    </p>
+                    <p>
+                        <em>状态：</em>
+                        <span>
+                            <%if(mydata1[0].finalorder_status==0){%>
+                            加入购物车
+                            <%}%>
+                            <%if(mydata1[0].finalorder_status==1){%>
+                            待支付
+                            <%}%>
+                            <%if(mydata1[0].finalorder_status==2){%>
+                            已完成
+                            <%}%>
+                        </span>
+                    </p>
+                </div>
+
+                <h4>收货信息</h4>
+                <div class="d3">
+                    <!--<p>-->
+                    <!--<em>收货地区:</em>-->
+                    <!--<span>成都</span>-->
+                    <!--</p>-->
+                    <p>
+                        <em>收货地址:</em>
+                        <span><%=mydata1[0].userdress%></span>
+                    </p>
+                    <p>
+                        <em>收货人姓名:</em>
+                        <span><%=mydata1[0].username%></span>
+                    </p>
+                </div>
+
+                <h4>配送方式</h4>
+                <div class="d4">
+                    <p>
+                        <em>配送方式:</em>
+                        <span>
+                            <%if(mydata1[0].Indistribution==1){%>
+                                Small lucky 配送
+                            <%}else{%>
+                                站点自取
+                            <%}%>
+                        </span>
+                    </p>
+                    <p>
+                        <em>配送时间:</em>
+                        <span><%=mydata1[0].sendtime%></span>
+                    </p>
+                    <p>
+                        <em>运费:</em>
+                        <span>￥12.00</span>
+                    </p>
+                </div>
+                <h4>支付方式</h4>
+                <div class="d5">
+                    <p>
+                        <em>支付方式:</em>
+                        <span><%=mydata1[0].payway%></span>
+                    </p>
+                </div>
+                <table class="table" style="margin-top: 40px">
+                    <tbody>
+                    <tr>
+                        <th>商品</th>
+                        <th class="text-center">销售价</th>
+                        <th class="text-center">数量</th>
+                        <th class="text-center">生日牌</th>
+                        <th class="text-center">优惠金额</th>
+                        <th class="text-center">小计</th>
+                    </tr>
+                    <%for(var i=0;i<mydata1.length;i++){%>
+                    <tr>
+                        <td>
+                            <a href="" style="text-decoration: none">
+                                <div>
+                                <span style="float: left">
+                                        <img src="<%=mydata1[i].pro_orimg%>"  class="img" alt="">
+                                </span>
+                                    <span style="font-size: 12px"><%=mydata1[i].pro_name%>
+                                        <br>
+                                    <span class="bp">标配</span>
+                                    "餐具套装10套"
+                                </span>
+
+                                </div>
+                            </a>
+                        </td>
+                        <td  class="text-center">￥<%=mydata1[i].pro_price%></td>
+                        <td  class="text-center"><%=mydata1[i].order_num%></td>
+                        <td  class="text-center">
+                            <%if(mydata1[i].order_birth_card=="选择生日牌"){%>
+                                Happy Birthday!
+                            <%}else {%>
+                                <%=mydata1[i].order_birth_card%></td>
+                            <%}%>
+                        <td  class="text-center"><%=mydata1[i].youhuimoney%></td>
+                        <td  class="text-center">
+                            ￥0.00
+                        </td>
+                    </tr>
+                    <%}%>
+                    </tbody>
+                </table>
+                <div style="font-size: 12px">
+                    <em>订单留言:</em>
+                    <span style="width: 250px;display: inline-block;vertical-align: top"><%=mydata1[0].message%></span>
+                </div>
+
+                <div style="float: right" class="wb">
+                    <p>
+                        <em>商品金额:</em>
+                        <b>
+                            <%if(mydata1[0].totalmoney<300){%>
+                            ￥<%=Number(mydata1[0].totalmoney)-12%>.00
+                            <%}else{%>
+                            ￥<%=Number(mydata1[0].totalmoney)%>.00
+                            <%}%>
+                        </b>
+                    </p>
+                    <p>
+                        <em>配送费:</em>
+                        <b>
+                            <span>
+                                <%if(mydata1[0].totalmoney<300){%>
+                                ￥12.00
+                                <%}else{%>
+                                ￥0.00
+                                <%}%>
+                            </span>
+                        </b>
+                    </p>
+                    <p>
+                        <em>总金额:</em>
+                        <b>
+                            <span>￥<%=mydata1[0].totalmoney%></span>
+                        </b>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <%}%>
+    </div>
+</section>
+<%-include("footer.ejs")%>
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/jquery-3.1.1.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

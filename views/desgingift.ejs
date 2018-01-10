@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>设计师礼品商品详情页面</title>
+
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/giftdetail.css"/>
+</head>
+<body>
+
+<%-include("nav.ejs")%>
+
+<div class="jiange"></div>
+<!--banner 图-->
+<section class="container-fluid banner">
+    <div class="row">
+        <div class="bir-banner">
+            <!--<div class="goods-detail">-->
+            <img src="<%=imgBanner%>" class="goods-detail" alt=""/>
+            <!--</div>-->
+        </div>
+    </div>
+</section>
+<!--产品详情内容-->
+<section class="container">
+    <div class="row">
+        <h2 class="col-lg-12"><%=Name%></h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+        </div>
+        <div class="col-lg-6">
+            <span class="tittle-price">￥<%=Price%>/<%=gg%></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="clean"></div>
+            <ul class="product-detail">
+                <li>
+                    <img src="images/icon1.png" class="product-detail-img2" alt=""/>
+                    <span>配送时间：</span>
+                    <span>现在订购最早<span class="now-time"></span> 配送。每日最晚配送时间21:30</span>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-6 right-line">
+            <div class="row">
+                <div class="col-lg-12 product-detail-right">
+                    <ul class="row">
+                        <li>
+                            <img src="<%=img1%>" alt=""/>
+                            <span><%=ms%></span>
+                        </li>
+                        <li>
+                            <img src="<%=img2%>" alt=""/>
+                            <span><%=Num%></span>
+                        </li>
+                        <li>
+                            <img src="<%=img3%>" alt=""/>
+                            <span><%=Time%></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 product-detail-right-price">
+                    <ul class="right-size">
+                        <li>商品规格</li>
+                        <li>
+                            <input type="radio" name="w-name" value="<%=Price%>" class="yin-chang"/>
+                            <a href="" class="size-toggle"><span class="value"><%=gg%></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row kongge"></div>
+            <div class="row ">
+                <div class="col-lg-5">
+                    <div class="gouwu">
+                        <button class="btn-give-up" onclick="shop(this)">立即购买</button>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-lg-offset-1 show">
+                    <div class="shoppingDo">
+                        <p>成功加入购物车</p>
+                        <a href="/gouwuche.do">
+                            <div class="chakan">查看购物车</div>
+                        </a>
+                    </div>
+                    <button class="btn-que-ren" onclick="cakeShop(this)">加入购物车</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--<section class="container">-->
+<!--<div class="row">-->
+<!--<div class="col-lg-6 bottom-line"></div>-->
+<!--<div class="col-lg-6 bottom-line"></div>-->
+<!--</div>-->
+<!--</section>-->
+<!--分割线-->
+<section class="container">
+    <div class="row bottom-line"></div>
+</section>
+<!--图片展示-->
+<section class="container">
+    <div class="row">
+        <div class="picture-view">
+            <img src="<%=img4%>" class="img-responsive" alt=""/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="picture-view">
+            <img src="<%=img5%>" class="img-responsive" alt=""/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="picture-view">
+            <img src="<%=img6%>" class="img-responsive" alt=""/>
+        </div>
+    </div>
+</section>
+
+
+<!--推荐-->
+<section class="container">
+    <div class="row">
+        <div class="col-lg-12 googs-tuijian">
+            <h4>商品推荐</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="goods-view">
+
+                <li>
+                    <a href="tjgoods.do?name1=<%=img7%>"><img src="<%=img7%>" alt=""/></a>
+                </li>
+
+                <li>
+                    <a href="tjgoods.do?name1=<%=img8%>"><img src="<%=img8%>" alt=""/></a>
+                </li>
+                <li>
+                    <a href="tjgoods.do?name1=<%=img9%>"><img src="<%=img9%>" alt=""/></a>
+                </li>
+                <li>
+                    <a href="tjgoods.do?name1=<%=img10%>"><img src="<%=img10%>" alt=""/></a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<%-include("footer.ejs")%>
+<!--登陆提示模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" id="prompt_modal" aria-hidden="true" data-backdrop="static" data-show="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                请登陆!
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="prompt_sure_btn" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="js/desgingift.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

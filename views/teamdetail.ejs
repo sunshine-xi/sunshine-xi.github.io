@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>蛋糕详情页面冰淇淋详情页面</title>
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/teamdetail.css"/>
+</head>
+<body>
+
+<%-include("nav.ejs")%>
+
+<div class="jiange"></div>
+<!--banner 图-->
+<section class="container-fluid">
+    <div class="row">
+        <div class="bir-banner">
+            <!--<div class="goods-detail">-->
+            <img src="<%=bannerImg%>" class="goods-detail" alt=""/>
+            <!--</div>-->
+        </div>
+    </div>
+</section>
+<!--产品详情内容-->
+<section class="container">
+    <div class="row">
+        <h2 class="col-lg-12"><%=name%></h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <p><%=ms1%></p>
+            <p><%=ms2%></p>
+            <p><%=ms3%></p>
+        </div>
+        <div class="col-lg-6">
+            <span class="tittle-price">¥<%=price%>/盒</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <ul class="product-detail">
+                <li>
+                    <img src="images/sweet.png" class="product-detail-img2" alt=""/>
+                    <span>参考甜度：</span>
+                    <i><img src="images/sweet_02.png" alt=""/></i>
+                    <!--<i><img src="images/sweet_02.png" alt=""/></i>-->
+                    <!--<i><img src="images/sweet_02.png" alt=""/></i>-->
+                    <!--<i><img src="images/sweet_02.png" alt=""/></i>-->
+                </li>
+                <li>
+                    <img src="images/icon1.png" class="product-detail-img2" alt=""/>
+                    <span>配送时间：</span>
+                    <span>现在订购最早<span class="now-time"></span> 配送。每日最晚配送时间21:30</span>
+                </li>
+                <li>
+                    <img src="images/icon2.png" class="product-detail-img2" alt=""/>
+                    <span>保鲜时间：</span>
+                    <span>0－4℃保藏10小时，5℃食用为佳</span>
+                </li>
+                <li>
+                    <img src="images/icon3.png" class="product-detail-img2" alt=""/>
+                    <span>标准配件：</span>
+                    <span>含标配餐具，可添加巧克力生日牌，不含蜡烛</span>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-6 right-line">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="<%=img4%>" class="product-detail-right-img" alt=""/>
+                </div>
+                <div class="col-lg-6 product-detail-right">
+                    <ul>
+                        <li>
+                            <img src="images/icon4.png" alt=""/>
+                            <span>80g</span>
+                        </li>
+                        <li>
+                            <img src="images/icon5.png" alt=""/>
+                            <span>适合1人分享</span>
+                        </li>
+                        <li>
+                            <img src="images/icon6.png" alt=""/>
+                            <span>含1把竹勺</span>
+                        </li>
+                        <li>
+                            <img src="images/icon7.png" alt=""/>
+                            <span>需提前5小时预订</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="product-detail-right-price">
+                    <ul class="right-size col-lg-12">
+                        <li>商品规格</li>
+                        <li>
+                            <input type="radio" name="w-name" value="<%=price%>" class="yin-chang"/>
+                            <a href="" class="size-toggle"><span class="value">盒</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row kongge"></div>
+            <div class="row ">
+                <div class="col-lg-5">
+                    <div class="gouwu">
+                        <button class="btn-give-up" onclick="shop(this)">立即购买</button>
+                    </div>
+
+                </div>
+                <div class="col-lg-5 col-lg-offset-1 show">
+                    <div class="shoppingDo">
+                        <p>成功加入购物车</p>
+                        <a href="/gouwuche.do">
+                            <div class="chakan">查看购物车</div>
+                        </a>
+                    </div>
+                    <!--<a href="">-->
+                    <button class="btn-que-ren" onclick="cakeShop(this)">加入购物车</button>
+                    <!--</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row">
+        <div class="col-lg-6 bottom-line"></div>
+        <div class="col-lg-6 bottom-line"></div>
+    </div>
+</section>
+
+
+<!--图片展示-->
+<section class="container">
+    <div class="row">
+        <div class="col-lg-12 teamdetail-text">
+            <p><span class="teamdetail-text-tittle">生命只有 10 天的，意式杰拉朵冰淇淋</span></p>
+            <p>日晒与水洗西达摩拼配，香气浓郁</p>
+            <p>中偏深烘焙，带来巧克力坚果气息，和烟熏尾韵</p>
+            <p>咖啡加牛奶，平衡、醇厚</p>
+        </div>
+        <div class="picture-view col-lg-12">
+            <img src="<%=img1%>" class="img-responsive" alt="" style="width: 100%"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 teamdetail-text-one">
+            <p>巴氏杀菌鲜牛奶，新西兰乳脂奶油</p>
+            <p>凝冻工艺，技术性越过大冰晶生成带</p>
+            <p>-18℃恒温配送</p>
+            <p>由此而来的，醇厚、保质期10天的--</p>
+            <p>高密度意式Gelato10冰淇淋</p>
+        </div>
+        <div class="picture-view col-lg-12">
+            <img src="<%=img2%>" class="img-responsive" alt="" style="width: 100%"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="picture-view col-lg-12 ">
+            <img src="<%=img3%>" class="img-responsive" alt="" style="width: 100%"/>
+        </div>
+    </div>
+</section>
+<div class="kongge col-lg-12"></div>
+<section class="container">
+    <div class="row col-lg-12 text-center">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <img src="images/teamdetail5.png" class="img-responsive"  alt="" />
+        </div>
+    </div>
+    <div class="row Lip-text col-lg-12">
+        <span>商品规格：</span>
+        <ul>
+            <li>［名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 称  ] 拿铁冰淇淋</li>
+            <li>［净&nbsp;   含  量 ］80g</li>
+            <li>［品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 牌 ］GELATO10</li>
+            <li>［产品类型］清型全乳脂冰淇淋</li>
+            <li>［食用建议］室温放置15分钟后食用，若不及时食用，需放置冰箱冷冻</li>
+            <li>［保质期限］10天</li>
+        </ul>
+    </div>
+</section>
+<!--推荐-->
+<div class="container"><!--商品推荐-->
+    <div class="row">
+        <h4>商品推荐</h4>
+        <ul class="row pro-list-pr"><!--蛋糕图片清单-->
+            <li class="list-goods-pr1 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第一幅蛋糕图片-->
+                <a href="/message.do?name=images/3001.jpg">
+                    <img src="images/3001.jpg" class="img-responsive" alt="平安夜">
+                </a>
+            </li>
+            <li class="list-goods-pr2 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第2幅蛋糕图片-->
+                <a href="/message.do?name=images/3003.jpg">
+                    <img src="images/3003.jpg" class="img-responsive" alt="黑森林">
+                </a>
+            </li>
+            <li class="list-goods-pr3 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第3幅蛋糕图片-->
+                <a href="/message.do?name=images/3005.jpg">
+                    <img src="images/3005.jpg" class="img-responsive" alt="生日蛋糕">
+                </a>
+            </li>
+            <li class="list-goods-pr4 pro-list-su col-lg-3 col-sm-3 col-md-3 col-xs-12"><!--第4幅蛋糕图片-->
+                <a href="/message.do?name=images/3007.jpg">
+                    <img src="images/3007.jpg" class="img-responsive" alt="多莓之都">
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<%-include("footer.ejs")%>
+<!--登陆提示模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" id="prompt_modal" aria-hidden="true" data-backdrop="static" data-show="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                请登陆!
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="prompt_sure_btn" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="js/teamdetail.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

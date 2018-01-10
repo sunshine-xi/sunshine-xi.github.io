@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地址管理</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/address.css">
+</head>
+<body>
+<%-include('nav.ejs')%>
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-10 addressInf">
+            <%if(mydata==""){%>
+                <p>已有 <span>0</span>条收货地址，(最多可添加10条收获地址信息)</p>
+                <div class="row">
+                    <div class="col-xs-12 text-right">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#add">添加收货地址</button>
+                    </div>
+                </div>
+                <div class="row addressTitle">
+                    <div class="col-xs-4 text-center">
+                        地址
+                    </div>
+                    <div class=" col-xs-2 text-center">
+                        收货人
+                    </div>
+                    <div class=" col-xs-2 text-center">
+                        联系电话
+                    </div>
+                    <div class=" col-xs-4 text-center">
+                        操作
+                    </div>
+                </div>
+                <div class="row addressContent">
+                    <div class="col-xs-12 text-center">暂无地址信息</div>
+                </div>
+            <%}else {%>
+                <p>已有 <span><%=mydata.length%></span>条收货地址，(最多可添加10条收获地址信息)</p>
+                <div class="row">
+                    <div class="col-xs-12 text-right">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#add">添加收货地址</button>
+                    </div>
+                </div>
+                <div class="row addressTitle">
+                    <div class="col-xs-4 text-center">
+                        地址
+                    </div>
+                    <div class=" col-xs-2 text-center">
+                        收货人
+                    </div>
+                    <div class=" col-xs-2 text-center">
+                        联系电话
+                    </div>
+                    <div class=" col-xs-4 text-center">
+                        操作
+                    </div>
+                </div>
+                <%for(var i=0;i<mydata.length;i++){%>
+                <div class="row addressContent">
+                    <div class=" col-xs-4 text-center address"><%=mydata[i].address%></div>
+                    <div class=" col-xs-2 text-center">
+                        <%=mydata[i].address_name%>
+                    </div>
+                    <div class=" col-xs-2 text-center tel"><%=mydata[i].address_tel%></div>
+                    <div class=" col-xs-4 text-center">
+                        <%if(mydata[i].address_status=='2'){%>
+                        <span class="settings">设为默认</span>
+                        <%}else{%>
+                        <span class="default">默认地址</span>
+                        <%}%>
+                        <span onclick="revise(this)">修改</span>
+                        <span onclick="deleteAddress(this)">删除</span>
+                    </div>
+                </div>
+                <%}%>
+            <%}%>
+        </div>
+    </div>
+
+    <!--添加收货地址 -->
+    <div class="modal fade bs-example-modal-lg" id="add" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static" data-show="false">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close cancelAdd" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">添加收货地址</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div>
+                            <span> 地址 : </span>
+                            <select name="" id="province" onclick="onChange()">
+                                <option value="0">---请选择---</option>
+                                <option value="四川省">四川省</option>
+                                <option value="广东省">广东省</option>
+                                <option value="湖南省">湖南省</option>
+                                <option value="湖北省">湖北省</option>
+                            </select>
+                            <select name="" id="city">
+                            </select>
+                            <input type="text" class="addText form-control" id="specificAddress" placeholder="具体地址">
+                        </div>
+                        <div>
+                            <label for="name">收货人</label>
+                            <input type="text" class="addText form-control" id="name" placeholder="收货人">
+                        </div>
+                        <div>
+                            <label for="tel">电话</label>
+                            <input type="text" class="addText form-control" id="tel" placeholder="电话">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success addTo" data-dismiss="modal">确认添加</button>
+                    <button type="button" class="btn btn-default cancelAdd" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<%-include('footer.ejs')%>
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="js/address.js"></script>
+</body>
+</html>

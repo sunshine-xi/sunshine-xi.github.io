@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="configuration/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/payway_page.css">
+</head>
+<body>
+<!--导航-->
+<%-include('nav.ejs')%>
+
+
+<div class="container-fluid" id="pay_page">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="h_left_box">
+                <p>选择支付方式</p>
+                <span id="h_dingdanhao">订单号：<%=mydata[0].final_orderid%></span>
+            </div>
+            <div id="h_right_box">
+                <span>您需支付：</span>
+                <span>￥<%=mydata[0].totalmoney%></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" id="title_box">
+            <span>支付方式</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" id="payway_box">
+            <ul class="row">
+                <li class="col-md-2 col-sm-12 col-xs-12">
+                    <label>
+                        <input type="radio" name="payway_img" value="1">
+                        <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                        <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                        &nbsp;
+                        <img src="images/pay-zhifubao.png" alt="">
+                        <span>支付宝</span>
+                    </label>
+                </li>
+                <li class="col-md-2 col-sm-12 col-xs-12">
+                    <label>
+                        <input type="radio" name="payway_img" value="2">
+                        <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                        <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                        &nbsp;
+                        <img src="images/login-weixin.png" alt="">
+                        <span>微信</span>
+                    </label>
+                </li>
+                <li class="col-md-2 col-sm-12 col-xs-12">
+                    <label>
+                        <input type="radio" name="payway_img" value="3">
+                        <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                        <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                        &nbsp;
+                        <img src="images/pay-jdonline.png" alt="">
+                        <span>京东支付</span>
+                    </label>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-right" id="payway_foot">
+            <span>剩余时间：</span>
+            <span id="h_fen"></span>
+            <span>分</span>
+            <span id="h_miao"></span>
+            <span>秒</span>
+            <button type="button" class="btn btn-default" id="h_surezfbtn">确认支付</button>
+        </div>
+    </div>
+</div>
+<!--提示模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" id="prompt_modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                请输入优惠券号/尊享卡号
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="prompt_sure_btn" class="btn btn-default center-block" data-dismiss="modal">确定</button>
+                <!--<button type="button" id="prompt_sure_btn" class="btn btn-primary center-block">确定</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--footer部分-->
+<%-include('footer.ejs')%>
+
+<script src="configuration/js/jquery-1.8.2.min.js"></script>
+<script src="configuration/bootstrap-3.3.5-dist/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="js/payway_page.js"></script>
+</body>
+</html>

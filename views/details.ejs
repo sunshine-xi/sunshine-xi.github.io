@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>订单管理</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    <link href="configuration/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/details.css">
+</head>
+<body>
+<%-include("nav.ejs")%>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-10 nr">
+            <h4>我的订单</h4>
+            <table class="table">
+                <thead>
+                <tr>
+                    <td class="text-center">订单编号</td>
+                    <td class="text-center">金额</td>
+                    <td class="text-center">下单时间</td>
+                    <td class="text-center">订单状态</td>
+                    <td class="text-center">支付方式</td>
+                    <td class="text-center">操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                <%if(mydata==""&& mydata1==""){%>
+                    <tr class="text-center">
+                        <td colspan="6">
+                            暂无订单信息
+                        </td>
+                    </tr>
+                <%}else{%>
+                    <%for(var i=0;i<mydata.length;i++){%>
+                        <tr>
+                            <td class="text-center">
+                                <div>
+                                    <a href="/Theorder.do?pro_id=<%=mydata[i].final_orderid%>"><%=mydata[i].final_orderid%></a>
+                                </div>
+                                <img src="<%=mydata[i].pro_orimg%>" class="img" alt="">
+                            </td>
+                            <td class="text-center">￥<%=mydata[i].totalmoney%></td>
+                            <td class="text-center"><%=mydata[i].order_time%></td>
+                            <td class="text-center">
+                                <%if(mydata[i].finalorder_status==0){%>
+                                加入购物车
+                                <%}%>
+                                <%if(mydata[i].finalorder_status==1){%>
+                                待支付
+                                <%}%>
+                                <%if(mydata[i].finalorder_status==2){%>
+                                已完成
+                                <%}%>
+                            </td>
+                            <td class="text-center"><%=mydata[i].payway%></td>
+                            <td class="text-center"><a href="/Theorder.do?pro_id=<%=mydata[i].final_orderid%>">操作/编辑</a></td>
+                        </tr>
+                    <%}%>
+                <%for(var i=0;i<mydata1.length;i++){%>
+                        <tr>
+                            <td class="text-center">
+                                <div>
+                                    <a href="/Theorder.do?pro_id=<%=mydata1[i].final_orderid%>"><%=mydata1[i].final_orderid%></a>
+                                </div>
+                                <img src="<%=mydata1[i].pro_orimg%>" class="img" alt="">
+                            </td>
+                            <td class="text-center">￥<%=mydata1[i].totalmoney%></td>
+                            <td class="text-center"><%=mydata1[i].order_time%></td>
+                            <td class="text-center">
+                                <%if(mydata1[i].finalorder_status==0){%>
+                                加入购物车
+                                <%}%>
+                                <%if(mydata1[i].finalorder_status==1){%>
+                                待支付
+                                <%}%>
+                                <%if(mydata1[i].finalorder_status==2){%>
+                                已完成
+                                <%}%>
+                            </td>
+                            <td class="text-center"><%=mydata1[i].payway%></td>
+                            <td class="text-center"><a href="/Theorder.do?pro_id=<%=mydata1[i].final_orderid%>">操作/编辑</a></td>
+                        </tr>
+                    <%}%>
+                <%}%>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-1"></div>
+    </div>
+</div>
+
+<%-include("footer.ejs")%>
+
+<script src="configuration/js/jquery-1.11.3.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/jquery-3.1.1.js"></script>
+<script src="configuration/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url:"details.do",
+            type:"GET",
+            dataType:"json",
+            success:function (data) {
+                // 成功后的操作
+            }
+
+        })
+    });
+</script>
+
+
+</body>
+</html>
+

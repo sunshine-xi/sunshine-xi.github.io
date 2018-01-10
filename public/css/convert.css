@@ -1,0 +1,360 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    list-style: none;
+    text-decoration: none;
+}
+em{
+    font-style: normal;
+}
+header{
+    margin-bottom: 100px;
+}
+/*头部*/
+.header{
+    height: 80px;
+    box-shadow: 1px 1px 5px 0 grey;
+    color: #684029;
+    background-color: #FFFFFF;
+}
+
+/*导航*/
+.nav{
+    padding-left: 20px;
+}
+/*左边导航*/
+.nav_left{
+    background-color: #FFFFFF;
+    height: 78px;
+    margin-top: 0;
+}
+.nav_left>li{
+    float: left;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    width: 60px;
+}
+.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>li>ul>li>a{
+    display: inline-block;
+    color: #684029;
+    padding: 0;
+}
+.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>ul>li>a:hover{
+    color: #BB9772;
+    text-decoration: none;
+}
+.Integral{
+    display: none;
+}
+/*logo图片*/
+.logoImg{
+    height:80px;
+    margin-left: 2%;
+}
+/*专区*/
+.zone{
+    position:relative;
+}
+/*专区的子菜单*/
+.zoneInfo{
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    z-index: 999;
+    width: 100px;
+    border: 1px solid #EDEDED;
+    background-color: #FFFFFF;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s linear;
+}
+.zoneInfo>li{
+    height: 40px;
+    line-height: 40px;
+}
+.zone:hover .zoneInfo{
+    visibility: visible;
+    opacity: 1;
+}
+.zoneInfo>li:hover{
+    color: #684029;
+}
+/*右边导航*/
+.navbar-right>li:not(:nth-child(3)){
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    width: 80px;
+}
+.nav_left>li:hover,.navbar-right>li:not(:nth-child(3)):hover{
+    color: #BB9772;
+    cursor: pointer;
+}
+.navbar-right>li:nth-child(3)>span>a{
+    color: #684029;
+}
+.navbar-right>li:nth-child(3)>span>a:hover{
+    color: #BB9772;
+    text-decoration: none;
+}
+.navbar-right>li:nth-child(3)>span:hover{
+    color: #BB9772;
+    cursor: pointer;
+}
+/*地址下拉列表*/
+.navbar-right #address{
+    border: none;
+    background-color: rgba(0,0,0,0);
+}
+/*窗口缩小时的菜单栏*/
+.navbar-toggle{
+    margin-top: 20px;
+}
+/*app下载*/
+.app{
+    position: relative;
+}
+/*二维码*/
+.Qrcode{
+    position: absolute;
+    margin-left: -50px;
+    left: 50%;
+    margin-top: -10px;
+    z-index: 999;
+}
+.Qrcode>li>img{
+    width: 100px;
+    display: none;
+}
+.app:hover .Qrcode>li>img{
+    display: block;
+}
+.navbar-collapse.in{
+    height: 200px;
+}
+.navLogin{
+    padding: 0 10px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+.shoppingCart{
+    font-size: 18px;
+    margin-left: -10px;
+}
+a:hover{
+    text-decoration: none;
+}
+ol,ul{
+    list-style: none;
+}
+/*==============口味分类=============*/
+.content-box{
+    width: 88%;
+    /*background-color: yellow;*/
+    /*height: 200px;*/
+    margin: 0 auto;
+    overflow: hidden;
+}
+.pro-list{
+    width: 100%;
+    /*background-color: #1b6d85;*/
+    margin-top: 25px;
+    margin-bottom: 35px;
+    padding: 8px 0;
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+}
+.pro-list dl{
+    width: 100%;
+    /*background-color: #9acfea;*/
+    height: 50px;
+    margin-bottom: 0;
+}
+dl>dt{
+    font-weight: normal;
+    margin-right: 38px;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    color: #9B9EA1;
+}
+.pro-list dl>dd{
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 13px;
+    color: #765751;
+}
+/*==============中间分隔字=============*/
+.pro-list-box{
+    width: 100%;
+    /*background-color: #4cae4c;*/
+}
+.pro-list-box .pro-list-title:first-child{
+    padding-top: 10px;
+}
+.pro-list-title{
+    text-align: center;
+    padding: 45px 0;
+}
+.pro-list-title>h2{
+    display: inline-block;
+    font-size: 20px;
+    text-align: left;
+    padding: 0 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-left: 2px solid #684029;
+    color: #7F4029;
+    line-height: 20px;
+}
+h2 span{
+    display: block;
+    font-size: 12px;
+    color: #765751;
+}
+/*==============蛋糕图片清单=============*/
+.pro-list-pr{
+    width: 100%;
+    /*background-color: #0f0f0f;*/
+}
+.pro-list-su img{
+    height: 246px;
+    width: 228px;
+    margin: 0 auto;
+}
+.pro-list-su{
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    /*height: 400px;*/
+}
+.pro-list-su h3{
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 0;
+    color: #765751;
+}
+.pro-list-su h3>span{
+    display: block;
+    font-size: 13px;
+    margin-top: 5px;
+    line-height: 18px;
+    color: #BB9AA6;
+}
+.pro-list-linkOne img{
+    width: 20px;
+    height: 20px;
+}
+.pro-list-linkOne{
+    display: block;
+    margin: 25px 0;
+    color: #765751;
+    cursor: pointer;
+}
+.pro-list-linkOne:hover{
+    color: #BB9AA6;
+}
+a:first-child:hover h3{
+    color: #BB9AA6;
+}
+.fa-cart-plus{
+    margin-top: 20px;
+}
+/*==============尾部分隔字=============*/
+.pro-list-box{
+    width: 100%;
+    /*background-color: #4cae4c;*/
+}
+.pro-list-titleTwo{
+    text-align: center;
+    padding: 45px 0;
+    margin-top: 0;
+}
+.pro-list-titleTwo>h2{
+    display: inline-block;
+    font-size: 20px;
+    text-align: left;
+    padding: 0 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-left: 2px solid #684029;
+    color: #7F4029;
+    line-height: 20px;
+}
+h2 span{
+    display: block;
+    font-size: 12px;
+    color: #765751;
+}
+/*==============售罄部分=============*/
+.bgColor{
+    background-color: rgba(255,255,255,.6);
+    position: absolute;
+    top: 0;
+    /*z-index: 99;*/
+    width: 85%;
+    height: 300px;
+}
+.bgColor span{
+    position: absolute;
+    top: 112px;
+    left: 45%;
+}
+.bgColor a{
+    color: #765751;
+}
+.bgColor:hover a{
+    color: #BB9AA6;
+}
+/*尾部*/
+footer{
+    background-color: #333333;
+}
+/*字体颜色*/
+footer .row{
+    color: white;
+}
+/*第一排ul*/
+footer .row ul:first-child{
+    margin: 50px 0;
+    /*width: 60%;*/
+    height: 30px;
+}
+footer .row ul:first-child>li{
+    /*width: 160px;*/
+    float: left;
+    text-align: center;
+}
+footer .row ul:first-child>li:not(:last-child){
+    border-right: 1px solid white;
+}
+/*第二排小图标*/
+footer .row ul:nth-child(2){
+    height: 50px;
+    margin: 0 0 50px;
+}
+footer .row ul:nth-child(2)>li{
+    /*width: 160px;*/
+    float: left;
+    text-align: center;
+}
+footer .row ul:nth-child(2)>li>.footer_bg{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: rgba(255,255,255,.1);
+    line-height: 50px;
+}
+/*分割线*/
+footer .hr{
+    border: 1px solid #616161;
+    margin-top: 30px;
+}
+footer .row p:last-child{
+    line-height: 50px;
+}

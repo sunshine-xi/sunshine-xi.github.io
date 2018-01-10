@@ -1,0 +1,98 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    color: #684029;
+    font-family: "Î¢ÈíÑÅºÚ";
+}
+.tittle{
+    font-size: 24px;
+}
+.bot-line{
+    margin-top:100px;
+    border-bottom: 2px solid #684029;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+.form-section{
+    margin-top: 40px;
+}
+.form-section .row{
+    margin-top: 20px;
+    border-bottom: 1px solid #BB9772;
+}
+.form-section p{
+    font-size: 18px;
+}
+.form-section p span{
+    display: inline-block;
+    margin-left: 10px;
+}
+.btn{
+    margin-top: 20px;
+}
+.btn button{
+    display: inline-block;
+    width: 114px;
+    height: 30px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
+.que-ren{
+    width: 238px;
+    height: 40px;
+    text-align: center;
+    /*line-height: 40px;*/
+    background-color:#684029 ;
+    color: whitesmoke;
+}
+.modal-title,.modal-body{
+    color:  #684029;
+    font-size: 16px;
+}
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+.give-up a{
+    color: #684029;
+
+}
+.give-up{
+    text-align: center;
+    /*line-height: 40px;*/
+    width: 238px;
+    height: 40px;
+    color: #684029;
+
+}
+.row .tipple li{
+    color: red;
+    font-size: 14px;
+}
+.fa-mobile{
+    font-size: 20px;
+}
+
+
+/*Ä£Ì«¿òÑùÊ½*/
+
+
+
+#myModal{
+    background-color: rgba(0,0,0,.5);
+    margin-top: 10%;
+
+}
+.btn-primary{
+    background-color:#684029 ;
+    color: whitesmoke;
+}
+.jiange{
+    height: 60px;
+}

@@ -1,0 +1,13 @@
+$("#address").click(function(){
+    $(this).val();
+    $.ajax({
+        url:"/chosePrivince.do",
+        type:"post",
+        data:{
+            chosePrivince:$(this).val()
+        },
+        success:function(data){
+            console.log(data);
+        }
+    })
+});

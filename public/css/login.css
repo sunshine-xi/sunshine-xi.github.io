@@ -1,0 +1,370 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    list-style: none;
+    text-decoration: none;
+}
+header{
+    margin-bottom: 100px;
+}
+/*头部*/
+.header{
+    height: 80px;
+    box-shadow: 1px 1px 5px 0 grey;
+    color: #684029;
+    background-color: #FFFFFF;
+}
+
+/*导航*/
+.nav{
+    padding-left: 20px;
+}
+/*左边导航*/
+.nav_left{
+    background-color: #FFFFFF;
+    height: 78px;
+    margin-top: 0;
+}
+.nav_left>li{
+    float: left;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    width: 60px;
+}
+.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>li>ul>li>a{
+    display: inline-block;
+    color: #684029;
+    padding: 0;
+}
+.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>ul>li>a:hover{
+    color: #BB9772;
+    text-decoration: none;
+}
+/*logo图片*/
+.logoImg{
+    height:80px;
+    margin-left: 2%;
+}
+/*专区*/
+.zone{
+    position:relative;
+}
+/*专区的子菜单*/
+.zoneInfo{
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    z-index: 999;
+    width: 100px;
+    border: 1px solid #EDEDED;
+    background-color: #FFFFFF;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s linear;
+}
+.zoneInfo>li{
+    height: 40px;
+    line-height: 40px;
+}
+.zone:hover .zoneInfo{
+    visibility: visible;
+    opacity: 1;
+}
+.zoneInfo>li:hover{
+    color: #684029;
+}
+/*右边导航*/
+.navbar-right>li:not(:nth-child(3)){
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    width: 80px;
+}
+.nav_left>li:hover,.navbar-right>li:not(:nth-child(3)):hover{
+    color: #BB9772;
+    cursor: pointer;
+}
+.navbar-right>li:nth-child(3)>span>a{
+    color: #684029;
+}
+.navbar-right>li:nth-child(3)>span>a:hover{
+    color: #BB9772;
+    text-decoration: none;
+}
+.navbar-right>li:nth-child(3)>span:hover{
+    color: #BB9772;
+    cursor: pointer;
+}
+/*地址下拉列表*/
+.navbar-right #address{
+    border: none;
+    background-color: rgba(0,0,0,0);
+}
+/*窗口缩小时的菜单栏*/
+.navbar-toggle{
+    margin-top: 20px;
+}
+/*app下载*/
+.app{
+    position: relative;
+}
+/*二维码*/
+.Qrcode{
+    position: absolute;
+    margin-left: -50px;
+    left: 50%;
+    margin-top: -10px;
+    z-index: 999;
+}
+.Qrcode>li>img{
+    width: 100px;
+    display: none;
+}
+.app:hover .Qrcode>li>img{
+    display: block;
+}
+.navbar-collapse.in{
+    height: 200px;
+}
+.navLogin{
+    padding: 0 10px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+.shoppingCart{
+    font-size: 18px;
+    margin-left: -10px;
+}
+/*登录*/
+section{
+    margin-top: -20px;
+    padding: 30px 0;
+    height: 600px;
+    background-image: url("../images/login&registerbg.jpg");
+    background-size: 100%;
+}
+/*账号密码登录*/
+section>.login{
+    background-color: white;
+    height: 480px;
+    width: 400px;
+    border:1px solid #E9E9E9;
+    margin-right:2% ;
+    border-radius: 5px;
+}
+/*登录方式*/
+section>.login>.loginTitle{
+    width: 310px;
+    margin: 0 auto;
+}
+section>.login>.loginTitle>span{
+    font-size: 18px;
+    width: 150px;
+    display: inline-block;
+    text-align: center;
+    margin: 30px 0;
+}
+section>.login>.loginTitle>span:hover{
+    cursor: pointer;
+}
+section>.login>.loginTitle>span:first-child{
+    border-right: 1px solid #DCDCDC;
+    color: #482618;
+}
+section>.login>.loginTitle>span:nth-child(2){
+    color: #DCDCDC;
+}
+/*账号  密码输入*/
+section #inputAccount,section #inputPassword{
+    height: 40px;
+    margin-left: 35px;
+    outline: none;
+    box-shadow: none;
+}
+/*登录按钮*/
+section .btn_login{
+    font-size: 18px;
+    width: 330px;
+    height: 50px;
+    background-color: #442818;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin-top: 20px;
+}
+/*记住密码*/
+section .checkbox{
+    color: #744F3A;
+}
+/*忘记密码 注册*/
+section .forgetPwd,section .registered{
+    padding: 0;
+    color: #744F3A;
+    line-height: 32px;
+}
+/*其他登录方式*/
+section .other{
+    margin: 40px 0 20px;
+}
+section .other i{
+    border: thin solid #E7E7E7;
+    margin-top: 8px;
+}
+section .other span{
+    text-align: center;
+    color: #B3B3B3;
+}
+section .row li>.section_bg{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.2);
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    float: left;
+    cursor: pointer;
+}
+section .row li>.section_bg:hover{
+    background-color: rgba(0,0,0,.2);
+}
+/*手机验证码登录*/
+section>.loginTel{
+    background-color: white;
+    height: 540px;
+    width: 400px;
+    border:1px solid #E9E9E9; ;
+    border-radius: 5px;
+    margin-right: -400px;
+    visibility: hidden;
+    opacity: 0;
+}
+/*登录方式*/
+section>.loginTel>.loginTelTitle{
+    width: 310px;
+    margin: 0 auto;
+}
+section>.loginTel>.loginTelTitle>span{
+    font-size: 18px;
+    width: 150px;
+    display: inline-block;
+    text-align: center;
+    margin: 30px 0;
+}
+section>.loginTel>.loginTelTitle>span:first-child{
+    border-right: 1px solid #DCDCDC;
+    color: #DCDCDC;
+}
+section>.loginTel>.loginTelTitle>span:nth-child(2){
+    color: #482618;
+}
+section>.loginTel>.loginTelTitle>span:hover{
+    cursor: pointer;
+}
+/*图片验证*/
+.passport{
+    margin: 0 20px;
+    vertical-align: middle;
+}
+/*图片验证刷新*/
+#checkCode{
+    text-align: center;
+    background-image: url("../images/imgbg.jpg");
+    background-position: bottom;
+    font-size: 18px;
+    height: 40px ;
+    line-height: 40px;
+}
+.refresh{
+    color: #CEA68F;
+    margin-top: 5px;
+    font-size: 24px;
+}
+/*获取短信验证码按钮*/
+.btn-default{
+    height: 40px;
+}
+/*账号  密码输入*/
+section #inputTwoAccount,section #imgValidation,section #infValidation{
+    height: 40px;
+    margin-left: 35px;
+    box-shadow: none;
+    outline: none;
+}
+/*登录按钮*/
+section .btn_login{
+    font-size: 18px;
+    width: 330px;
+    height: 50px;
+    background-color: #442818;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin-top: 20px;
+}
+/*记住密码*/
+section .checkbox{
+    color: #744F3A;
+}
+/*忘记密码 注册*/
+section .forgetPwd a,section .registered a{
+    padding: 0;
+    color: #744F3A;
+    line-height: 32px;
+    text-decoration: none;
+}
+input{
+    outline: none;
+    box-shadow: none;
+}
+/*尾部*/
+footer{
+    background-color: #333333;
+}
+/*字体颜色*/
+footer .row{
+    color: white;
+}
+/*第一排ul*/
+footer .row ul:first-child{
+    margin: 50px 0;
+    /*width: 60%;*/
+    height: 30px;
+}
+footer .row ul:first-child>li{
+    /*width: 160px;*/
+    float: left;
+    text-align: center;
+}
+footer .row ul:first-child>li:not(:last-child){
+    border-right: 1px solid white;
+}
+/*第二排小图标*/
+footer .row ul:nth-child(2){
+    height: 50px;
+    margin: 0 0 50px;
+}
+footer .row ul:nth-child(2)>li{
+    /*width: 160px;*/
+    float: left;
+    text-align: center;
+}
+footer .row ul:nth-child(2)>li>.footer_bg{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: rgba(255,255,255,.1);
+    line-height: 50px;
+}
+/*分割线*/
+footer .hr{
+    border: 1px solid #616161;
+    margin-top: 30px;
+}
+footer .row p:last-child{
+    line-height: 50px;
+}

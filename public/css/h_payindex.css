@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+}
+#h_payindexbox{
+    padding:3% 6%;
+}
+#h_payindexbox>div:nth-of-type(1)>div>p{
+    font-size: 16px;
+    font-weight: bold;
+}
+#h_payindexbox>div:nth-of-type(1)>div span{
+    color: rgb(189,189,189);
+    font-size: 14px;
+}
+#h_payindexbox>div:nth-of-type(1)>div>span:nth-of-type(2){
+    color: rgb(189,189,189);
+    font-size: 14px;
+}
+#h_payindexbox>div:nth-of-type(1)>div span:nth-of-type(2){
+    margin-left: 12%;
+
+}
+#h_payindexbox>div:nth-of-type(1)>div span:nth-of-type(3),#h_payindexbox>div:nth-of-type(1)>div span:nth-of-type(4){
+    float: right;
+    color: rgb(255,113,77);
+    font-weight: bold;
+}
+#h_payindexbox>div:nth-of-type(1)>div{
+    border-bottom: 2px solid rgb(236,236,236);
+    padding-bottom: 1%;
+}
+#h_payindexbox>div:nth-of-type(2){
+    padding: 5% 0;
+}
+#h_payindexbox>div>div:nth-of-type(1){
+    padding-right: 0%;
+}
+#h_paypicbox{
+    padding-top: 3%;
+}
+#h_paypicbox h3{
+    padding-left: 19.5%;
+}
+#h_payindexbox>div>div:nth-of-type(2){
+    padding-left: 2%;
+}
+#h_paypic{
+    width: 35%;
+}
